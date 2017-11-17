@@ -1,0 +1,186 @@
+<!--orderDetail.wxml-->
+<!-- 地址 -->
+<!-- <view class="content">
+  <view>
+    <view class="sessionName">
+      <text class="session-val" style="margin-top:0.5em"> {{jsonData.contactPerson}}  {{jsonData.contactMobile}}</text>
+      <text class="session-val">{{jsonData.address}}</text>
+    </view>
+  </view>
+</view> -->
+<!-- 商品属性 -->
+<!-- <view wx:for="{{jsonData.goods}}">
+  <text>\n</text>
+  <view class="content">
+    <view>
+      <view class="session" style="height:100%">
+        <image src="{{item.goodsImg}}" class="leftPic"></image>
+
+        <view>
+          <view class="goodName">{{item.goodsName}}</view>
+          <view class="goodName">{{item.price}}</view>
+          <view wx:for="{{item.goodsAttr}}" wx:for-item="attr" style="display:inline">
+            <view wx:if="{{attr.paraType=='2'}}" style="display:inline">
+              <image src="{{attr.content}}" class="attrImage"></image>
+              <text>  \t </text>
+            </view>
+            <view wx:elif="{{attr.paraType=='1'}}" style="display:inline">
+              <text class="goodAttr">{{attr.content}}</text>
+              <text>  \t </text>
+            </view>
+          </view>
+           <text> X {{attr.num}}</text>
+        </view>
+      </view>
+    </view>
+  </view>
+</view> -->
+<!-- 金额 -->
+<!-- <text>\n</text>
+<view class="content">
+  <view>
+    <view class="session" >
+      <view class="sessoin-tit">商品总额</view>
+      <input class="session-val" style="text-align:right;width:20em;" value="{{totalPrice}}" />
+    </view>
+    <view class="session" wx:if="{{jsonData.couponStatus=='1'}}">
+      <view class="sessoin-tit">优惠券</view>
+      <input class="session-val" style="text-align:right;width:20em;" value="{{jsonData.couponPrice}}" />
+    </view>
+    <view class="session" wx:if="{{jsonData.balanceStatus=='1'}}">
+      <view class="sessoin-tit">余额</view>
+      <input class="session-val" style="text-align:right;width:20em;" value="{{jsonData.balance}}" />
+    </view>
+  </view>
+</view> -->
+<!-- 实付款 -->
+<!-- <text>\n</text>
+<view class="content">
+  <view>
+    <view class="session">
+      <view class="sessoin-tit" style="text-align:right;width:90em;">实付款</view>
+      <input class="session-val" value="{{jsonData.fee}}" />
+    </view>
+  </view>
+</view> -->
+<!-- 下方按键提示 -->
+<!-- <view class="buttom">
+  <view class="buttomView">
+    尚未开奖>
+  </view>
+</view> -->
+
+<!-- 地址 -->
+<view>
+  <!-- 没填地址的时候 -->
+  <view class='noAddressView' style='{{noAddress}}' bindtap='getAddress'>
+    <view class='noAddressText'>
+      请设置收货地址
+    </view>
+    <view class='noAddressImageView'>
+      <image src='../../utils/image/buycar/btn_next.png' class='setAddressBtn'></image>
+    </view>
+  </view>
+  <!-- 有填写地址 -->
+  <view class='isAddressView' style='{{isAddress}}'>
+    <!-- 姓名 -->
+    <view class='isAddressName'>
+      {{contactPerson}}
+    </view>
+    <!-- 联系电话 -->
+    <view class='isAddressMobile'>
+      {{contactMobile}}
+    </view>
+    <!-- 联系地址 -->
+    <view class='isAddressAddress'>
+      {{getAddress}}
+    </view>
+  </view>
+</view>
+<!-- 商品列表 -->
+<view wx:for="{{jsonData.goods}}">
+  <!-- 每个item -->
+  <view class='goodsItem'>
+    <!-- 商品图片 -->
+    <view class='goodItemImage'>
+      <image src='{{item.goodsImg}}' class='goodImage'></image>
+    </view>
+    <!-- 商品名称 -->
+    <view class='goodItemName'>
+      {{item.goodsName}}
+    </view>
+    <!-- 商品单价 -->
+    <view class='goodItemPrice'>
+      ￥{{item.price}}
+    </view>
+    <!-- 商品属性 -->
+    <view class='attrView'>
+      <view wx:for="{{item.goodsAttr}}" wx:for-item="attr" class='forItemView'>
+        <!-- 文字 -->
+        <view wx:if="{{attr.paraType=='1'}}">
+          <view class="fontStyle">{{attr.content}}</view>
+        </view>
+        <!-- 图片 -->
+        <view wx:elif="{{attr.paraType=='2'}}" class='attrImageView'>
+          <image src="{{attr.content}}" class="imageStyle"></image>
+        </view>
+      </view>
+      <!-- 购买商品件数 -->
+      <view class='viewCount'>
+         X {{item.num}}
+      </view>
+    </view>
+  </view>
+</view>
+<!-- 分割线 -->
+<view class='fenge'>
+</view>
+<!-- 优惠券，余额，实付款 -->
+<view class='cbrViewItem'>
+  <!-- 优惠券 -->
+  <view class='couponView' style='{{isCoupon}}'>
+    <!-- 有使用优惠券 -->
+    <view class='couponText'>
+      优惠券
+    </view>
+    <view class='couponPrice'>
+      {{getCouponPrice}}
+    </view>
+    <view class='rightImageView'>
+      <image src='../../utils/image/buycar/btn_next.png' class='rightImage'></image>
+    </view>
+  </view>
+  <view class='couponView' style='{{noCoupon}}' bindtap='getCoupon'>
+    <!-- 没有使用优惠券 -->
+    <view class='couponText' >
+      优惠券
+    </view>
+    <!-- <view class='couponPrice'>
+      {{jsonData.couponPrice}}
+    </view> -->
+    <view class='rightImageView'>
+      <image src='../../utils/image/buycar/btn_next.png' class='rightImage'></image>
+    </view>
+  </view>
+  <!-- 余额 -->
+  <view class='blanceView'>
+    <view class='blanceText'>
+      余额
+    </view>
+    <view class='blancePrice'>
+      剩余 {{jsonData.userBalance}}
+    </view>
+    <view class='blanceSwitch'>
+      <switch class='switchBtn' bindchange="switchChange"></switch>
+    </view>
+  </view>
+  <!-- 实付款 -->
+  <view class='realPayView'>
+    <view class='payText'>实付款：</view>
+    <view class='payPrice'>￥{{jsonData.fee}}</view>
+  </view>
+</view>
+<!-- 支付按钮 -->
+<view class='payView'>
+  <button class='payBtn' bindtap='pay'>微信支付</button>
+</view>

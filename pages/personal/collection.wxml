@@ -1,0 +1,46 @@
+<view class="swiper-tab">
+  <view class="swiper-tab-item {{currentTab==0?'':'disActive'}} {{currentTab==0?'active':''}}" data-current="0" bindtap="clickTab">商城商品</view>
+  <view class="swiper-tab-item {{currentTab==1?'':'disActive'}} {{currentTab==1?'active':''}}" data-current="1" bindtap="clickTab">团购商品</view>
+</view>
+
+<swiper current="{{currentTab}}" duration="300" style='height:{{showWindowHeight}}px;'>
+<!-- bindchange="swiperTab" -->
+<!-- 商城 -->
+  <swiper-item>
+    <!-- <view class="goodListView" wx:for="{{shoeList}}" >
+      <view class="goodsView" bindtap="jumpCollection" data-goods-id="{{item.goodsId}}" data-type="1">
+        <view class="goodsPrice">{{item.price}}</view>
+        <image src="{{item.goodsImg}}" class="goodsImage"></image>
+         <view>{{item.goodsName}}</view>
+      </view>
+    </view> -->
+    <view wx:for="{{shoeList}}" style='width:48%;height:210px;float:left;'>
+      <!-- 每个商品 -->
+      <view bindtap="jumpCollection" data-goods-id="{{item.goodsId}}" data-type="1" class='itemView'>
+        <!-- 商品图片 -->
+        <view class='imageView'>
+          <image src='{{item.goodsImg}}' class='goodsImg'></image>
+        </view>
+        <!-- 商品名称 -->
+        <view class='goodsNameView'>
+          {{item.goodsName}}
+        </view>
+        <!-- 商品价格-->
+        <view>
+          <!-- 背景图 -->
+          <view class='mmoneyBack'>
+            <image src='../../utils/image/personal/ico_noimage.png' class='moneyImage'></image>
+          </view>
+          <!-- 价格 -->
+          <view class='money'>
+            ￥{{item.price}}
+          </view>
+        </view>
+      </view>
+    </view>
+  </swiper-item>
+  <!-- 团购 -->
+  <swiper-item>
+    <view>团购商品，敬请期待</view>
+  </swiper-item>
+</swiper>

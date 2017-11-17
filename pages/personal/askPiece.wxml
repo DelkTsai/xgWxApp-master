@@ -1,0 +1,29 @@
+<!--pages/personal/askPiece.wxml-->
+<!-- 上面加号图片 -->
+<view class='topView'>
+  <image src='{{midImage}}' class='topImageFang' data-invite-code='{{inviteCode}}' bindtap='{{goToChipList}}'></image>
+  <!-- 遮罩层 -->
+  <view class='tongMask maskst' style='{{maskst}}' data-invite-code='{{inviteCode}}' bindtap='{{goToChipList}}'></view>
+  <view class='tongMask masknd' style='{{masknd}}' data-invite-code='{{inviteCode}}' bindtap='{{goToChipList}}'></view>
+  <view class='tongMask maskrd' style='{{maskrd}}' data-invite-code='{{inviteCode}}' bindtap='{{goToChipList}}'></view>
+  <view class='tongMask maskth' style='{{maskth}}' data-invite-code='{{inviteCode}}' bindtap='{{goToChipList}}'></view>
+</view>
+<!-- 图片下面的文字 -->
+<view class='textStyle'>
+  <view class='needClassGoodsName'>
+    {{goodsName}}
+  </view>
+  <view class='needClass'>
+    {{showText}}
+  </view>
+</view>
+<!-- 邀请码文字-->
+<view class='textButton'>
+  <view class='toptext'>
+    我的邀请码
+  </view>
+  <view class='inviteCode'>
+    {{inviteCode}}
+  </view>
+</view>
+

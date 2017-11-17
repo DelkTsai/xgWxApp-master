@@ -1,0 +1,177 @@
+<!--buyCarList.wxml-->
+<!-- 购物车列表 -->
+<!-- <view class="classname" wx:for="{{buyCarList}}">
+  <view class="content">
+    <view>
+      <view class="session">
+        <checkbox value="" checked="{{checkBox[index]}}" class="checkbx" bindtap="checkChange" data-shop-car-id="{{item.shopCarId}}" data-index="{{index}}" data-price="{{item.price}}" style="visibility:{{cbh[imdex]}};"/>
+        <image src="../../utils/image/buycar/allsel.png"  class="checkbx" bindtap="checkChange" data-index="{{index}}" style="visibility:{{cbih[index]}};width:20px;height:20px;"></image> -->
+<!-- 商品图片 -->
+<!-- <view class="classname">
+          <image src="{{item.goodsImg}}" class="goodsImage"></image>
+        </view> -->
+<!-- 商品名称 -->
+<!-- <view class="classname">
+        
+        </view> -->
+<!-- 商品价格 -->
+<!-- <view class="classname"> -->
+<!-- 商品名称 -->
+<!-- <text style="display:block;"> {{item.goodsName}}</text> -->
+<!-- 商品价格 -->
+<!-- <text style="display:block;margin-top:-1em;">{{item.price}}</text> -->
+<!-- 商品属性 -->
+<!-- <view class="attrClass" bindtap="powerDrawer" data-index="{{index}}" data-num="{{item.num}}" data-goods-attr="{{item.goodsAttr}}" data-goods-img="{{item.goodsImg}}" data-goods-name="{{item.goodsName}}" data-goods-id="{{item.goodsId}}" data-shop-car-id="{{item.shopCarId}}" data-money="{{item.price}}" data-statu="open" data-index="{{index}}" >
+            <view class="tong mashu" wx:for="{{item.goodsAttr}}" wx:for-item="attr" >
+              <image src="{{attr.content}}" class="attrImage " wx:if="{{attr.paraType=='2'}}">
+                </image>
+                <text wx:if="{{attr.paraType=='1'}}">{{attr.content}}</text>
+            </view>
+          </view> -->
+<!-- 加减按钮 -->
+<!-- <view class="tong">
+              <image src="../../utils/image/buycar/btn_jianw.png" bindtap="jiannum" data-index="{{index}}" data-goods-attr="{{item.goodsAttr}}" data-goods-img="{{item.goodsImg}}" data-goods-name="{{item.goodsName}}" data-goods-id="{{item.goodsId}}" data-shop-car-id="{{item.shopCarId}}" data-money="{{item.price}}" class="mines"></image>
+              <text>{{num[index]}}</text>
+              <image src="../../utils/image/buycar/btn_jiaw.png" bindtap="jianum" data-index="{{index}}" data-goods-attr="{{item.goodsAttr}}" data-goods-img="{{item.goodsImg}}" data-goods-name="{{item.goodsName}}" data-goods-id="{{item.goodsId}}" data-shop-car-id="{{item.shopCarId}}" data-money="{{item.price}}" class="plus"></image>
+            </view>
+        </view> -->
+<!-- 商品属性 -->
+<!-- <view class="classname">
+          
+        </view>  -->
+<!-- 商品数量 -->
+<!-- <view class="classname">
+          
+        </view> -->
+<!-- </view> -->
+<!-- 
+      <view class="session">
+        <input class="session-val" bindchange="finishConfirm" id="confirmCode" placeholder="请输入你的验证码" />
+        <view class="sessoin-tit" bindtap="getConfirm">{{showMsg}}</view>
+      </view>
+      <text style="color:#FE3131;font-size:12px;">{{errorMsg}}</text>
+      <button class="myBtn" bindtap="saveTel">保存</button> -->
+<!-- 
+    </view>
+
+  </view>
+</view> -->
+
+<!-- 购物车列表 -->
+<view wx:for="{{buyCarList}}">
+  <!-- 每个item的样式 -->
+  <view class='itemView'>
+    <!-- checkbox -->
+    <view class='checkBoxView'>
+      <checkbox value="" checked="{{checkBox[index]}}" class="checkb" bindtap="checkChange" data-shop-car-id="{{item.shopCarId}}" data-index="{{index}}" data-price="{{item.price}}" style="visibility:{{cbh[imdex]}};"></checkbox>
+    </view>
+    <!-- 商品图片 -->
+    <view class='goodsImageView'>
+      <image src='{{item.goodsImg}}' class='goodsImageNew'></image>
+    </view>
+    <!-- 商品名称 -->
+    <view class='goodsNameViewNew'>
+      {{item.goodsName}}
+    </view>
+    <!-- 商品价格 -->
+    <view class='goodsPriceViewNew'>
+      ￥ {{item.price}}
+    </view>
+    <!-- 商品属性 -->
+    <view class='goodsAttrViewNew' bindtap="powerDrawer" data-index="{{index}}" data-num="{{item.num}}" data-goods-attr="{{item.goodsAttr}}" data-goods-img="{{item.goodsImg}}" data-goods-name="{{item.goodsName}}" data-goods-id="{{item.goodsId}}" data-shop-car-id="{{item.shopCarId}}"
+      data-money="{{item.price}}" data-statu="open" data-index="{{index}}">
+      <view wx:for="{{item.goodsAttr}}" wx:for-item="attr" class='goodsAttrViewNewFor'>
+        <!-- 文字 -->
+        <view wx:if="{{attr.paraType=='1'}}" class='attrTextNew'>
+          {{attr.content}}
+        </view>
+        <!-- 图片 -->
+        <view wx:if="{{attr.paraType=='2'}}" class='attrImageViewNew'>
+          <image src='{{attr.content}}' class='attrImageNew'></image>
+        </view>
+      </view>
+    </view>
+    <!-- 商品购买个数 加减按钮-->
+    <!-- 减按钮 -->
+    <view class='mineBtnNewView' bindtap="jiannum" data-index="{{index}}" data-goods-attr="{{item.goodsAttr}}" data-goods-img="{{item.goodsImg}}" data-goods-name="{{item.goodsName}}" data-goods-id="{{item.goodsId}}" data-shop-car-id="{{item.shopCarId}}" data-money="{{item.price}}">
+      <image src='../../utils/image/buycar/btn_jianw.png' class='mineBtnImage'></image>
+    </view>
+    <!-- 数量 -->
+    <view class='numNew'>
+      {{num[index]}}
+    </view>
+    <!-- 加按钮 -->
+    <view class='plusBtnNewView' bindtap="jianum" data-index="{{index}}" data-goods-attr="{{item.goodsAttr}}" data-goods-img="{{item.goodsImg}}" data-goods-name="{{item.goodsName}}" data-goods-id="{{item.goodsId}}" data-shop-car-id="{{item.shopCarId}}" data-money="{{item.price}}">
+      <image src='../../utils/image/buycar/btn_jiaw.png' class='plusBtnImage'></image>
+    </view>
+  </view>
+  <!-- 分割线 -->
+  <view class='fenge'>
+  </view>
+</view>
+
+<!-- 结算窗口 -->
+<!-- <view class="footerSum"> -->
+  <!-- 全选按钮 -->
+  <!-- <view class="footerTotal selectButtom">
+    <checkbox value="value" checked="{{fall}}" bindtap="checkAll" />
+    <text class="quanText">全选</text>
+  </view> -->
+  <!-- 合计 -->
+  <!-- <view class="footerTotal">
+    <text class="quanText hijitext">合计:￥{{totalMoney}}</text>
+  </view> -->
+  <!-- 计算按钮 -->
+  <!-- <view class="footerTotal sumButton">
+    <text class="sumBut" bindtap="sumClick">结算</text>
+  </view>
+</view> -->
+
+<!-- 结算窗口 -->
+<view class='sumViewNew'>
+  <!-- 全选按钮 -->
+  <view class='fullCheck'>
+   <checkbox value="value" checked="{{fall}}" bindtap="checkAll" />
+   <view class='fullcheckText'>
+    全选
+   </view>
+  </view>
+  <!-- 合计 -->
+  <view class='sumToatlMoneyNew'>
+    <view class='sumTextNew'>
+      合计：
+    </view>
+    <view class='sumValue'>
+      ￥{{totalMoney}}
+    </view>
+  </view>
+  <!-- 结算按钮 -->
+  <view class='sumBtnViewNew' style="width:{{leftWidth}}px;">
+    <button class='sumBtnNew' bindtap="sumClick">结算</button>
+  </view>
+</view>
+
+
+<!-- 弹出框选择码数以及颜色 -->
+<view class="drawer_screen" hidden="{{hidden}}">
+  <view animation="{{animationData}}" class="drawer_box" wx:if="{{showModalStatus}}">
+
+    <!--drawer content-->
+    <view class="drawer_title">码数</view>
+    <view class="drawer_content" wx:for="{{dataList.goodsAttr}}">
+
+      <view style="display:inline;margin-left:1em;color:#FFFFFF;background-color:#7D7D7D;border-radius:3px;" wx:if="{{item.paraType=='1'}}" wx:for="{{item.para}}" wx:for-index="ite" wx:for-item="attr" bindtap="wenziPara" data-para-index="{{ite}}" data-para-desc="{{attr.paraDesc}}"
+        data-para-img="{{attr.paraImg}}" data-para-type="{{item.paraType}}">
+        {{attr.paraDesc}}
+      </view>
+    </view>
+    <view class="drawer_title">颜色</view>
+    <view class="drawer_content" wx:for="{{dataList.goodsAttr}}">
+      <view style="display:inline;margin-left:1em;" wx:if="{{item.paraType=='2'}}" wx:for="{{item.para}}" wx:for-item="attrs" bindtap="tupianPara" wx:for-index="iee" data-para-ind="{{iee}}" data-para-img="{{attrs.paraImg}}" data-para-desc="{{attrs.paraDesc}}"
+        data-para-type="{{item.paraType}}">
+        <image src="{{attrs.paraImg}}" class="co"></image>
+      </view>
+    </view>
+    <view class="btn_ok" bindtap="powerDrawer" data-statu="close">确定</view>
+  </view>
+</view>

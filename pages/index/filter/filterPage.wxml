@@ -1,0 +1,60 @@
+<view style="width:{{windowWidth}}px;height:{{windowHeight}}px">
+  <view style='background:rgb(46, 46, 46);color:#FFF;height:30px;'>
+    <text style='float:left;margin-top:5px;font-size:14px;margin-left:5px' bindtap='onClearAllFilter'>全部清除</text>
+    <view style='margin-left:45%;line-height:30px;height:30px'>
+      <text style='font-size:14px;'>筛选  </text>
+      <text style='font-size:14px;'>{{filterCount}}</text>
+    </view>
+  </view>
+  <scroll-view style='height:{{windowHeight-30-66}}px;' scroll-y>
+  <input placeholder='搜索' style='margin:auto;width:90%;background: #8c8c8c;border-radius: 6px;height:31px;color:#000;font-size: 18px;text-align: center;' placeholder-style="color:#000;text-align: center;margin:auto;width:110%;" value='{{searchKey}}' bindinput='searchInput'></input>
+    <view >
+    </view>
+    <!--类型  -->
+    <view style='text-align:center; margin-top:15px;' wx:if="{{filterContnet['type']}}">
+      <text class='typeTitle'>类型</text>
+      <scroll-view class='scroll_x_box' scroll-x >
+            <image wx:for="{{filterContnet['type'].para}}" src='{{item.paraImg}}' style='width:64px;height:64px;margin-left: 20px;' data-item-index="{{index}}"bindtap='onLeiXingItemClick'></image>
+      </scroll-view>
+      <view class='divider_hor'></view>
+    </view>
+
+
+    <!--品牌  -->
+    <view style='text-align:center; margin-top:15px;' wx:if="{{filterContnet['brand']}}">
+      <text class='typeTitle'>品牌</text>
+      <scroll-view class='scroll_x_box' scroll-x >
+            <image wx:for="{{filterContnet['brand'].para}}" src='{{item.paraImg}}' style='width:64px;height:64px;margin-left: 20px;' data-item-index="{{index}}"bindtap='onPinPaiItemClick'></image>
+      </scroll-view>
+      <view class='divider_hor'></view>
+
+    </view>
+
+
+
+    <!--码数  -->
+    <view style='text-align:center; margin-top:15px;' wx:if="{{filterContnet['size']}}">
+      <text class='typeTitle'>码数</text>
+      <scroll-view class='scroll_x_box' scroll-x style='heigh:auto;'>
+        <view  wx:for="{{filterContnet['size'].para}}" style='display:inline-block;vertical-align:middle;margin:auto 0;'>
+         <text   class='{{item.isSel?"maShu sel":"maShu"}}' data-item-index="{{index}}"bindtap='onMaShuItemClick'>{{item.paraDesc}}</text>
+        </view>
+      </scroll-view>
+        <view class='divider_hor'></view>
+    </view>
+
+
+
+<!--颜色  -->
+    <view style='text-align:center; margin-top:15px;' wx:if="{{filterContnet['color']}}">
+      <text class='typeTitle'>颜色</text>
+       <view style='width:{{46*6}}px;margin:20px auto;pading:0 10px;text-align:left;'>
+            <image wx:for="{{filterContnet['color'].para}}" src="{{item.paraImg}}"  class="yanSe {{item.isSel?'sel':''}} " bindtap='onYanSeItemClick'
+            data-item-index="{{index}}"  style="margin-left:{{(index)%11==6?'34':'10'}}px;">    
+            </image>
+      </view>
+    </view>
+  
+  </scroll-view>
+  <button style='width:90%;margin:10px auto;' bindtap='OnFilterConfirm'>确定</button>
+</view>

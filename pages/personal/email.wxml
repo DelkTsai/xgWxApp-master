@@ -1,0 +1,23 @@
+<!-- <text>\n</text>
+<view class="content">
+    <view>
+        <view class="session">
+            <input class="session-val" bindchange="finishEmail" id="userEmail" placeholder="请输入用户邮箱" value="{{email}}"/>
+        </view>
+        <button class="myBtn" bindtap="saveEmail">保存</button>
+    </view>
+
+</view> -->
+
+<view class='holeView' style='height:{{windowHeight}}px;'>
+  <view class='centerView'>
+    <!-- 用户名 -->
+    <view class='userName'>
+      <input class="inputStyle" bindchange="finishEmail" id="userEmail" placeholder="请输入用户邮箱" value="{{email}}"/>
+    </view>
+    <!-- 提交按钮 -->
+    <view class='submitBtn'>
+      <button class="myBtn" bindtap="saveEmail">保存</button>
+    </view>
+  </view>
+</view>

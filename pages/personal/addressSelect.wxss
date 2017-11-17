@@ -1,0 +1,118 @@
+/* address.wxss */
+/* 没数据时图像不可见 */
+.nullImage{
+  width: 5rem;
+  margin-top: 6.75rem;
+  /* margin-left: 7rem; */
+  height: 3rem;
+  display: inline-block;
+}
+.holeView{
+  text-align: center;
+}
+.nullAddress{
+  font-size: 1rem;
+}
+
+.content{
+  width: 100%;
+  /* box-sizing: border-box; */
+  /* margin: -21rpx auto; */
+  background: #fff;
+  /* min-height: 400rpx; */
+  padding: 50rpx 25rpx;
+  /* position: relative; */
+  /* box-shadow: 0 0 20rpx 4rpx  #becee7; */
+  border-radius: 10rpx;
+  /* margin-top: 1em; */
+}
+.session {
+  display:block;
+  /* height: 120rpx;
+  line-height: 120rpx; */
+}
+.sessoin-tit{
+  font-size: 26rpx;
+  color: #666666;
+  vertical-align: middle;
+  padding:0 15rpx;
+  width: 140rpx;
+}
+.session-val{
+  font-size: 26rpx;
+  color: #666666;
+  display: block;
+  width: 100%;
+  border-bottom: 0px solid #000;
+  margin-top: 32rpx;
+}
+.myBtn{
+   background-color:  #2D2D2D ;
+   color: #fff;
+   font-size: 26rpx;
+   height: 88rpx;
+   line-height: 88rpx;
+   margin-top: 100rpx;
+}
+.touch-item {
+ font-size: 14px;
+ display: flex;
+ justify-content: space-between;
+ border-bottom:1px solid #ccc;
+ width: 100%;
+ overflow: hidden;
+ /* flex-direction: column; */
+}
+/* .content {
+ width: 100%;
+ padding: 10px;
+ line-height: 22px;
+ margin-right:0;
+ -webkit-transition: all 0.4s;
+ transition: all 0.4s;
+ -webkit-transform: translateX(90px);
+ transform: translateX(90px);
+ margin-left: -90px
+} */
+.del {
+ background-color: #2D2D2D;
+ width: 90px;
+ display: flex;
+ flex-direction: column;
+ align-items: center;
+ justify-content: center;
+ color: #fff;
+ -webkit-transform: translateX(90px);
+ transform: translateX(90px);
+ -webkit-transition: all 0.4s;
+ transition: all 0.4s;
+}
+.touch-move-active .content,
+.touch-move-active .del {
+ -webkit-transform: translateX(0);
+ transform: translateX(0);
+}
+/* 选择框距离顶部的距离 */
+.topDistance{
+  margin-top: 1.8em;
+  margin-right: 1em;
+}
+/* 右侧编辑图片的大小 */
+.editImage{
+  width: 20px;
+  height: 20px;
+}
+.rightImage{
+  margin-left: 3em;
+}
+/* checkbox变圆 */
+.checkR{
+  border-radius: 1em;
+}
+/* 新增按钮保持在底部 */
+.footer{
+  position: absolute;
+  bottom: 0px;
+  width: 100%;
+}
+

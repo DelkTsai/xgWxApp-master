@@ -1,0 +1,70 @@
+/* pages/personal/askPiece.wxss */
+/* 上方方框图片 */
+.topView{
+  width: 100%;
+  position: relative;
+  text-align: center;
+  height: 380px;
+}
+.topImageFang{
+  position: absolute;
+  width: 279px;
+  height: 279px;
+   top: 42px;
+  left: 17vw; 
+}
+/* 文字样式 */
+.textStyle{
+  width: 100%;
+  position: relative;
+}
+.needClass{
+  font-size: 13px;
+  color: #7d7d7d;
+  text-align: center;
+  width: 100%;
+}
+.needClassGoodsName{
+  font-size: 22px;
+  color: #7d7d7d;
+  text-align: center;
+  width: 100%;
+}
+/* 邀请码样式 */
+.textButton{
+  width: 100%;
+  text-align: center;
+  /* 外边距合并 */
+  overflow: hidden;
+}
+.toptext{
+  margin-top: 82px;
+  font-size: 13px;
+  color: #7d7d7d;
+}
+.inviteCode{
+  font-size: 24px;
+  color: #000000;
+}
+/* 图片遮罩属性 */
+.tongMask{
+  width: 50%;
+  height: 50%;
+  position: absolute;
+}
+.maskst{
+  top: 0px;
+  left: 0px;
+}
+.masknd{
+  right: 0px;
+  top: 0px;
+}
+.maskrd{
+  left: 0px;
+  bottom: 0px;
+}
+.maskth{
+  right: 0px;
+  bottom: 0px;
+}

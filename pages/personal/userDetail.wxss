@@ -1,0 +1,28 @@
+/* userDetail.wxss */
+/* 下方6个按钮 */
+.viewButton{
+  display: block;
+  width: 100%;
+  clear: both;
+  margin-bottom: 1.8em;
+
+}
+.viewButtonLeft{
+  margin-left: 1.5em;
+}
+.viewButtonRight{
+  float: right;
+  margin-right: 1.5em;
+}
+/* 头像样式 */
+.headImage{
+  width: 1.5em;
+  height: 1.5em;
+  float: right;
+  margin-right: 1em;
+  border-radius: 1em;
+}
+.text{
+  float: right;
+  margin-right: 1em;
+}

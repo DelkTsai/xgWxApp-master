@@ -1,0 +1,54 @@
+<!--orderDetail.wxml-->
+<!-- 订单详情 -->
+<!-- 设置地址信息 -->
+<view class="addressView">
+  <view class="userName">{{orderList.contactPerson}}</view>
+  <view class="userTel">{{orderList.contactMobile}}</view>
+  <view class="userAddress">{{orderList.address}}</view>
+</view>
+<!-- 商品信息 -->
+<view class="goodsList" wx:for="{{orderList.goods}}">
+  <!-- 每一个单独的item -->
+  <view class="itemGood">
+    <image src="{{item.goodsImg}}" class="goodsImage"></image>
+    <view class="goodName">
+     {{item.goodsName}}
+    </view>
+    <view class="goodPrice">{{item.price}}</view>
+    <view class="attrList">
+      <view class="listattr" wx:for="{{item.goodsAttr}}" wx:for-item="ite">
+        <view class="attrText" wx:if="{{ite.paraType=='1'}}">
+          {{ite.content}}
+        </view>
+        <view class="attrImage" wx:if="{{ite.paraType=='2'}}">
+          <image src="{{ite.content}}" class="attimg"></image>
+        </view>
+      </view>
+    </view>
+     <!-- 商品个数 -->
+      <view class="goodNum">
+        X {{item.num}}
+      </view>
+  </view>
+</view>
+<!-- 优惠券 -->
+<view class="couponList">
+  <view class="totalPrice">
+    <view class="goodtPrice">商品总价</view>
+    <view class="tprice">￥{{orderList.fee}}</view>
+  </view>
+  <view class="totalPrice">
+    <view class="goodtPrice">优惠券</view>
+    <view class="tprice">￥{{orderList.couponPrice}}</view>
+  </view>
+  <view class="totalPrice">
+    <view class="goodtPrice">余额</view>
+    <view class="tprice">￥{{orderList.balance}}</view>
+  </view>
+</view>
+<!-- 实付款 -->
+<view class="totalPrice">
+    <view class="tp">
+     <text class="wen">实付款：</text> <text class="pp"> ￥ {{orderList.totalFee}}</text>
+    </view>
+</view>

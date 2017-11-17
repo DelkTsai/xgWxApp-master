@@ -1,0 +1,14 @@
+<!--myscore.wxml-->
+<view class="scoreShow">
+  <view class="scoreText">积分</view>
+  <view class="scoreValue">{{scorep}}</view>
+</view>
+<!-- 下方按钮 -->
+<view class="buttonView">
+  <view>
+    <button class="changeCoupon" bindtap="changeCouponList" data-score="{{scorep}}">兑换优惠券</button>
+  </view>
+  <view>
+    <button  class="changePiece" bindtap="changePieceList" data-score="{{scorep}}">兑换碎片</button>
+  </view>
+</view>

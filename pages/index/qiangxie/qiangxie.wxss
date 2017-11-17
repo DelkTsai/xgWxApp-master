@@ -1,0 +1,13 @@
+/* pages/index/qiangxie/qiangxie.wxss */
+.tabPage{
+  width:80%;
+}
+page{
+  font-size: 14px;
+}
+.tableItem{
+  display:  inline-block;
+  width:30%;
+  text-align:center;
+  margin-top:10px;
+}

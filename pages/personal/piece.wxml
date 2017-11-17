@@ -1,0 +1,33 @@
+<!--piece.wxml-->
+<view class="swiper-tab">
+  <view class="swiper-tab-item {{currentTab==0?'':'disActive'}} {{currentTab==0?'active':''}}" data-current="0" bindtap="clickTab">碎片</view>
+  <view class="swiper-tab-item {{currentTab==1?'':'disActive'}} {{currentTab==1?'active':''}}" data-current="1" bindtap="clickTab">我的兑换</view>
+  <view class="swiper-tab-item {{currentTab==2?'':'disActive'}} {{currentTab==2?'active':''}}" data-current="2" bindtap="clickTab">碎片交换</view>
+</view>
+<swiper current="{{currentTab}}" duration="300" style="height:800px;">
+  <!-- bindchange="swiperTab" -->
+  <!-- 碎片 -->
+  <swiper-item style="text-align:center;">
+    <text>\n</text>
+    <image src="../../utils/image/personal/sec_wodsuipian.png" class="tongPiece" style="height:155px;" bindtap="myPiece"></image>
+    <text>\n</text>
+    <text>\n</text>
+    <image src="../../utils/image/personal/sec_suipianshang.png" style="height:155px;" class="tongPiece" bindtap='chipMall'></image>
+  </swiper-item>
+  <!-- 我的兑换 -->
+  <swiper-item>
+    <view class="changeView" wx:for="{{myChange}}">
+      <image src="{{item.goodsImg}}" class="changeImage"></image>
+      <view class="changeName">{{item.goodsName}}</view>
+      <view class="changeTime">兑换时间：{{item.createdTime}}</view>
+    </view>
+  </swiper-item>
+  <!-- 碎片交换 -->
+  <swiper-item style="text-align:center;">
+   <text>\n</text>
+   <image src="../../utils/image/personal/sec_suipianqingqiu.png" class="tongPiece" style="height:155px;" bindtap='askPiece'></image>
+   <text>\n</text>
+   <text>\n</text>
+   <image src="../../utils/image/personal/sec_suipianjiaohuan.png" class="tongPiece" style="height:155px;" bindtap='exchangePiece'></image>
+  </swiper-item>
+</swiper>

@@ -1,0 +1,26 @@
+<!--addressAddOrEdit.wxml-->
+<!-- 新增或修改地址 -->
+<view class="holePage">
+  <view class="section">
+    <text class="textTitle">收货人</text><input type="text" id="receiveUser" bindchange="receiveChange" value="{{contactPerson}}"/>
+    <text>\n</text>
+  </view>
+  <view class="section">
+    <text class="textTitle">联系方式</text><input type="text" id="content" bindchange="contentChange" value="{{contactMobile}}"/>
+    <text>\n</text>
+  </view>
+  <view class="section">
+    <view class="textTitle">所在地区</view>
+    <picker mode="region" bindchange="bindRegionChange" value="{{region}}" custom-item="{{customItem}}">
+      <view class="picker">
+        {{region[0]}} {{region[1]}} {{region[2]}}
+      </view>
+    </picker>
+  </view>
+  <view class="section">
+    <text>\n</text>
+    <text class="textTitle">详细地址</text><input type="text" id="address" bindchange="addressChange" value="{{address}}"/>
+    <text>\n</text>
+  </view>
+</view>
+<button class="myBtn  footer" bindtap="saveAddress">保存地址</button>

@@ -1,0 +1,409 @@
+.swiper-tab{
+    width: 100%;
+    /* border-bottom: 2px solid #ccc; */
+    text-align: center;
+    height: 30px;
+    line-height: 28px;
+    /* line-height: 88rpx; */
+    font-weight: bold;
+    padding-bottom: 2px;
+}
+.swiper-tab-item{
+    display: inline-block;
+    width: 33.33%;
+    color:red;
+}
+/* 选项卡被选中 */
+.active{
+    color:#000000;
+    border-bottom: 2px solid #000000 ;
+}
+/* 选项卡没有被选中 */
+.disActive{
+  color:#DEDEDE;
+}
+/* 轮播图样式 */
+.slide-image{  
+    width: 100%;  
+} 
+/* 横拉样式 */
+.tab-h {
+  height: 105px;
+  width: 100%;
+  box-sizing: border-box;
+  overflow: hidden;
+  line-height: 80rpx;
+  /* background: #f7f7f7; */
+  font-size: 16px;
+  white-space: nowrap;
+  /* 这个属性控制横条在顶部还是写的地方 */
+  /* position: fixed; */
+  top: 0;
+  left: 0;
+  z-index: 99;
+}
+
+.tab-item {
+   margin: 0 36rpx; 
+  display: inline-block;
+  width: 100%;
+}
+
+.tab-item.active {
+  color: #4675f9;
+  position: relative;
+}
+
+.tab-item.active:after {
+  content: "";
+  display: block;
+  height: 8rpx;
+  width: 52rpx;
+  background: #4675f9;
+  position: absolute;
+  bottom: 0;
+  left: 5rpx;
+  border-radius: 16rpx;
+}
+
+.item-ans {
+  width: 100%;
+  display: flex;
+  flex-grow: row no-wrap;
+  justify-content: space-between;
+  padding: 30rpx;
+  box-sizing: border-box;
+  height: 180rpx;
+  align-items: center;
+  border-bottom: 1px solid #f2f2f2;
+}
+
+.avatar {
+  width: 100rpx;
+  height: 100rpx;
+  position: relative;
+  padding-right: 30rpx;
+}
+
+.avatar .img {
+  width: 100%;
+  height: 100%;
+}
+
+.avatar .doyen {
+  width: 40rpx;
+  height: 40rpx;
+  position: absolute;
+  bottom: -2px;
+  right: 20rpx;
+}
+
+.expertInfo {
+  font-size: 12px;
+  flex-grow: 2;
+  color: #b0b0b0;
+  line-height: 1.5em;
+}
+
+.expertInfo .name {
+  font-size: 16px;
+  color: #000;
+  margin-bottom: 6px;
+}
+
+.askBtn {
+  width: 120rpx;
+  height: 60rpx;
+  line-height: 60rpx;
+  text-align: center;
+  font-size: 14px;
+  border-radius: 60rpx;
+  border: 1px solid #4675f9;
+  color: #4675f9;
+}
+
+.tab-content {
+  margin-top: 80rpx;
+}
+
+.scoll-h {
+  height: 100%;
+}
+.wa-grid{
+  width:100%;
+  overflow: hidden;
+}
+.wa-grid-50{
+  float: left;
+  width: 50%;
+  box-sizing: border-box;
+}
+.text-center{
+  text-align: center
+}
+.border-basic{
+  border: 0px solid #ddd
+}
+.borderright{
+  border-right: 1px solid #ddd;
+}
+
+
+.tab-item {
+  margin: 0 36rpx;
+  display: inline-block;
+}
+
+.tab-item.active {
+  color: #4675f9;
+  position: relative;
+}
+
+.tab-item.active:after {
+  content: "";
+  display: block;
+  height: 8rpx;
+  width: 52rpx;
+  background: #4675f9;
+  position: absolute;
+  bottom: 0;
+  left: 5rpx;
+  border-radius: 16rpx;
+}
+
+.item-ans {
+  width: 100%;
+  display: flex;
+  flex-grow: row no-wrap;
+  justify-content: space-between;
+  padding: 30rpx;
+  box-sizing: border-box;
+  height: 180rpx;
+  align-items: center;
+  border-bottom: 1px solid #f2f2f2;
+}
+
+.avatar {
+  width: 100rpx;
+  height: 100rpx;
+  position: relative;
+  padding-right: 30rpx;
+}
+
+.avatar .img {
+  width: 100%;
+  height: 100%;
+}
+
+.avatar .doyen {
+  width: 40rpx;
+  height: 40rpx;
+  position: absolute;
+  bottom: -2px;
+  right: 20rpx;
+}
+
+.expertInfo {
+  font-size: 12px;
+  flex-grow: 2;
+  color: #b0b0b0;
+  line-height: 1.5em;
+}
+
+.expertInfo .name {
+  font-size: 16px;
+  color: #000;
+  margin-bottom: 6px;
+}
+
+.askBtn {
+  width: 120rpx;
+  height: 60rpx;
+  line-height: 60rpx;
+  text-align: center;
+  font-size: 14px;
+  border-radius: 60rpx;
+  border: 1px solid #4675f9;
+  color: #4675f9;
+}
+
+.tab-content {
+  margin-top: 80rpx;
+}
+
+.scoll-h {
+  height: 100%;
+}
+.wa-grid{
+  width:100%;
+  overflow: hidden;
+}
+.wa-grid-50{
+  float: left;
+  width: 50%;
+  box-sizing: border-box;
+}
+.text-center{
+  text-align: center
+}
+.border-basic{
+  border: 0px solid #ddd
+}
+.borderright{
+  border-right: 1px solid #ddd;
+}
+
+/* 横拉滑动的图片样式 */
+.hengImage{
+  width: 5.23rem;
+  height: 2.28rem;
+}
+/* 横向滑动 */
+silderX{
+  height: 120px;
+}
+/* 每周抢鞋的图片 */
+.meizhouImage{
+  position: relative;
+  width: 9.68rem;
+  height: 4.91rem;
+  top: 30px;
+}
+.textpos
+{
+  position: absolute;
+}
+/* 商品列表 */
+.goodListView
+{
+
+  width: 49%;
+  display: inline-block;
+  float: left; 
+  border: 0px solid #000000;
+}
+/* 商品列表的选项卡 */
+.goodsView{
+  width: calc(100% - 10px);
+  margin-left: 5px;
+  margin-right: 5px;
+  height: 210px;
+  text-align: center;
+  position: relative;
+}
+/* 商品价钱 */
+.goodsPrice{
+  background-image: url(../../utils/image/personal/ico_noimage.png);
+  position: absolute;
+  top: 8px;
+  right:5%;
+}
+/* 列表图片 */
+.goodsImage{
+  width: 70%;
+  height: 55%;
+  position: relative;
+  top: 40px;
+}
+/* 列表文字 */
+.goodsName{
+  position: relative;
+  top: 40px;
+}
+/* 筛选按钮样式 */
+.buttonStyle{
+  background-color: #000000;
+  border-radius: 1em;
+  position: fixed;
+  bottom: 5px;
+  color: #ffffff;
+  width: 94px;
+  height: 32px;
+}
+/*资讯item*/
+.ziXunDiv{
+  margin: 10px;
+  background: white;
+  padding-bottom: 8px;
+  box-shadow: 2px 2px 2px #888;
+}
+.ziXunImg{
+  width: 100%;
+  
+}
+.ziXunTitle{
+  margin-top: 14px;
+  color: #000;
+  display: block;
+  margin-left: 10px;
+  font-size: 13px;
+}
+.ziXunDate{
+  font-size: 11px;
+  color: #7D7D7D;
+  margin-left: 10px;
+  margin-top: 26px;
+}
+.pageBgColor{
+  background: #F5F5F5;
+  height: 100%;
+  width: 100%;
+}
+.scroll-height{
+  height: 500px;
+}
+.dingZhiTitle{
+  color: #7D7D7D;
+  font-size: 13px;
+  margin-top: 10px;
+  margin-left: 10px;
+}
+.dingZhiItem{
+  display:inline-block;
+  margin-top: 10px;
+  margin-left:10px; 
+}
+.modal-mask {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: #000;
+  opacity: 0.5;
+  overflow: hidden;
+  z-index: 9000;
+  color: #fff;
+}
+.modal-dialog {
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+  z-index: 9999;
+  text-align: center;
+}
+/* .WxMasonryView{
+  column-count:2;
+   column-gap: 10px; 
+  padding-left: 10px;
+} */
+.WxMasonryView{
+  column-count:2;
+  column-gap: 10px;
+  width: 100%;
+}
+.WxMasonry{
+  width: 95%;
+  background: #fefefe;
+  border: 2px solid #fcfcfc;
+  box-shadow: 0 1px 2px rgba(34, 25, 25, 0.4);
+  margin: 5px 2px 2px 2px;
+  padding: 1px;
+  padding-bottom: 5px;
+  transition: opacity .4s ease-in-out;
+  display: inline-block;
+}
+.shadowBorder{
+  background: white;
+  box-shadow:0 0 1px 1px #D9D9D9;
+}

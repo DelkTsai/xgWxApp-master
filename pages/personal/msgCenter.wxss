@@ -1,0 +1,102 @@
+
+/* .content{
+  width: 100%;
+  box-sizing: border-box;
+  margin: -21rpx auto;
+  background: #fff;
+  min-height: 400rpx;
+  padding: 50rpx 25rpx;
+  position: relative;
+  box-shadow: 0 0 20rpx 4rpx  #becee7;
+  border-radius: 10rpx;
+  margin-top: 1em;
+} */
+/* .session {
+  display:flex;
+  
+} */
+/* .sessoin-tit{
+  font-size: 26rpx;
+  color: #666666;
+  vertical-align: middle;
+  padding:0 15rpx;
+  width: 140rpx;
+} */
+/* .session-val{
+  font-size: 26rpx;
+  color: #666666;
+  display: block;
+  width: 100%;
+  border-bottom: 1px solid #000;
+  margin-top: 32rpx;
+} */
+/* .myBtn{
+   background-color:  #2D2D2D ;
+   color: #fff;
+   font-size: 26rpx;
+   height: 88rpx;
+   line-height: 88rpx;
+   margin-top: 100rpx;
+} */
+/* 上方文字 */
+/* .fontTop{
+  color: #AAAAAA;
+  font-size: 1.33rem;
+} */
+/* 下方时间 */
+/* .createtime{
+  color: #7D7D7D;
+  font-size: 1rem;
+} */
+/* 分割线 */
+.fenge{
+  width: 100%;
+  height: 5px;
+  background-color: #F7F7F7;
+}
+
+/* 每个item的样式 */
+.itemView{
+  width: 100%;
+  height: 130px;
+  position: relative;
+  margin-top: 3vh;
+  margin-bottom: 5vh;
+  /* box-shadow: 0px 5px 2px 5px #888888; */
+}
+/* 标题样式 */
+.titleView{
+  font-size: 16px;
+  color: #aaaaaa;
+  border-bottom:2px solid #7d7d7d;
+  padding-left:21px; 
+}
+/* 内容样式 */
+.contentView{
+  position: absolute;
+  left: 20px;
+  font-size: 14px;
+  color: #000;
+}
+/* 创建时间和立即查看 */
+.createAndLook{
+  position: relative;
+  width: 100%;
+  height: 20px;
+  bottom: 7px;
+  left: 0px;
+}
+.createView{
+  position: absolute;
+  left: 21px;
+  font-size: 12px;
+  color: #7d7d7d;
+  top: 90px;
+}
+.lookView{
+  position: absolute;
+  right: 24px;
+  top: 90px;
+  color: #7d7d7d;
+  font-size: 13px;
+}

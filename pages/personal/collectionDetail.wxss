@@ -1,0 +1,328 @@
+/* collectionDetail.wxss */
+page{
+  background: #F5F5F5;
+}
+.tab-h {
+  height: 30px;
+  width: 100%;
+  box-sizing: border-box;
+  overflow: hidden;
+  line-height: 30px;
+  /* background: #f7f7f7; */
+  font-size: 16px;
+  white-space: nowrap;
+  /* 这个属性控制横条在顶部还是写的地方 */
+  /* position: fixed; */
+  top: 0;
+  left: 0;
+  z-index: 99;
+}
+
+.tab-item {
+  margin: 0 36rpx;
+  display: inline-block;
+}
+
+.tab-item.active {
+  color: #4675f9;
+  position: relative;
+}
+
+.tab-item.active:after {
+  content: "";
+  display: block;
+  height: 8rpx;
+  width: 52rpx;
+  background: #4675f9;
+  position: absolute;
+  bottom: 0;
+  left: 5rpx;
+  border-radius: 16rpx;
+}
+
+.item-ans {
+  width: 100%;
+  display: flex;
+  flex-grow: row no-wrap;
+  justify-content: space-between;
+  padding: 30rpx;
+  box-sizing: border-box;
+  height: 180rpx;
+  align-items: center;
+  border-bottom: 1px solid #f2f2f2;
+}
+
+.avatar {
+  width: 100rpx;
+  height: 100rpx;
+  position: relative;
+  padding-right: 30rpx;
+}
+
+.avatar .img {
+  width: 100%;
+  height: 100%;
+}
+
+.avatar .doyen {
+  width: 40rpx;
+  height: 40rpx;
+  position: absolute;
+  bottom: -2px;
+  right: 20rpx;
+}
+
+.expertInfo {
+  font-size: 12px;
+  flex-grow: 2;
+  color: #b0b0b0;
+  line-height: 1.5em;
+}
+
+.expertInfo .name {
+  font-size: 16px;
+  color: #000;
+  margin-bottom: 6px;
+}
+
+.askBtn {
+  width: 120rpx;
+  height: 60rpx;
+  line-height: 60rpx;
+  text-align: center;
+  font-size: 14px;
+  border-radius: 60rpx;
+  border: 1px solid #4675f9;
+  color: #4675f9;
+}
+
+.tab-content {
+  margin-top: 80rpx;
+}
+
+.scoll-h {
+  height: 100%;
+}
+.wa-grid{
+  width:100%;
+  overflow: hidden;
+}
+.wa-grid-50{
+  float: left;
+  width: 50%;
+  box-sizing: border-box;
+}
+.text-center{
+  text-align: center
+}
+.border-basic{
+  border: 0px solid #ddd
+}
+.borderright{
+  border-right: 1px solid #ddd;
+}
+
+/* 顶部横条样式 */
+.topBar{
+  text-align: center;
+  height:30px;
+  line-height: 30px;
+}
+.topBarImage{
+  width: 1.08rem;
+  height: 1.08rem;
+}
+.topBarText{
+  font-size: 1.08rem;
+}
+/* 中间的图片 */
+.midImageView{
+  text-align: center;
+}
+.midImage{
+  width: 100%;
+}
+/* 商品名字与价格 */
+.nameAndPrice{
+  text-align: center;
+}
+.nameCss{
+  font-size: 1.83rem;
+}
+.pricess{
+  font-size: 1.67rem;
+  color: #808080;
+}
+/* 描述 */
+.desp{
+  margin: 1.5em;
+  color: #7D7D7D;
+  font-size: 1.08rem;
+}
+/* 底部图片 */
+.buttomImage{
+  width: 100%;
+}
+/* 一键购买 */
+.buttomBuy{
+  background-color: #000;
+  color: #FFFFFF;
+  font-size: 1.17rem;
+  /* height: 100%; */
+  /* position: absolute; */
+  bottom: 0px;
+  right: 0px;
+}
+/* 分享按钮 */
+.shareButton{
+  width: 1.83rem;
+  height: 1.83rem;
+  background-image: url('../../utils/image/personal/btn_share.png');
+}
+/* 颜色样式 */
+.co{
+  width: 20px;
+  height: 20px;
+  border-radius: 10px;
+}
+
+/* 加入购物车弹窗样式 */
+.btn { 
+  width: 80%;  
+  padding: 20rpx 0;  
+  border-radius: 10rpx;  
+  text-align: center;  
+  margin: 40rpx 10%;  
+  background: #000;  
+  color: #fff;  
+} 
+   
+/*mask*/ 
+.drawer_screen { 
+  width: 100%;  
+  height: 100%;  
+  position: fixed;  
+  top: 0;  
+  left: 0;  
+  z-index: 1000;  
+  background: #000;  
+  opacity: 0.95;  
+  overflow: hidden;  
+} 
+   
+/*content*/ 
+.drawer_box { 
+  width: 650rpx;  
+  overflow: hidden;  
+  position: fixed;  
+  top: 50%;  
+  left: 0;  
+  z-index: 1001;  
+  background: #FAFAFA;  
+  margin: -150px 50rpx 0 50rpx;  
+  border-radius: 3px;  
+} 
+   
+.drawer_title{ 
+  padding:15px;  
+  font: 20px "microsoft yahei";  
+  text-align: center;  
+} 
+.drawer_content { 
+  /* height: 210px;   */
+  overflow-y: scroll; /*超出父盒子高度可滚动*/ 
+} 
+   
+.btn_ok{ 
+  padding: 10px;  
+  font: 20px "microsoft yahei";  
+  text-align: center;  
+  border-top: 1px solid #E8E8EA;  
+  color: #3CC51F;  
+} 
+   
+.top{ 
+    padding-top:8px;  
+} 
+.bottom { 
+    padding-bottom:8px;  
+} 
+.title { 
+    height: 30px;  
+    line-height: 30px;  
+    width: 160rpx;  
+    text-align: center;  
+    display: inline-block;  
+    font: 300 28rpx/30px "microsoft yahei";  
+} 
+   
+.input_base { 
+    border: 2rpx solid #ccc;  
+    padding-left: 10rpx;  
+    margin-right: 50rpx;  
+} 
+.input_h30{ 
+    height: 30px;  
+    line-height: 30px;  
+} 
+.input_h60{ 
+    height: 60px;  
+} 
+.input_view{ 
+    font: 12px "microsoft yahei";  
+    background: #fff;  
+    color:#000;  
+    line-height: 30px;  
+} 
+   
+input { 
+    font: 12px "microsoft yahei";  
+    background: #fff;  
+    color:#000 ;  
+} 
+radio{ 
+    margin-right: 20px;  
+} 
+.grid { display: -webkit-box; display: box; } 
+.col-0 {-webkit-box-flex:0;box-flex:0;} 
+.col-1 {-webkit-box-flex:1;box-flex:1;} 
+.fl { float: left;} 
+.fr { float: right;} 
+.shadowBorder{
+  background: white;
+  box-shadow:0 0 1px 1px #D9D9D9;
+}
+.maShu{
+    vertical-align: middle;
+  font-size: 14px;
+  color: black;
+  background: rgba(255,255,255,0.20);
+  padding: 6px 15px;
+  border-radius: 6px;
+  display: inline-block;
+}
+.smaShu{
+  vertical-align: middle;
+  font-size: 14px;
+  color: black;
+  background: rgba(255,255,255,0.20);
+  padding: 6px 20px;
+  border-radius: 6px;
+  display: inline-block;
+  border:1px solid rgba(255,255,255,0.20);
+}
+.smaShu.sel
+{
+  border:1px solid white;
+}
+.attrTitle{
+  font-size: 12px;
+  color: #FFFFFF;
+}
+.divider{
+  background: #363636;
+  width: 85%;
+  height: 1px;
+  margin-left: 7.5%;
+  margin-right:7.5%;
+}

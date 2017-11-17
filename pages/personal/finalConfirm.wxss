@@ -1,0 +1,83 @@
+/* pages/personal/confrimExchange.wxss */
+/* 整个view的样式 */
+.holeView{
+  position: relative;
+  width: 100%;
+  height: 210px;
+}
+.leftImage{
+  position: relative;
+  left: 0px;
+  top: 0px;
+  width: 49%;
+  height: 100%;
+  display: inline-block;
+}
+.rightImage{
+  position: relative;
+  right: 0px;
+  top: 0px;
+  width: 49%;
+  height: 100%;
+  display: inline-block;
+}
+.imageShow{
+  position: absolute;
+  left: 24px;
+  top: 15px;
+  width: 140px;
+  height: 140px;
+}
+.textShow{
+  font-size: 12px;
+  left: 35px;
+  height: 149px;
+  position: absolute;
+  overflow: hidden;
+  right: 35px;
+  text-overflow: ellipsis;
+}
+.imageView{
+  position: relative;
+  width: 100%;
+  height: 160px;
+}
+/* 通用遮罩 */
+.tongMask{
+  position: absolute;
+  width: 50%;
+  height: 50%;
+}
+/* 左侧图片的遮罩 */
+.olt{
+  top: 0px;
+  left: 0px;
+}
+.ort{
+  top: 0px;
+  right: 0px;
+}
+.olb{
+  left: 0px;
+  bottom: 0px;
+}
+.orb{
+  right: 0px;
+  bottom: 0px;
+}
+/* 确认交换按钮 */
+.buttonView{
+  width: 100%;
+  height: 42px;
+  position: absolute;
+  left: 0px;
+  bottom: 17px;
+  text-align: center;
+}
+.changeCoupon{
+  width: 80%;
+  background-color:#000;
+  color: #fff;
+  font-size: 14px;
+  border-radius: 10px;
+}

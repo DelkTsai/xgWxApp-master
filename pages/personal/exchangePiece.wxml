@@ -1,0 +1,28 @@
+<!--pages/personal/exchangePiece.wxml-->
+<!-- 上面加号图片 -->
+<view class='topView'>
+  <image src='{{midImage}}' class='topImageFang' data-invite-code='{{inviteCode}}' bindtap='{{goToChipList}}'></image>
+  <!-- 遮罩层 -->
+  <view class='tongMask maskst' style='{{maskst}}' data-invite-code='{{inviteCode}}' bindtap='{{goToChipList}}'></view>
+  <view class='tongMask masknd' style='{{masknd}}' data-invite-code='{{inviteCode}}' bindtap='{{goToChipList}}'></view>
+  <view class='tongMask maskrd' style='{{maskrd}}' data-invite-code='{{inviteCode}}' bindtap='{{goToChipList}}'></view>
+  <view class='tongMask maskth' style='{{maskth}}' data-invite-code='{{inviteCode}}' bindtap='{{goToChipList}}'></view>
+</view>
+<!-- 商品名称 -->
+<!-- <view class='goodsName'>
+  <view class='mainGoodsName'>
+    23333333
+  </view>
+</view> -->
+<!-- 用户邀请码 -->
+<view class='inviteView'>
+  <input placeholder='请输入用户邀请码' bindblur="finishInsert" class='inputStyle' value='{{inviteCode}}'></input>
+  <!-- 下划线 -->
+  <view class='underView'></view>
+</view>
+<!-- 提交按钮 -->
+<view class='submitView'>
+  <view class='mainSubmitView' bindtap='sendInvite'>
+    <text class='textSubmit'>提交</text>
+  </view>
+</view>

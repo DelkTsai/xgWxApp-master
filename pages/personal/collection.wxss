@@ -1,0 +1,95 @@
+.swiper-tab{
+    width: 100%;
+    border-bottom: 2rpx solid #ccc;
+    text-align: center;
+    height: 46px;
+    line-height: 46px;
+    font-weight: bold;
+}
+.swiper-tab-item{
+    display: inline-block;
+    width: 33.33%;
+    color:red;
+}
+/* 选项卡被选中 */
+.active{
+    color:#000000;
+    border-bottom: 4rpx solid #000000;
+}
+/* 选项卡没有被选中 */
+.disActive{
+  color:#DEDEDE;
+}
+/* 商品列表的选项卡 */
+/* .goodsView{
+  width: calc(100% - 10px);
+  margin-left: 5px;
+  margin-right: 5px;
+  height: 210px;
+  text-align: center;
+  position: relative;
+} */
+/* 列表图片 */
+/* .goodsImage{
+  width: 70%;
+  height: 55%;
+} */
+/* 商品价钱 */
+/* .goodsPrice{
+  background-image: url(../../utils/image/personal/ico_noimage.png);
+  position: absolute;
+  top: 8px;
+  right:5%;
+}
+.goodListView
+{
+  width: 49%;
+  display: inline;
+  float: left;
+  border: 0px solid #000000;
+} */
+/* 每个item样式 */
+.itemView{
+  width: 100%;
+  height: 210px;
+  float: left;
+  margin: 5px;
+   position: relative; 
+}
+/* 商品图片样式 */
+.imageView{
+  width: 35vw;
+  height: 21vh;
+  left: 21px;
+  top: 15px;
+  position: absolute;
+}
+.goodsImg{
+  width: 100%;
+  height: 100%
+}
+/* 商品名称 */
+.goodsNameView{
+  font-size: 12px;
+  top: 149px;
+  left: 20px;
+  position: absolute;
+}
+/* 价钱 */
+.mmoneyBack{
+  position: absolute;
+  top: 8px;
+  left: 128px;
+  width: 44px;
+  height: 44px;
+}
+.moneyImage{
+  width: 100%;
+  height: 100%;
+}
+/* 价格 */
+.money{
+  position: absolute;
+  left: 132px;
+  top: 15px;
+}

@@ -1,0 +1,133 @@
+/* personHome.wxss */
+.moveRight{
+  /* margin-left: 12em; */
+  color: #7D7D7D;
+  display: inline;
+  position: absolute;
+  top: 5px;
+  left: 90px;
+  font-size: 14px;
+}
+/* 余额样式 */
+.blance{
+  /* margin-left: 4.8em; */
+  display: inline;
+  font-size: 1.5em;
+  font-weight:lighter;
+  position: absolute;
+  top: 20px;
+  left: 32px;
+  width: 200px;
+}
+/* 列表样式 */
+.ulList{
+  text-align: center;
+  margin-left: 2em;
+  color: #000000;
+  font-size: 1em;
+}
+/* 列表行的样式 */
+.liList{
+  font-size: 0.9em;
+  
+}
+/* 三张图片的列表样式 */
+.imageUlList{
+  text-align: center;
+  margin-left: 2em;
+}
+.topViewtop{
+  position: relative;
+  width: 100%;
+  height: 20px;
+}
+/* 图片样式 */
+.imagePic{
+  width: 2em;
+  height: 2em;
+}
+/* 图像列表里面的view */
+.viewImageAll{
+  display: block;
+  height: 5em;
+}
+.imageView{
+  display: block;
+  margin:0 auto；
+}
+
+/* 下方6个按钮 */
+ .viewButton{
+  display: block;
+  width: 100%;
+  clear: both;
+  margin-bottom: 1.8em;
+
+}
+.viewButtonLeft{
+  margin-left: 1.5em;
+}
+.viewButtonRight{
+  float: right;
+  margin-right: 1.5em;
+} 
+
+.weui-cell:before {
+  right: 15px;
+}
+
+/* 顶部图片样式 */
+.topView{
+  margin-left: 5em;
+}
+.imageViewTop
+{
+  position: absolute;
+  left: -45px;
+  top: 5px;
+}
+.topImage{
+  width: 3em;
+  height: 3em;
+  border-radius: 3em;
+  /* position: absolute; */
+  /* top: 0.5em; */
+  /* margin-left: 2em; */
+}
+.topViews{
+  height: 3em;
+  text-align: center;
+}
+/* 我的夺宝，积分的样式 */
+.wa-grid-33{
+  float: left;
+  width: 33.3%;
+  box-sizing: border-box;
+  text-align: center;
+  
+}
+.wa-grid-25{
+  float: left;
+  width: 25%;
+  box-sizing: border-box;
+  text-align: center;
+}
+.wa-grid-50{
+  float: left;
+  width: 50%;
+  box-sizing: border-box;
+}
+.border-basic{
+  border: 0px solid #ddd
+}
+/* 灰色的分隔 */
+.garyText{
+  width: 100%;
+  height: 0.2em;
+  background-color: #F7F7F7;
+}
+/* 余额样式 */
+.blanceViewTop{
+  position: absolute;
+  left: 120px;
+}

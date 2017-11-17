@@ -1,0 +1,30 @@
+<!--adviceFeedBack.wxml-->
+<!-- <text>\n</text>
+<view class="content">
+    <view>
+        <view class="session">
+            <textarea class="" bindchange="finishAdvice" id="userAdvice" placeholder="写下你的意见" >
+            </textarea>
+        </view>
+        <text>\n</text>
+        <text>\n</text>
+        <text>\n</text>
+        <text>\n</text>
+        <button class="myBtn" bindtap="saveAdvice">保存</button>
+    </view>
+</view> -->
+<!-- 底页 -->
+<view class='pageView' style="height:{{windowHeight}}px;">
+  <!-- 中间部分 -->
+  <view class='centerView'>
+    <!-- 意见 -->
+    <view class='adviceView'>
+       <textarea class="" bindchange="finishAdvice" id="userAdvice" placeholder="写下你的意见" >
+        </textarea>
+    </view>
+    <!-- 保存按钮 -->
+    <view class='saveBtnView'>
+      <button class="myBtn" bindtap="saveAdvice">保存</button>
+    </view>
+  </view>
+</view>

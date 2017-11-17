@@ -1,0 +1,4 @@
+/* headImage.wxss */
+.imageShow{
+  text-align: center;
+}

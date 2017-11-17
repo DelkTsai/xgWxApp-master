@@ -1,0 +1,35 @@
+<!-- <text>\n</text>
+<view class="content">
+    <view>
+        <view class="session">
+            <input class="session-val" type="number"  placeholder="请输入手机号码" maxlength="11" bindchange="inputChange" id="telNum"/>
+        </view>
+        
+        <view class="session">
+            <input class="session-val" bindchange="finishConfirm" id="confirmCode" placeholder="请输入你的验证码" />
+            <view class="sessoin-tit"  bindtap="getConfirm" >{{showMsg}}</view>
+        </view>
+        <text style="color:#FE3131;font-size:12px;">{{errorMsg}}</text>
+        <button class="myBtn" bindtap="saveTel">保存</button>
+
+    </view>
+
+</view> -->
+<!-- 整个view -->
+<view class='holeView' style='height:{{windowHeight}}px;'>
+  <view class='itemView'>
+    <!-- 手机号码 -->
+    <view class='telView'>
+      <input class="telInput" type="number" placeholder="请输入手机号码" maxlength="11" bindchange="inputChange" id="telNum" />
+    </view>
+    <!-- 验证码 -->
+    <view class='maView'>
+      <input class="maInput" bindchange="finishConfirm" id="confirmCode" placeholder="请输入你的验证码" />
+      <view class="maTip" bindtap="getConfirm">{{showMsg}}</view>
+    </view>
+    <!-- 提交按钮 -->
+    <view class='btnView'>
+      <button class="myBtn" bindtap="saveTel">保存</button>
+    </view>
+  </view>
+</view>

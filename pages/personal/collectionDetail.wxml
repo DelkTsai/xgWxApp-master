@@ -1,0 +1,119 @@
+<!-- 顶部条 -->
+<view class="topBar" style='background:white;'>
+  <image src="../../utils/image/personal/ico_zhengpin.png" class="topBarImage"></image>
+  <text class="topBarText">100%正品保证</text>
+</view>
+<scroll-view scroll-y style='height:{{windowHeight-30}}px'>
+<!-- 中间的图片 -->
+<view class="midImageView" style='background:white'>
+  <image src="{{dataList.showImg[1]}}" class="midImage" mode='widthFix'></image>
+</view>
+<!-- 商品名字以及价格 -->
+<view class="nameAndPrice" style='background:white;padding-bottom:35px;' >
+  <view class="nameCss" style='font-size:22px;'>
+    {{dataList.goodsName}}
+  </view>
+  <view class="pricess" style='color:red;font-size:20px;margin-top:3px;background:white' >
+    ￥{{dataList.price}}
+  </view>
+</view>
+<!--码数  -->
+<view style='width:100%;background:white;' wx:for="{{dataList.goodsAttr}}" wx:if="{{item.name=='码数'}}">
+  <view style='width:100%;padding-top:10px;height:30px;text-align:center'>  
+    <view style='background:#EEEEEE;height:1px;width:80%;margin-left:10%;margin-top:15px;'></view>
+    <text style='position:relative;background:white;font-size:14px;top:-14px;padding:0 8px'>{{item.name}}</text>
+  </view>
+  <scroll-view style='width:100%;white-space:nowrap;' scroll-x>    
+      <text  scroll-x wx:for="{{item.para}}" wx:for-item="para" class='maShu' data-item-index="{{index}}" >{{para.paraDesc}}</text>
+  </scroll-view>
+</view>
+
+<view style='background:white;margin-top:10px;'>
+<view style='width:33.3%;display:inline-block;text-align:center;'>
+  <image style='width:75px;height:75px;' src='../../utils/image/base/qwjd.png'></image>
+</view>
+<view style='width:33.3%;display:inline-block;text-align:center;'>
+  <image  style='width:75px;height:75px;' src='../../utils/image/base/jybz.png'></image>
+</view>
+<view style='width:33.3%;display:inline-block;text-align:center;'>
+  <image  style='width:75px;height:75px;' src='../../utils/image/base/shqy.png'></image>
+</view>
+</view>
+
+<!-- 描述 -->
+<view class="desp" style='font-size:13px;color: #7D7D7D;background:white;margin:0px;padding:35px 24px;margin-top:10px;padding-bottom:10px;'>
+  {{dataList.goodsDesc}}
+</view>
+<!--产品图片  -->
+<view style='column-count:2;column-gap:0px;padding-left:10px;background:white;padding-bottom:10px;'>
+  <image mode='widthFix' style='width:{{(windowWidth-30)/2}}px;height:auto;' wx:for="{{dataList.showImg}}" src='{{item}}' 
+  wx:if="{{index>1}}"></image>
+</view>
+
+<!--关联产品  -->
+<scroll-view style='white-space: nowrap;width:100%;margin-top:10px;background:white;'>
+  <view wx:for="{{dataList.otherGoods}}" style='display:inline-block;margin-right:10px;'>
+    <image mode='widthFix' style='width:125px'  src='{{item.showImg}}' data-goods-id="{{item.goodsId}}"></image>
+  </view>
+</scroll-view>
+
+<!-- 下方按钮 -->
+<view style="width:100%;background:white;margin-top:10px;height:50px;">
+<!--分享  -->
+  <view style='display:inline-block;width:calc(20% - 1px);text-align:center;' bindtap='customShareClick'>
+    <image src='../../utils/image/base/btn_share.png' style='width:20px;height:20px' >
+    </image>
+  </view>
+  <view style='width:1px;height:25px;background-color:#000;display:inline-block;margin-top:13px;'></view>
+  <!--收藏  -->
+  <view style='width:calc(20% - 1px);display:inline-block;text-align:center;' bindtap='onCollectionClick'>
+     <image src='{{dataList.isCollect=="0"?"../../utils/image/base/star.png":"../../utils/image/base/clickStar.png"}}' style='width:20px;height:20px' >
+    </image>
+  </view>
+  <view style='width:1px;height:25px;background-color:#000;display:inline-block;margin-top:13px;'></view>
+  <!--加入购物车  -->
+  <view style='width:20%;display:inline-block;text-align:center;' bindtap='onAddToShoppintcarClick'>
+     <image src='../../utils/image/base/btn_buy.png' style='width:20px;height:20px' >
+    </image>
+  </view>
+  <view style='width:40%;height:50px;display:inline-block;text-align:center;background:#000000;color:white;float:right;'>
+    <text style='height:50px;line-height:50px;' bindtap='showOrHideShoppintModal'>一键购买</text>
+  </view>
+
+
+</view>
+
+
+</scroll-view>
+<!-- 弹窗 -->
+<!--使用animation属性指定需要执行的动画-->
+<view class="drawer_screen" hidden="{{!showModalStatus}}" >
+  <view style='position:relative;width:100%;height:100%;' >
+    <view style='background:#000;width:100%;height:100%;opacity:0.8;' bindtap='showOrHideShoppintModal'></view>
+      <view style='position:absolute;bottom:0px;width:100%;text-align:center;background:#181818;padding-top:15px;color:white;'>
+          <!--购买数量  -->
+          <view>
+            <text class='attrTitle'>购买数量</text>
+            <view style='text-align:center;color:white;margin:10px;'>
+              <text style='width:20px;height:20px;border-radius:10px;border:1px solid #FFFFFF;line-height:20px;display:inline-block;text-align:center;' bindtap='onModifyCountClick' data-opera="-1">-</text>
+              <text style='margin:0 20px;'>{{selCount}}</text>
+              <text style='width:20px;height:20px;border-radius:10px;border:1px solid #FFFFFF;line-height:20px;display:inline-block;text-align:center;' bindtap='onModifyCountClick' data-opera="1">+</text>
+            </view>           
+          </view>
+      <!--码数  -->
+      <view style='width:100%;color:white;' wx:for="{{dataList.goodsAttr}}" wx:if="{{item.name=='码数'}}">
+        <view style='background:#363636;height:1px;width:80%;margin-left:10%;margin-top:15px;'></view>
+        <text style='font-size:12px;margin-top:15px;margin-bottom:20px;display:inline-block;'>{{item.name}}</text>
+       
+        <scroll-view style='width:100%;white-space:nowrap;' scroll-x>    
+            <text wx:for="{{item.para}}" wx:for-item="para" class='{{para.isSel?"smaShu sel":"smaShu"}}' style='color:white;margin-left:20px;' data-item-index="{{index}}" bindtap='onMaShuItemClick'>{{para.paraDesc}} </text>
+        </scroll-view>
+
+      </view>
+        <view style='background:#363636;height:1px;width:80%;margin-left:10%;margin-top:15px;'></view>
+        <text style='font-size:12px;margin-top:15px;margin-bottom:15px;display:block;'>价钱</text>
+        <text style='font-size:25px;margin-top:15px;margin-bottom:0;display:block;'>{{price}}</text>
+        <button style='width:80%;margin:20px 10%;' size='mini' bindtap='onSubmitClick'>结算</button>
+      </view>
+  </view>
+</view>

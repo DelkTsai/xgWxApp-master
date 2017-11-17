@@ -1,0 +1,11 @@
+<!--headImage.wxml-->
+<view class="imageShow">
+  <image src="{{imageUrl}}"></image>
+  <action-sheet hidden="{{actionSheetHidden}}" bindchange="listenerActionSheet">
+    <block>
+       <action-sheet-item bindtap="openAlbum">打开相册</action-sheet-item>
+       <action-sheet-item bindtap="openCamera">打开摄像头</action-sheet-item>
+    </block>
+    <action-sheet-cancel>取消</action-sheet-cancel>
+  </action-sheet>
+</view>

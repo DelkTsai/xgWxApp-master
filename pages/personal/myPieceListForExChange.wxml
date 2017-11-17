@@ -1,0 +1,30 @@
+<!--pages/personal/myPieceListForExChange.wxml-->
+<!-- 我的碎片列表 -->
+<view wx:for="{{dataList}}">
+  <!-- 每个item循环 -->
+  <view class='itemView' bindtap="powerDrawer" data-statu="open" data-goods-id='{{item.goodsId}}' data-goods-img='{{item.goodsImg}}' data-goods-name='{{item.goodsName}}'
+  data-chip-detail='{{item.chipDetail}}'>
+    <image src='{{item.goodsImg}}' class='itemImage'></image>
+    <view class='itemText'>
+      {{item.goodsName}}
+    </view>
+  </view>
+</view>
+<!-- 弹出框选择碎片 -->
+<view class="drawer_screen" hidden="{{hidden}}">
+  <view animation="{{animationData}}" class="drawer_box" wx:if="{{showModalStatus}}">
+   <view class='popView'>
+      <image src='{{goodsImg}}' class='popImage'></image>
+      <view class="tongMask maskst" style="{{maskst}}" data-attr-id='{{chipDetail[0].attrId}}' data-index='1' bindtap='clickMask'>{{chipDetail[0].count}}</view>
+      <view class="tongMask masknd" style="{{masknd}}" data-attr-id='{{chipDetail[1].attrId}}' data-index='2' bindtap='clickMask'>{{chipDetail[1].count}}</view>
+      <view class="tongMask maskrd" style="{{maskrd}}" data-attr-id='{{chipDetail[2].attrId}}' data-index='3' bindtap='clickMask'>{{chipDetail[2].count}}</view>
+      <view class="tongMask maskth" style="{{maskth}}" data-attr-id='{{chipDetail[3].attrId}}' data-index='4' bindtap='clickMask'>{{chipDetail[3].count}}</view>
+   </view>
+   <!-- 关闭按钮 -->
+   <view class='cancleButton' bindtap="powerDrawer" data-confirm="close" data-statu="close">
+      <image src='../../utils/image/personal/btn_cancelgrey.png' class='cancleImage'></image>
+   </view>
+    <view class="btn_ok" bindtap="powerDrawer" data-confirm="confirm" data-statu="close">选择碎片</view>
+  </view>
+  
+</view>

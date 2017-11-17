@@ -1,0 +1,56 @@
+<!--orderList.wxml-->
+<!-- 我的订单页面 -->
+<!-- <view wx:for="{{itemList}}" wx:key="orderId" class="content">
+
+  <view bindtap="jumpOrderDeatil" data-order-no="{{item.orderNo}}" class='itemView'>
+    <view class="Dinline" style="width:70%;height:3em;float:right;margin-top:1em;">
+      <view class="classname">
+        <view style="font-size:1.25rem;">{{item.goods[0].goodsName}}</view>
+        <view class="Dinline" wx:for="{{item.goods[0].goodsAttr}}" wx:for-item="attr">
+      
+          <view wx:if="{{attr.paraType=='1'}}" class="Dinline attrE">
+            <view class="Dinline" style="color:#7D7D7D;">{{attr.content}}</view>
+          </view>
+   
+          <view wx:elif="{{attr.paraType=='2'}}" class="Dinline attrE">
+            <image src="{{attr.content}}" class="attrImage"></image>
+          </view>
+        </view>
+        <text> X {{item.goods[0].num}}</text>
+      </view>
+      
+    </view>
+    <image src="{{item.goods[0].goodsImg}}" class="imageStyle"></image>
+
+  </view>
+</view> -->
+<view wx:for="{{itemList}}" wx:key="orderId" class="content">
+  <!-- 每个item -->
+  <view bindtap="jumpOrderDeatil" data-order-no="{{item.orderNo}}" data-order-id='{{item.orderId}}' data-pay-status='{{item.payStatus}}' class='itemView'>
+    <!-- 商品图片 -->
+    <view class='goodsImageView'>
+      <image src='{{item.goods[0].goodsImg}}' class='goodsImage'></image>
+    </view>
+    <!-- 商品名称 -->
+    <view class='goodsName'>
+      {{item.goods[0].goodsName}}
+    </view>
+    <!-- 商品属性以及购买数量 -->
+    <view class='attrView'>
+      <view wx:for="{{item.goods[0].goodsAttr}}" wx:for-item="attr" class='forItemView'>
+        <!-- 文字 -->
+        <view wx:if="{{attr.paraType=='1'}}">
+          <view class="fontStyle">{{attr.content}}</view>
+        </view>
+        <!-- 图片 -->
+        <view wx:elif="{{attr.paraType=='2'}}" class='attrImageView'>
+          <image src="{{attr.content}}" class="imageStyle"></image>
+        </view>
+      </view>
+      <!-- 购买商品件数 -->
+      <view class='viewCount'>
+         X {{item.goods[0].num}}
+      </view>
+    </view>
+  </view>
+</view>

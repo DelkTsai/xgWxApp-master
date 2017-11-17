@@ -1,0 +1,36 @@
+<!--msgCenter.wxml-->
+<!-- <view wx:for="{{itemList}}"  wx:key="msgId" class="content">
+    <view bindtap='isPiece' data-msg-type='{{item.msgType}}' data-extra-id='{{item.extraId}}'>
+        <view class="session">
+          <text class="session-val fontTop">{{item.title}}</text>
+        </view>
+        <text>{{item.content}}</text>
+        <text>\n\n\n\n\n</text>
+        <text class="createtime">{{item.createdTime}}</text> 
+    </view>
+</view> -->
+
+<view wx:for="{{itemList}}"  wx:key="msgId">
+  <!-- 每个item的内容 -->
+  <view bindtap='isPiece' data-msg-type='{{item.msgType}}' data-extra-id='{{item.extraId}}' class='itemView'>
+      <!-- 碎片标题 -->
+      <view class='titleView'>
+        {{item.title}}
+      </view>
+      <!-- 碎片内容 -->
+      <view class='contentView'>
+        {{item.content}}
+      </view>
+      <!-- 创建时间跟立即查看按钮 -->
+      <view class='createAndLook'>
+        <view class='createView'>
+          {{item.createdTime}}
+        </view>
+        <view class='lookView'>
+          立即查看>
+        </view>
+      </view>
+  </view>
+  <!-- 分割线 -->
+<view class='fenge'></view>
+</view>

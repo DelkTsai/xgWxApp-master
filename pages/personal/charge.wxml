@@ -1,0 +1,27 @@
+<!--charge.wxml-->
+<!-- /* 充值页面 */ -->
+<!-- <text>\n</text>
+<view class="content">
+    <view>
+        <view class="session">
+            <view class="sessoin-tit">充值金额</view>
+            <input class="session-val" bindchange="finishCharge" id="userCharge" placeholder="请输入充值金额" value="{{nickname}}"/>
+        </view>
+        
+    </view>
+</view>
+<text>\n</text>
+<text class="tip">    *账户余额不可提现</text>
+<button class="myBtn" bindtap="charge">微信支付</button> -->
+
+<!-- 充值金额 -->
+<view class='changeView'>
+  <view class='chargeText'>充值金额</view>
+  <input class="chrge" bindchange="finishCharge" id="userCharge" placeholder="请输入充值金额" />
+</view>
+<!-- 提示 -->
+ <view class='tip'>*账户余额不可提现</view>
+ <!-- 支付方式按钮 -->
+ <view class='chageView'>
+  <button class='chargeButton' bindtap="charge">微信支付</button>
+</view>

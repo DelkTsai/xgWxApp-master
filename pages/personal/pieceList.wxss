@@ -1,0 +1,268 @@
+/* pieceList.wxss */
+.content{
+  width: 100%;
+  /* box-sizing: border-box; */
+  /* margin: -21rpx auto; */
+  background: #fff;
+  /* min-height: 400rpx; */
+  padding: 50rpx 25rpx;
+  /* position: relative; */
+  /* box-shadow: 0 0 20rpx 4rpx  #becee7; */
+  border-radius: 10rpx;
+  /* margin-top: 1em; */
+}
+.session {
+  display:block;
+  /* height: 120rpx;
+  line-height: 120rpx; */
+}
+.sessoin-tit{
+  font-size: 26rpx;
+  color: #666666;
+  vertical-align: middle;
+  padding:0 15rpx;
+  /* width: 140rpx; */
+}
+.session-val{
+  font-size: 26rpx;
+  color: #666666;
+  display: block;
+  width: 100%;
+  border-bottom: 0px solid #000;
+  margin-top: 32rpx;
+}
+.myBtn{
+   background-color:  #2D2D2D ;
+   color: #fff;
+   font-size: 26rpx;
+   height: 88rpx;
+   line-height: 88rpx;
+   margin-top: 100rpx;
+}
+.touch-item {
+ font-size: 14px;
+ display: flex;
+ justify-content: space-between;
+ border-bottom:1px solid #ccc;
+ width: 100%;
+ overflow: hidden;
+ /* flex-direction: column; */
+}
+/* .content {
+ width: 100%;
+ padding: 10px;
+ line-height: 22px;
+ margin-right:0;
+ -webkit-transition: all 0.4s;
+ transition: all 0.4s;
+ -webkit-transform: translateX(90px);
+ transform: translateX(90px);
+ margin-left: -90px
+} */
+.del {
+ background-color: #2D2D2D;
+ width: 90px;
+ display: flex;
+ flex-direction: column;
+ align-items: center;
+ justify-content: center;
+ color: #fff;
+ -webkit-transform: translateX(90px);
+ transform: translateX(90px);
+ -webkit-transition: all 0.4s;
+ transition: all 0.4s;
+}
+
+/* 列表的左侧图片 */
+.leftImage{
+  width: 26.4%;
+  height: 8.25rem;
+  /* display: inline; */
+}
+/* 列表字体样式 */
+.fontsize{
+  font-size: 1.25rem;
+  display: inline-block;
+  /* float: right; */
+  margin-left: 1em;
+}
+/* 剩余积分 */
+.footer{
+  position: absolute;
+  bottom: 15px;
+  width: 30%;
+  text-align: center;
+  border-radius: 10px;
+}
+
+
+/* 弹窗样式 */
+.btn { 
+  width: 80%;  
+  padding: 20rpx 0;  
+  border-radius: 10rpx;  
+  text-align: center;  
+  margin: 40rpx 10%;  
+  background: #000;  
+  color: #fff;  
+} 
+   
+/*mask*/ 
+.drawer_screen { 
+  width: 100%;  
+  height: 100%;  
+  position: fixed;  
+  top: 0;  
+  left: 0;  
+  z-index: 1000;  
+  background: #000000;  
+  opacity: 0.7;  
+  overflow: hidden;  
+} 
+   
+/*content*/ 
+.drawer_box { 
+  width: 100%;  
+  overflow: hidden;  
+  position: fixed;  
+  top: 35%;  
+  left: 0;  
+  z-index: 1001;  
+  background: #FAFAFA;  
+  /* margin: -150px 50rpx 0 50rpx;   */
+  border-radius: 3px;  
+  background-color: #FFFFFF;
+} 
+   
+.drawer_title{ 
+  padding:15px;  
+  font: 20px "microsoft yahei";  
+  text-align: center; 
+  color: #000000; 
+} 
+.drawer_content { 
+  /* height: 210px;   */
+  overflow-y: scroll; /*超出父盒子高度可滚动*/ 
+} 
+   
+.btn_ok{ 
+  padding: 10px;  
+  font: 20px "microsoft yahei";  
+  text-align: center;  
+  border-top: 1px solid #E8E8EA;  
+  color: #3CC51F;  
+  background-color: #FFFFFF;
+} 
+   
+.top{ 
+    padding-top:8px;  
+} 
+.bottom { 
+    padding-bottom:8px;  
+} 
+.title { 
+    height: 30px;  
+    line-height: 30px;  
+    width: 160rpx;  
+    text-align: center;  
+    display: inline-block;  
+    font: 300 28rpx/30px "microsoft yahei";  
+} 
+   
+.input_base { 
+    border: 2rpx solid #ccc;  
+    padding-left: 10rpx;  
+    margin-right: 50rpx;  
+} 
+.input_h30{ 
+    height: 30px;  
+    line-height: 30px;  
+} 
+.input_h60{ 
+    height: 60px;  
+} 
+.input_view{ 
+    font: 12px "microsoft yahei";  
+    background: #fff;  
+    color:#000;  
+    line-height: 30px;  
+} 
+   
+input { 
+    font: 12px "microsoft yahei";  
+    background: #fff;  
+    color:#000 ;  
+} 
+radio{ 
+    margin-right: 20px;  
+} 
+.grid { display: -webkit-box; display: box; } 
+.col-0 {-webkit-box-flex:0;box-flex:0;} 
+.col-1 {-webkit-box-flex:1;box-flex:1;} 
+.fl { float: left;} 
+.fr { float: right;} 
+
+/* 遮罩通用样式 */
+.showCover{
+  position: absolute;
+  width: 50%;
+  height: 50%;
+  background-color: rgba(247, 247, 247, 0.7);
+}
+.showCoverP{
+  background-color: rgba(247, 247, 247, 0);
+}
+.topleft{
+  top: 0px;
+  left: 0px;
+}
+.topright{
+  top: 0px;
+  right: 0px;
+}
+.bottomleft{
+  bottom: 0px;
+  left: 0px;
+}
+.bottomright{
+  bottom: 0px;
+  right: 0px;
+}
+
+/* 兑换商品按钮 */
+.butViewS{
+  margin-top:5em;
+}
+.cancleButton{
+  position: absolute;
+  width: 15px;
+  height: 15px;
+  top: -15vh;
+  right: 1.5vw;
+}
+.cancleImage{
+  width: 15px;
+  height: 15px;
+}
+.itemView{
+  border-bottom:1px solid #ccc;
+  width: 100%;
+  height: 105px;
+  position: relative;
+}
+.itemImage{
+  position: absolute;
+  width: 99px;
+  height: 99px;
+  left: 1vw;
+  top: 0.5vh;
+}
+.itemText{
+  position: absolute;
+  font-size: 15px;
+  left: 30vw;
+  top: 5vh;
+  word-wrap: break-word;
+  word-break: break-all;
+}
+ 

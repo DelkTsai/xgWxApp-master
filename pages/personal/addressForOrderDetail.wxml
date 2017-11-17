@@ -1,0 +1,34 @@
+<!--address.wxml-->
+<view class="holeView" hidden="{{hiddenValue}}">
+  <image src="../../utils/image/personal/pic_nuts.png" class="nullImage" ></image>
+   <text>\n</text> 
+  <text class="nullAddress">暂无收货地址</text>
+</view>
+<scroll-view scroll-y style='width:100%;height:{{windowHeight-50}}px'>
+<view wx:for="{{itemList}}"  wx:key="addressId" class="content">
+    <view class="{{item.isTouchMove?'touch-move-active':''}} touch-item " data-index="{{index}}"  bindtouchstart="touchstart" bindtouchmove="touchmove"  style='width:{{windowWidth+90}}px;'>
+        <view class="session leftWidth" data-index="{{index}}"  bindtap='backToDetail' data-address-id='{{item.data.addressId}}' data-contact-mobile='{{item.data.contactMobile}}' data-contact-person='{{item.data.contactPerson}}' data-province='{{item.data.province}}' data-city='{{item.data.city}}' data-district='{{item.data.district}}' data-address='{{item.data.address}}'>
+          <view style='white-space:nowrap;'>
+               <text class="session-val" style='width:60px;'>{{item.data.contactPerson}}</text>
+                <text class='session-val' style='margin-left:10px;width:90px'>{{item.data.contactMobile}}</text>
+          </view>
+          <view>
+             <text class="session-val">{{item.data.province}}{{item.data.city}}{{item.data.district}}</text>
+              <text class="session-val" style='margin-left:10px'>{{item.data.address}}</text>
+          </view>
+        </view>
+          
+         <view class="session topDistance rightImage"  data-address-id="{{item.data.addressId}}" data-contact-person="{{item.data.contactPerson}}" data-contact-mobile="{{item.data.contactMobile}}" data-province="{{item.data.province}}" data-city="{{item.data.city}}" data-district="{{item.data.district}}" data-address="{{item.data.address}}"  bindtap="editAddress" style='margin-top:0;margin-left:0'>
+            <image src="../../utils/image/personal/btn_edit.png" class="editImage" ></image>
+        </view>
+
+         
+        <view class="del" bindtap="delAddress" data-address-id="{{item.data.addressId}}" data-index="{{index}}">
+          <view style='position:relative;top:50%;transform:translateY(-50%);display:block;text-align:center;'>
+            <text style='white-space:nowrap;'>删除</text>
+          </view>
+        </view>
+    </view>
+</view>
+</scroll-view>
+<button class="myBtn footer" bindtap="newAddress">新建地址</button>

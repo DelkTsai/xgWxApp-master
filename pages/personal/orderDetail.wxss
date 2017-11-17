@@ -1,0 +1,225 @@
+/* 地址样式 */
+page{
+  background: rgb(245, 245, 245);
+  font-size:14px;
+}
+.noAddressView{
+  width: 100%;
+  min-height: 50px;
+  position: relative;
+  box-shadow: 0px 2.5px 1px gray;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  background:white;
+}
+.noAddressText{
+  font-size: 14px;
+  position: absolute;
+  left: 20px;
+  top: 15px;
+}
+.noAddressImageView{
+  position: absolute;
+  width: 8px;
+  height: 16px;
+  top: 15px;
+  right: 20px;
+}
+.setAddressBtn{
+  width: 100%;
+  height: 100%;
+}
+.isAddressView{
+  position: relative;
+  width: 100%;
+  height: 70px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+.isAddressName{
+  font-size: 14px;
+  display: inline-block;
+}
+.isAddressMobile{
+  font-size: 14px;
+  margin-left:10px;
+  display: inline-block;
+}
+.isAddressAddress{
+  position: absolute;
+  font-size: 14px;
+  left: 12px;
+  top: 37px;
+}
+/* 商品列表 */
+.goodsItem{
+  position: relative;
+  width: 100%;
+  height: 107px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+.goodItemImage{
+  position: absolute;
+  width: 107px;
+  height: 107px;
+  top: 0px;
+  left: 12px;
+}
+.goodImage{
+  width: 100%;
+  height: 100%;
+}
+.goodItemName{
+  position: absolute;
+  font-size: 15px;
+  left: 125px;
+  top: 10px;
+}
+.goodItemPrice{
+  position: absolute;
+  font-size: 14px;
+  color: #FE3131;
+  left: 122px;
+  top: 31px;
+}
+/* 商品属性 */
+.attrView{
+  position: absolute;
+  left: 141px;
+  top: 67px;
+}
+.fontStyle{
+  font-size: 13px;
+  color:#7d7d7d;
+  display: inline;
+}
+.imageStyle{
+  width: 13px;
+  height: 13px;
+  border-radius: 13px; 
+}
+.attrImageView{
+  width: 13px;
+  height: 13px;
+}
+.forItemView{
+  height: 14px;
+  width: 40px;
+  float: left;
+}
+/* 购买数量 */
+.viewCount{
+  font-size: 13px;
+  display: inline-block;
+}
+/* 优惠券余额实付款 */
+.cbrViewItem{
+  widows: 100%;
+  height: 150%;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+.couponView{
+  width: 100%;
+  height: 50px;
+  position: relative;
+  background: white;
+}
+.couponText{
+  font-size: 14px;
+  position: absolute;
+  left: 20px;
+  top: 15px;
+}
+.couponPrice{
+  position: absolute;
+  font-size: 14px;
+  color: #7d7d7d;
+  top: 15px;
+  right: 42px;
+}
+.rightImageView{
+  position: absolute;
+  width: 8px;
+  height: 16px;
+  top: 15px;
+  right: 20px;
+}
+.rightImage{
+  width: 100%;
+  height: 100%;
+}
+.blanceView{
+  position: relative;
+  width: 100%;
+  height: 50px;
+  background: white;
+}
+.blanceText{
+  position: absolute;
+  top: 15px;
+  left: 20px;
+  font-size: 14px;
+}
+.blancePrice{
+  position: absolute;
+  font-size: 14px;
+  color: #7d7d7d;
+  top: 15px;
+  left: 58px;
+}
+.blanceSwitch{
+  position: absolute;
+  width: 62px;
+  height: 17px;
+  right: 21px;
+  top: 17px;
+}
+.switchBtn{
+  width: 100%;
+  height: 100%;
+}
+.realPayView{
+  position: relative;
+  width: 100%;
+  height: 50px;
+  background: white;
+}
+.payText{
+  position: absolute;
+  right: 82px;
+  top: 15px;
+  font-size: 14px;
+}
+.payPrice{
+  position: absolute;
+  color: #FE3131;
+  font-size: 14px;
+  top: 15px;
+  right: 20px;
+}
+/* 分割线 */
+.fenge{
+  width: 100%;
+  height: 10px;
+  background-color: #F7F7F7;
+}
+/* 支付按钮 */
+.payView{
+  position: absolute;
+  left: 0px;
+  bottom: 0px;
+  width: 100%;
+  height: 50px;
+  background: white;
+}
+.switchBtn{
+  width: 100%;
+  height: 100%;
+  background-color: #fff;
+}
+.shadow{
+  box-shadow:0px 0px 3px gray;
+
+}

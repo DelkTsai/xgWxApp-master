@@ -1,0 +1,36 @@
+<!--pages/personal/confrimExchange.wxml-->
+<!-- 展示一张图片 -->
+<view class='holeView'>
+  <!-- 左边的图片 -->
+  <view class='leftImage'>
+    <view class='imageView'>
+      <image src='{{ogoodsImg}}' class='imageShow'></image>
+      <view class='tongMask olt' style='{{olt}}'></view>
+      <view class='tongMask ort' style='{{ort}}'></view>
+      <view class='tongMask olb' style='{{olb}}'></view>
+      <view class='tongMask orb' style='{{orb}}'></view>
+    </view>
+    <view class='textShow'>
+      {{ogoodsName}}
+    </view>
+  </view>
+  <!-- 右边的图片 -->
+  <view class='rightImage' bindtap='{{addImage}}'>
+    <view class='imageView'>
+      <image src='{{mgoodsImg}}' class='imageShow'></image>
+      <view class='tongMask olt' style='{{mlt}}'></view>
+      <view class='tongMask ort' style='{{mrt}}'></view>
+      <view class='tongMask olb' style='{{mlb}}'></view>
+      <view class='tongMask orb' style='{{mrb}}'></view>
+    </view>
+    <view class='textShow'>
+      {{mgoodsName}}
+    </view>
+  </view>
+</view>
+<!-- 确认交换按钮 -->
+<view class="buttonView" style='{{buttonView}}'>
+  <view>
+    <button class="changeCoupon" bindtap="confirmToExchange" >确认交换</button>
+  </view>
+</view>

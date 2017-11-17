@@ -1,0 +1,98 @@
+<!--pages/personal/orderDetailPay.wxml-->
+<!-- 分割线 -->
+<view class='fenge'></view>
+<!-- 地址 -->
+<view class='addressView'>
+  <!-- 姓名 -->
+  <view class='addressName'>
+    {{dataList.contactPerson}}
+  </view>
+  <!-- 电话 -->
+  <view class='addressTel'>
+    {{dataList.contactMobile}}
+  </view>
+  <!-- 地址 -->
+  <view class='addressAddress'>
+    {{dataList.address}}
+  </view>
+</view>
+<!-- 分割线 -->
+<view class='fenge'></view>
+<!-- 商品列表 -->
+<view wx:for="{{dataList.goods}}">
+  <!-- 每个item -->
+  <view class='goodsItem'>
+    <!-- 商品图片 -->
+    <view class='goodItemImage'>
+      <image src='{{item.goodsImg}}' class='goodImage'></image>
+    </view>
+    <!-- 商品名称 -->
+    <view class='goodItemName'>
+      {{item.goodsName}}
+    </view>
+    <!-- 商品单价 -->
+    <view class='goodItemPrice'>
+      ￥{{item.price}}
+    </view>
+    <!-- 商品属性 -->
+    <view class='attrView'>
+      <view wx:for="{{item.goodsAttr}}" wx:for-item="attr" class='forItemView'>
+        <!-- 文字 -->
+        <view wx:if="{{attr.paraType=='1'}}">
+          <view class="fontStyle">{{attr.content}}</view>
+        </view>
+        <!-- 图片 -->
+        <view wx:elif="{{attr.paraType=='2'}}" class='attrImageView'>
+          <image src="{{attr.content}}" class="imageStyle"></image>
+        </view>
+      </view>
+      <!-- 购买商品件数 -->
+      <view class='viewCount'>
+         X {{item.num}}
+      </view>
+    </view>
+  </view>
+</view>
+<!-- 分割线 -->
+<view class='fenge'></view>
+<!-- 商品总额优惠券余额 -->
+<view class='sumView'>
+  <!-- 商品总额 -->
+  <view class='itemView'>
+    <view class='itemText'>
+        商品总额
+    </view>
+    <view class='itemValue'>
+      {{dataList.fee}}
+    </view>
+  </view>
+  <!-- 优惠券 -->
+  <view class='itemView'>
+    <view class='itemText'>
+        优惠券
+    </view>
+    <view class='itemValue'>
+      ￥- {{dataList.couponPrice}}
+    </view>
+  </view>
+  <!-- 余额 -->
+  <view class='itemView'>
+    <view class='itemText'>
+        余额
+    </view>
+    <view class='itemValue'>
+      ￥-{{dataList.balance}}
+    </view>
+  </view>
+</view>
+<!-- 分割线 -->
+<view class='fenge'></view>
+<!-- 实付款 -->
+<view class='payView'>
+  <view class='payText'>
+    实付款:
+  </view>
+  <view class='payValue'>
+    ￥{{dataList.payFee}}
+  </view>
+</view>

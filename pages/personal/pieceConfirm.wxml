@@ -1,0 +1,60 @@
+<!--pieceConfirm.wxml-->
+<!-- 地址 -->
+<view class="content">
+  <view>
+    <view class="sessionName">
+      <text class="session-val" style="margin-top:0.5em;font-size:14px;"> {{contactPerson}}  {{contactMobile}}</text>
+      <text class="session-val" style="font-size:14px;">{{province}} {{city}} {{district}} {{address}}</text>
+    </view>
+  </view>
+</view>
+
+<!-- 商品属性 -->
+<!-- 商品属性 -->
+<view>
+  <text>\n</text>
+  <view class="content">
+    <view>
+      <view class="session" style="height:100%">
+        <image src="{{goodsImg}}" class="leftPic"></image>
+
+        <view>
+          <view class="goodName">{{goodsName}}</view>
+          <!-- <view wx:for="{{goodsAttr}}" style="display:inline">
+             <view wx:if="{{item.paraType=='2'}}" style="display:inline" wx:for="{{item.para}}" wx:for-item="attr">
+              <image src="{{attr.paraImg}}" class="attrImage"></image>
+              <text>  \t </text>
+            </view>
+            <view wx:if="{{item.paraType=='1'}}" style="display:inline">
+              <text class="goodAttr">{{attr.paraDesc}}</text>
+              <text>  \t </text>
+            </view>  
+           </view>   -->
+          <view style="display:inline" data-statu="open" bindtap="powerDrawer">
+            <image src="{{initImage}}" class="attrImage" style="width:0.8rem;"></image>
+          </view>
+        </view>
+
+
+      </view>
+    </view>
+  </view>
+</view>
+
+<!-- 弹窗 -->
+<view class="drawer_screen" hidden="{{hidden}}">
+  <view animation="{{animationData}}" class="drawer_box" wx:if="{{showModalStatus}}">
+    <view class="textValue" wx:for="{{goodsAttr}}">
+      <view class="">{{item.name}}</view>
+      <view wx:if="{{item.paraType=='2'}}" style="display:inline" wx:for="{{item.para}}" wx:for-item="attr">
+        <image src="{{attr.paraImg}}" class="attrImage" style="margin-right:1em;" data-name="{{item.name}}" data-item="{{item.paraType}}" data-para-content="{{attr.paraImg}}" bindtap="clickPara"></image>
+        <text>  \t \t\t</text>
+      </view>
+      <view wx:if="{{item.paraType=='1'}}" style="display:inline">
+         <view class="goodAttr" data-name="{{item.name}}" data-item="{{item.paraType}}" data-para-content="{{attr.paraDesc}}" bindtap="clickPara">{{attr.paraDesc}}</view>
+        <text>  \t </text>
+      </view>
+    </view>
+    <view class="btn_ok butViewS" bindtap="powerDrawer" data-statu="close">兑换商品</view>
+  </view>
+</view>

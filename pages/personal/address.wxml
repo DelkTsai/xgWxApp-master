@@ -1,0 +1,20 @@
+<!--address.wxml-->
+<view class="holeView" hidden="{{hiddenValue}}">
+  <image src="../../utils/image/personal/pic_nuts.png" class="nullImage" ></image>
+   <text>\n</text> 
+  <text class="nullAddress">暂无收货地址</text>
+</view>
+<view wx:for="{{itemList}}"  wx:key="addressId" class="content">
+    <view class="touch-item {{item.isTouchMove ? 'touch-move-active' : ''}}" data-index="{{index}}" bindtouchstart="touchstart" bindtouchmove="touchmove">
+        <view class="session">
+          <text class="session-val">{{item.data.contactPerson}}  {{item.data.contactMobile}}</text>
+           <text class="session-val">{{item.data.province}} {{item.data.city}} {{item.data.district}}  {{item.data.address}}</text>
+        </view>
+         <view class="session topDistance rightImage"  data-address-id="{{item.data.addressId}}" data-contact-person="{{item.data.contactPerson}}" data-contact-mobile="{{item.data.contactMobile}}" data-province="{{item.data.province}}" data-city="{{item.data.city}}" data-district="{{item.data.district}}" data-address="{{item.data.address}}"  bindtap="editAddress">
+            <image src="../../utils/image/personal/btn_edit.png" class="editImage" ></image>
+        </view>
+         
+        <view class="del" bindtap="delAddress" data-address-id="{{item.data.addressId}}" data-index="{{index}}">删除</view>
+    </view>
+</view>
+<button class="myBtn footer" bindtap="newAddress">新建地址</button>

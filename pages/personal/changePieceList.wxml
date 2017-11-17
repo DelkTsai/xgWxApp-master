@@ -1,0 +1,41 @@
+<!--changePieceList.wxml-->
+<view class="classname" wx:for="{{pieceList}}">
+  <view class="itemPieceView" bindtap="powerDrawer" data-statu="open" data-goods-img="{{item.goodsImg}}" data-chip-detail="{{item.chipDetail}}" data-chip-id="{{item.chipId}}">
+    <image src="{{item.goodsImg}}" class="pieceRightImage"></image>
+    <view class="pieceText">
+      {{item.goodsName}}
+    </view>
+  </view>
+</view>
+
+<!-- 剩余积分 -->
+<view class="bottomView">
+  <button class="restScore">剩余积分：{{scorep}}</button>
+</view>
+
+<!-- 弹出框选择碎片 -->
+<view class="drawer_screen" hidden="{{hidden}}">
+  <view animation="{{animationData}}" class="drawer_box" wx:if="{{showModalStatus}}">
+   <image src="../../utils/image/personal/btn_cancelgrey.png" class="cancleButton"  bindtap="powerDrawer" data-confirm="delete" data-statu="close"></image>
+    <view class="popViewTotal">
+      <image src="{{popGoodsImg}}" class="popImageGoods"></image>
+      <view class="coverView coverlt" style="{{popMask[0]}}" bindtap="clickChip" data-local="{{popChipDetail[0].local}}" data-count="{{popChipDetail[0].count}}" data-attr-id="{{popChipDetail[0].attrId}}" data-score="{{popChipDetail[0].score}}">
+        <view class="textlt">{{popChipDetail[0].count}}</view>
+      </view>
+      <view class="coverView coverrt" style="{{popMask[1]}}" bindtap="clickChip" data-local="{{popChipDetail[1].local}}" data-count="{{popChipDetail[1].count}}" data-attr-id="{{popChipDetail[1].attrId}}" data-score="{{popChipDetail[1].score}}">
+        <view class="textrt">{{popChipDetail[1].count}}</view>
+      </view>
+      <view class="coverView coverlb" style="{{popMask[2]}}" bindtap="clickChip" data-local="{{popChipDetail[2].local}}" data-count="{{popChipDetail[2].count}}" data-attr-id="{{popChipDetail[2].attrId}}" data-score="{{popChipDetail[2].score}}">
+        <view class="textbl">{{popChipDetail[2].count}}</view>
+      </view>
+      <view class="coverView coverrb" style="{{popMask[3]}}" bindtap="clickChip" data-local="{{popChipDetail[3].local}}" data-count="{{popChipDetail[3].count}}" data-attr-id="{{popChipDetail[3].attrId}}" data-score="{{popChipDetail[3].score}}">
+        <view class="textbr">{{popChipDetail[3].count}}</view>
+      </view>
+    </view>
+    <view class="popWord">
+      <view class="classname">{{popWord}}</view> 
+    </view>
+    <view class="btn_ok" bindtap="powerDrawer" data-confirm="confirm" data-statu="close">确认兑换</view>
+  </view>
+  
+</view>

@@ -1,0 +1,253 @@
+/* changePieceList.wxss */
+/* 循环的每个item的样式 */
+.itemPieceView{
+  position: relative;
+  width: 100%;
+  height: 105px;
+  box-shadow: 0px 2px 5px #dddddd;
+  margin-top: 1em;
+}
+/* 列表中商品图片样式 */
+.pieceRightImage{
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  top: 3px;
+  left: 5px;
+}
+/* 商品名称样式 */
+.pieceText{
+  position: absolute;
+  top: 52px;
+  left: 117px;
+  font-size: 15px;
+  color: #000000;
+  overflow: hidden;
+  text-overflow:ellipsis;
+  white-space: nowrap;
+  width: 280px;
+}
+/* 下方剩余积分 */
+
+.bottomView {
+  position: absolute;
+  bottom: 20px;
+  text-align: center;
+  width: 100%;
+}
+
+.restScore {
+  width: 50%;
+  background-color: #000;
+  color: #fff;
+  font-size: 13px;
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+
+
+/* 弹窗样式 */
+.btn { 
+  width: 80%;  
+  padding: 20rpx 0;  
+  border-radius: 10rpx;  
+  text-align: center;  
+  margin: 40rpx 10%;  
+  background: #000;  
+  color: #fff;  
+} 
+   
+/*mask*/ 
+.drawer_screen { 
+  width: 100%;  
+  height: 100%;  
+  position: fixed;  
+  top: 0;  
+  left: 0;  
+  z-index: 1000;  
+  background: #000000;  
+  opacity: 0.95;  
+  overflow: hidden;  
+} 
+   
+/*content*/ 
+.drawer_box { 
+  width: 100%;  
+  overflow: hidden;  
+  position: fixed;  
+  top: 20%;  
+  left: 0;  
+  z-index: 1001;  
+  background: #FAFAFA;  
+  /* margin: -150px 50rpx 0 50rpx;   */
+  border-radius: 3px;  
+  background-color: #FFFFFF;
+  height: 400px;
+} 
+   
+.drawer_title{ 
+  padding:15px;  
+  font: 20px "microsoft yahei";  
+  text-align: center; 
+  color: #000000; 
+} 
+.drawer_content { 
+  /* height: 210px;   */
+  overflow-y: scroll; /*超出父盒子高度可滚动*/ 
+} 
+   
+.btn_ok{ 
+  padding: 10px;  
+  font: 20px "microsoft yahei";  
+  text-align: center;  
+  border-top: 1px solid #E8E8EA;  
+  color: #3CC51F;  
+  background-color: #FFFFFF;
+} 
+   
+.top{ 
+    padding-top:8px;  
+} 
+.bottom { 
+    padding-bottom:8px;  
+} 
+.title { 
+    height: 30px;  
+    line-height: 30px;  
+    width: 160rpx;  
+    text-align: center;  
+    display: inline-block;  
+    font: 300 28rpx/30px "microsoft yahei";  
+} 
+   
+.input_base { 
+    border: 2rpx solid #ccc;  
+    padding-left: 10rpx;  
+    margin-right: 50rpx;  
+} 
+.input_h30{ 
+    height: 30px;  
+    line-height: 30px;  
+} 
+.input_h60{ 
+    height: 60px;  
+} 
+.input_view{ 
+    font: 12px "microsoft yahei";  
+    background: #fff;  
+    color:#000;  
+    line-height: 30px;  
+} 
+   
+input { 
+    font: 12px "microsoft yahei";  
+    background: #fff;  
+    color:#000 ;  
+} 
+radio{ 
+    margin-right: 20px;  
+} 
+.grid { display: -webkit-box; display: box; } 
+.col-0 {-webkit-box-flex:0;box-flex:0;} 
+.col-1 {-webkit-box-flex:1;box-flex:1;} 
+.fl { float: left;} 
+.fr { float: right;} 
+
+/* 遮罩通用样式 */
+.showCover{
+  position: absolute;
+  width: 50%;
+  height: 50%;
+  background-color: rgba(247, 247, 247, 0.7);
+}
+.showCoverP{
+  background-color: rgba(247, 247, 247, 0);
+}
+.topleft{
+  top: 0px;
+  left: 0px;
+}
+.topright{
+  top: 0px;
+  right: 0px;
+}
+.bottomleft{
+  bottom: 0px;
+  left: 0px;
+}
+.bottomright{
+  bottom: 0px;
+  right: 0px;
+}
+
+/* 弹窗，装载图片的那个部分 */
+.popViewTotal{
+  /* text-align: center;
+  width: 100%; */
+  position: relative;
+  height: 300px;
+  margin-top: 1em;
+}
+/* 弹窗商品图片 */
+.popImageGoods{
+  position: absolute;
+  widows: 195px;
+  height: 195px;
+  left: 42px;
+  top: 45px;
+}
+/* 四个遮罩 */
+.coverView{
+  width: 50%;
+  height: 50%;
+  position: absolute;
+  background-color: rgba(255, 255, 255, 0.7);
+}
+.coverlt{
+  left: 0px;
+  top: 0px;
+}
+.coverrt{
+  right: 0px;
+  top: 0px;
+}
+.coverlb{
+  bottom: 0px;
+  left: 0px;
+}
+.coverrb{
+  bottom: 0px;
+  right: 0px;
+}
+.textlt{
+  margin-top: 120px;
+  margin-left: 130px;
+}
+.textrt{
+  margin-top: 120px;
+  margin-left: 130px;
+}
+.textbl{
+  margin-top: 120px;
+  margin-left: 130px;
+}
+.textbr{
+  margin-top: 120px;
+  margin-left: 130px;
+}
+/* 弹窗积分文字样式 */
+.popWord{
+  text-align: center;
+  width: 100%;
+  font-size: 13px;
+  margin-top: 1em;
+  margin-bottom: 1em;
+}
+/* 弹窗关闭按钮 */
+.cancleButton{
+  position: absolute;
+  width: 14px;
+  height: 14px;
+  right: 10px;
+  top: 5px;
+}

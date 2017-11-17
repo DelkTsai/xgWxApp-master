@@ -1,0 +1,23 @@
+<!--userDetail.wxml-->
+<!-- 用户详细页面 -->
+ <view class="viewButton">
+    <text class="viewButtonLeft">用户头像</text>
+    <text class="viewButtonRight">></text>
+    <image src="{{userHead}}" data-image-url="{{userHead}}" class="headImage" bindtap="openImage"></image>
+  </view> 
+   <view class="viewButton">
+    <text class="viewButtonLeft">昵称</text>
+    <text class="viewButtonRight"  data-nick-name="{{nickName}}" bindtap="jumpNickname">></text>
+    <text class="text"  data-nick-name="{{nickName}}" bindtap="jumpNickname">{{nickName}}</text>
+  </view> 
+   <view class="viewButton">
+    <text class="viewButtonLeft">电子邮箱</text>
+    <text class="viewButtonRight" data-e-mail="{{email}}" bindtap="jumpEmail">></text>
+    <text class="text" data-e-mail="{{email}}" bindtap="jumpEmail">{{email}}</text>
+  </view> 
+   <view class="viewButton" bindtap="toTelBind">
+    <text class="viewButtonLeft">手机号码</text>
+    <text class="viewButtonRight">></text>
+    <text class="text">{{tel}}</text>
+  </view> 
+

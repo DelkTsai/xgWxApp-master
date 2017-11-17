@@ -1,0 +1,83 @@
+/* pages/personal/exchangePiece.wxss */
+/* 上方方框图片 */
+.topView{
+  width: 100%;
+  position: relative;
+  text-align: center;
+  height: 380px;
+}
+.topImageFang{
+  position: absolute;
+  width: 279px;
+  height: 279px;
+   top: 42px;
+  left: 17vw; 
+}
+/* 下方邀请码样式 */
+.inviteView{
+  text-align: center;
+  position: relative;
+  width: 100%;
+  height: 30px;
+}
+.inputStyle{
+  /* width: 80%; */
+  height: 20px;
+  /* border-bottom-width:0;
+  border-bottom-color:gary; */
+  display: block;
+}
+.underView{
+  border:1px black solid;
+  margin-left:10vw;
+  width:80%;
+}
+/* 提交按钮 */
+.submitView{
+  width: 100%;
+  position: fixed;
+  bottom: 17px;
+  left: 0px;
+}
+.mainSubmitView{
+  background-color: #000000;
+  height: 42px;
+  width: 80%;
+  margin-left: 10vw;
+  color: #ffffff;
+  font-size: 14px;
+  text-align: center;
+}
+.textSubmit{
+  display: inline-block;
+  margin-top: 1.3vh;
+}
+/* 商品名称 */
+/* .goodsName{
+  width: 100%;
+}
+.mainGoodsName{
+
+} */
+/* 遮罩通用样式 */
+.tongMask{
+  position: absolute;
+  width: 50%;
+  height: 50%;
+}
+.maskst{
+  top: 0px;
+  left: 0px;
+}
+.masknd{
+  top: 0px;
+  right: 0px;
+}
+.maskrd{
+  left: 0px;
+  bottom: 0px;
+}
+.maskth{
+  right: 0px;
+  bottom: 0px;
+}

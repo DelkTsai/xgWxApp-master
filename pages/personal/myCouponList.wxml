@@ -1,0 +1,14 @@
+<!--myCouponList.wxml-->
+<!-- 无优惠券的情况 -->
+<view class="noList" style="{{hidden}}">
+  <image src="../../utils/image/personal/pic_nuts.png" class="noImage"></image>
+  <view class="noText">暂无优惠券</view>
+</view>
+<!-- 有优惠券的情况 -->
+<view wx:for="{{couponList}}">
+  <view class="couponViewList">
+    <image src="../../utils/image/personal/sec_youhuiquan.png" class="couponImage"></image>
+    <view class="couponTitle">{{item.title}}</view>
+    <view class="couponDate">{{item.timeRange}}</view>
+  </view>
+</view>

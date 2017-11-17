@@ -1,0 +1,59 @@
+.holeView{
+  width: 100%;
+  position: relative;
+  background-color: #f7f7f7;
+}
+.itemView{
+  width: 324px;
+  height: 370px;
+  position: relative;
+  left: 26px;
+  top: 50px;
+  background-color: #ffffff;
+}
+.telView{
+  position: absolute;
+  width: 280px;
+  height: 30px;
+  left: 17px;
+  top: 40px;
+  border-bottom: 1px #000 solid; 
+}
+.telInput{
+  font-size: 14px;
+  color: #000;
+}
+.maView{
+  position: relative;
+  width: 280px;
+  height: 30px;
+  left: 17px;
+  top: 98px;
+  border-bottom: 1px #000 solid; 
+}
+.maInput{
+  font-size: 14px;
+  color: #000;
+  width: 200px;
+}
+.maTip{
+  position: absolute;
+  left: 190px;
+  top: 7px;
+  font-size: 14px;
+  color: #000;
+}
+.btnView{
+  width: 294px;
+  height: 42px;
+  position: absolute;
+  top: 292px;
+  left: 15px;
+}
+.myBtn{
+  width: 100%;
+  height: 100%;
+  background-color: #000;
+  color: #ffffff;
+  font-size: 14px;
+}

@@ -1,0 +1,122 @@
+<!--orderDetail.wxml-->
+<!-- 地址 -->
+<view>
+  <!-- 没填地址的时候 -->
+  <view class='noAddressView shadow'  bindtap='getAddress'>
+    <view style='{{noAddress}}'>
+          <view class='noAddressText'>
+      请设置收货地址
+    </view>
+    <view class='noAddressImageView'>
+      <image src='../../../utils/image/buycar/btn_next.png' class='setAddressBtn'></image>
+    </view>
+    </view>
+
+
+    <!-- 有填写地址 -->
+    <view class='isAddressView' style='{{isAddress}};overflow: hidden;text-overflow:ellipsis;white-space: nowrap;'>
+      <view style='display:inline-block;margin:10px;'>
+            <!-- 姓名 -->
+        <view class='isAddressName'>
+          {{contactPerson}}
+        </view>
+        <!-- 联系电话 -->
+        <view class='isAddressMobile'>
+          {{contactMobile}}
+        </view>
+      </view>
+  
+      <!-- 联系地址 -->
+      <view class='isAddressAddress'>
+        {{getAddress}}
+      </view>
+    </view>
+  </view>
+</view>
+<!-- 商品列表 -->
+<view style='background:white;margin:10px 0;' class='shadow'>
+  <!-- 每个item -->
+  <view class='goodsItem'>
+    <!-- 商品图片 -->
+    <view class='goodItemImage'>
+      <image src='{{jsonData.goodsImg}}' class='goodImage'></image>
+    </view>
+    <!-- 商品名称 -->
+    <view class='goodItemName' style='overflow: hidden;text-overflow:ellipsis;white-space: nowrap;'>
+      {{jsonData.goodsName}}
+    </view>
+    <!-- 商品单价 -->
+    <view class='goodItemPrice'>
+      ￥{{jsonData.fee}}
+    </view>
+    <!-- 商品属性 -->
+    <view class='attrView'>
+      <view wx:for="{{jsonData.goodsAttr}}" wx:for-item="attr" class='forItemView'>
+        <!-- 文字 -->
+        <view wx:if="{{attr.paraType=='1'}}">
+          <view class="fontStyle">{{attr.content}}</view>
+        </view>
+        <!-- 图片 -->
+        <view wx:elif="{{attr.paraType=='2'}}" class='attrImageView'>
+          <image src="{{attr.content}}" class="imageStyle"></image>
+        </view>
+      </view>
+      <!-- 购买商品件数 -->
+      <view class='viewCount'>
+         X 1
+      </view>
+    </view>
+  </view>
+</view>
+
+<!-- 优惠券，余额，实付款 -->
+<view class='cbrViewItem shadow' >
+  <!-- 优惠券 -->
+
+  <view class='couponView'  bindtap='getCoupon'>
+    <!-- 没有使用优惠券 -->
+    <view class='couponText' >
+      优惠券
+    </view>
+    <!-- <view class='couponPrice'>
+      {{jsonData.couponPrice}}
+    </view> -->
+        <view class='couponPrice' style='{{isCoupon}}'  hidden='{{getCouponPrice==0}}'>
+      -{{getCouponPrice}}
+    </view>
+    <view class='rightImageView'>
+      <image src='../../../utils/image/buycar/btn_next.png' class='rightImage'></image>
+    </view>
+<view style='background:#F5F5F5;height:1px;margin:0 5%;position:absolute;bottom:0;left:0;right:0;'></view>
+  </view>
+  <!-- 余额 -->
+  <view class='blanceView '>
+    <view class='blanceText'>
+      余额
+    </view>
+    <view class='blancePrice'>
+      剩余 ￥{{jsonData.userBalance}}
+    </view>
+    <!-- <view class='blanceSwitch'> -->
+      <switch  bindchange="switchChange" style='top:50%;transform:translateY(-50%);left:78%;position:relative;'></switch>
+    <!-- </view> -->
+        <view style='background:#F5F5F5;height:1px;margin:0 5%;position:absolute;bottom:0;left:0;right:0;'></view>
+  </view>
+  <!-- 实付款 -->
+  <view class='realPayView '>
+    <view class='payText'>实付款：</view>
+    <view class='payPrice'>￥{{jsonData.fee}}</view>
+  </view>
+</view>
+<!-- 支付按钮 -->
+<view class='payView '  style='text-align:center;line-height:50px;'>
+    <view class='shadow' style='background:white;' bindtap='pay' hidden="{{jsonData.payStatus=='1'}}">
+      微信支付
+    </view>
+     <view class='shadow' style='background:white;margin-top:10px;' hidden="{{jsonData.payStatus=='1'}}" bindtap='shareBtnClick'>
+      分享获取游戏资格
+    </view>
+    <view class='shadow' style='background:white;margin-top:10px;' hidden="{{!(jsonData.payStatus=='1')}}" bindtap='goToPay'>
+      开始游戏
+    </view>
+</view>
