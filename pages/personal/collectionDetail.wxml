@@ -3,9 +3,11 @@
   <image src="../../utils/image/personal/ico_zhengpin.png" class="topBarImage"></image>
   <text class="topBarText">100%正品保证</text>
 </view>
-<scroll-view scroll-y style='height:{{windowHeight-30}}px'>
-<!-- 中间的图片 -->
-<view class="midImageView" style='background:white'>
+<scroll-view scroll-y style='height:{{windowHeight-30-50}}px'>
+
+<view class='shadowBorder'>
+  <!-- 中间的图片 -->
+<view class="midImageView" style='background:white' bindtap='onBrowImageClick' data-image-url='{{dataList.showImg[1]}}'>
   <image src="{{dataList.showImg[1]}}" class="midImage" mode='widthFix'></image>
 </view>
 <!-- 商品名字以及价格 -->
@@ -27,8 +29,10 @@
       <text  scroll-x wx:for="{{item.para}}" wx:for-item="para" class='maShu' data-item-index="{{index}}" >{{para.paraDesc}}</text>
   </scroll-view>
 </view>
+</view>
 
-<view style='background:white;margin-top:10px;'>
+
+<view style='background:white;margin-top:10px;' class='shadowBorder'>
 <view style='width:33.3%;display:inline-block;text-align:center;'>
   <image style='width:75px;height:75px;' src='../../utils/image/base/qwjd.png'></image>
 </view>
@@ -40,25 +44,34 @@
 </view>
 </view>
 
+
+<view class='shadowBorder'>
 <!-- 描述 -->
-<view class="desp" style='font-size:13px;color: #7D7D7D;background:white;margin:0px;padding:35px 24px;margin-top:10px;padding-bottom:10px;'>
+<view class="desp " style='font-size:13px;color: #7D7D7D;background:white;margin:0px;padding:35px 24px;margin-top:10px;padding-bottom:10px;'>
   {{dataList.goodsDesc}}
 </view>
 <!--产品图片  -->
-<view style='column-count:2;column-gap:0px;padding-left:10px;background:white;padding-bottom:10px;'>
-  <image mode='widthFix' style='width:{{(windowWidth-30)/2}}px;height:auto;' wx:for="{{dataList.showImg}}" src='{{item}}' 
+<view style='column-count:2;column-gap:0px;padding-left:1px;background:white;padding-bottom:10px;'>
+  <image mode='widthFix' style='width:{{(windowWidth-3)/2}}px;height:auto;float:left;margin-top:1px;' wx:for="{{dataList.showImg}}" src='{{item}}' 
   wx:if="{{index>1}}"></image>
 </view>
-
+</view>
 <!--关联产品  -->
-<scroll-view style='white-space: nowrap;width:100%;margin-top:10px;background:white;'>
-  <view wx:for="{{dataList.otherGoods}}" style='display:inline-block;margin-right:10px;'>
-    <image mode='widthFix' style='width:125px'  src='{{item.showImg}}' data-goods-id="{{item.goodsId}}"></image>
-  </view>
-</scroll-view>
+<view class='shadowBorder' style='margin-top:10px;background:white;margin-bottom:10px;'>
+  <text style='color:#7D7D7D;font-size: 14px;margin-left:15px;'>相关鞋品</text>
+  <scroll-view style='white-space: nowrap;width:100%;' >
+    <view wx:for="{{dataList.otherGoods}}" style='display:inline-block;margin-right:10px;'>
+      <image mode='widthFix' style='width:125px'  src='{{item.showImg}}' data-goods-id="{{item.goodsId}}"></image>
+    </view>
+  </scroll-view>
+</view>
 
+
+
+
+</scroll-view>
 <!-- 下方按钮 -->
-<view style="width:100%;background:white;margin-top:10px;height:50px;">
+<view style="width:100%;background:white;height:50px;" >
 <!--分享  -->
   <view style='display:inline-block;width:calc(20% - 1px);text-align:center;' bindtap='customShareClick'>
     <image src='../../utils/image/base/btn_share.png' style='width:20px;height:20px' >
@@ -79,12 +92,9 @@
   <view style='width:40%;height:50px;display:inline-block;text-align:center;background:#000000;color:white;float:right;'>
     <text style='height:50px;line-height:50px;' bindtap='showOrHideShoppintModal'>一键购买</text>
   </view>
-
-
 </view>
 
 
-</scroll-view>
 <!-- 弹窗 -->
 <!--使用animation属性指定需要执行的动画-->
 <view class="drawer_screen" hidden="{{!showModalStatus}}" >

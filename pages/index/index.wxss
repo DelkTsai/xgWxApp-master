@@ -28,18 +28,15 @@
 } 
 /* 横拉样式 */
 .tab-h {
-  height: 105px;
   width: 100%;
   box-sizing: border-box;
   overflow: hidden;
-  line-height: 80rpx;
   /* background: #f7f7f7; */
   font-size: 16px;
   white-space: nowrap;
   /* 这个属性控制横条在顶部还是写的地方 */
   /* position: fixed; */
-  top: 0;
-  left: 0;
+
   z-index: 99;
 }
 
@@ -285,8 +282,11 @@ silderX{
 /* 商品列表的选项卡 */
 .goodsView{
   width: calc(100% - 10px);
-  margin-left: 5px;
-  margin-right: 5px;
+  margin-right: 0px;
+  margin-bottom: 0px;
+  margin-left:10px;
+  margin-top:10px;
+  background:white;
   height: 210px;
   text-align: center;
   position: relative;
@@ -405,5 +405,5 @@ silderX{
 }
 .shadowBorder{
   background: white;
-  box-shadow:0 0 1px 1px #D9D9D9;
+  box-shadow:0px 2px 5px 1px #DDDDDD;
 }

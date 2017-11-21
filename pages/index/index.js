@@ -9,8 +9,8 @@ Page({
     imgUrls: [],//轮播图数组
     indicatorDots: true,//是否会出现焦点
     autoplay: true,//是否自动播放
-    interval: 5000,//自动播放间隔时间
-    duration: 1000,//滑动动画时间
+    interval: 3000,//自动播放间隔时间
+    duration: 200,//滑动动画时间
     weekGoods: "",//每周抢鞋
     shoeList: [],//商品列表
     shopLastId: "",//商城的lastid
@@ -39,9 +39,8 @@ Page({
     })
   },
   onShow:function(){
-    console.log("onShow");
+    wx.stopPullDownRefresh();
     if (this.data.filterContent != null) {
-      console.log("not empty!");
       var sendFirstPageShoe = {
         "tokenSession": this.data.tokenSession,
         "lastId": "",
@@ -144,6 +143,7 @@ Page({
   },
   //商城获取数据之后的回调
   shopCallBack: function (json) {
+    wx.stopPullDownRefresh();
     var that = this;
     console.log(json);
     that.setData({
@@ -192,6 +192,7 @@ Page({
   }
   //潮流资讯 刷新回调
   ,ziXunRefreshCallback:function(json){
+    wx.stopPullDownRefresh();
     this.setData({
       ziXunList: json.data
     })  ;
@@ -221,6 +222,7 @@ Page({
   }
   //球鞋定制 刷新回调
   ,dingZhiRefreshCallback:function(json){
+    wx.stopPullDownRefresh()
     this.setData({
       dingZhiList: json.data
     });
@@ -357,8 +359,6 @@ Page({
   onPullDownRefresh: function () {
     if (this.data.currentTab==0){
       var that = this;
-
-
       // 获取首页商城数据
       wx.getStorage({
         key: 'token',
