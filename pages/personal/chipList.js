@@ -19,7 +19,8 @@ Page({
     maskst:"background-color:rgba(255,255,255,0.7);",//样式文件
     masknd:"background-color:rgba(255,255,255,0.7);",
     maskrd:"background-color:rgba(255,255,255,0.7);",
-    maskth:"background-color:rgba(255,255,255,0.7);"
+    maskth:"background-color:rgba(255,255,255,0.7);",
+    index:""
   },
 
   /**
@@ -192,8 +193,9 @@ Page({
             var atid = that.data.attrId;
             var img = that.data.goodsImg;
             var name = that.data.goodsName;
+            var indexp = that.data.index;
             wx.redirectTo({
-              url: 'askPiece?inviteCode=' + ivt + "&attrId=" + atid + "&midImage=" + img +"&goodsName="+name,
+              url: 'askPiece?inviteCode=' + ivt + "&attrId=" + atid + "&midImage=" + img +"&goodsName="+name+"&index="+indexp,
             })
           }
         }
@@ -223,7 +225,8 @@ Page({
           masknd: "background-color:rgba(255,255,255,0.7);",
           maskrd: "background-color:rgba(255,255,255,0.7);",
           maskth: "background-color:rgba(255,255,255,0.7);",
-          attrId:attrIdp
+          attrId:attrIdp,
+          index:index
         });
         break;
       case "2":
@@ -232,7 +235,8 @@ Page({
           masknd: "background-color:rgba(255,255,255,0);",
           maskrd: "background-color:rgba(255,255,255,0.7);",
           maskth: "background-color:rgba(255,255,255,0.7);",
-          attrId: attrIdp
+          attrId: attrIdp,
+          index: index
         });
         break;
       case "3":
@@ -241,7 +245,8 @@ Page({
           masknd: "background-color:rgba(255,255,255,0.7);",
           maskrd: "background-color:rgba(255,255,255,0);",
           maskth: "background-color:rgba(255,255,255,0.7);",
-          attrId: attrIdp
+          attrId: attrIdp,
+          index: index
         });
         break;
       case "4":
@@ -250,7 +255,8 @@ Page({
           masknd: "background-color:rgba(255,255,255,0.7);",
           maskrd: "background-color:rgba(255,255,255,0.7);",
           maskth: "background-color:rgba(255,255,255,0);",
-          attrId: attrIdp
+          attrId: attrIdp,
+          index: index
         });
         break; 
     }

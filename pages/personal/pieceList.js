@@ -19,7 +19,8 @@ Page({
     topleft: "",
     topright: "",
     bottomleft: "",
-    bottomright: ""
+    bottomright: "",
+    num:[]
   },
 
   /**
@@ -134,6 +135,20 @@ Page({
         popAttr: goodsAttr ,
         popId: goodsId
       });
+      var nump = [];
+      for (var i = 0; i < chipDetailp.length;i++)
+      {
+        if (chipDetailp[i]==null)
+        {
+          nump.push(0);
+        }
+        else{
+          nump.push(chipDetailp[i].count);
+        }
+      }
+      that.setData({
+        num:nump
+      })
     }
   },
   util: function (currentStatu, confirm) {
@@ -174,13 +189,30 @@ Page({
               showModalStatus: false
             }
           );
-          var goodsId = that.data.popId;
-          var goodsImg = that.data.popImage;
-          var goodsAttr = that.data.popAttr;
-          var goodsName = that.data.popName;
-          wx.navigateTo({
-            url: 'addressSelect?goodsId=' + goodsId + "&goodsImg=" + goodsImg + "&goodsAttr=" + JSON.stringify(goodsAttr) + "&goodsName=" + goodsName
-          })
+          var nump = that.data.num
+          var flag = true;
+          for(var i = 0;i<nump.length;i++)
+          {
+            if(nump[i]==0)
+            {
+              flag = false
+            }
+          }
+          if(flag)
+          {
+            var goodsId = that.data.popId;
+            var goodsImg = that.data.popImage;
+            var goodsAttr = that.data.popAttr;
+            var goodsName = that.data.popName;
+            wx.navigateTo({
+              url: 'addressSelect?goodsId=' + goodsId + "&goodsImg=" + goodsImg + "&goodsAttr=" + JSON.stringify(goodsAttr) + "&goodsName=" + goodsName
+            })
+          }
+          else{
+            wx.showToast({
+              title: '碎片不足，暂时不能兑换',
+            })
+          }
         }
         else if (confirm =="close"){
 

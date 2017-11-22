@@ -165,7 +165,8 @@ Page({
   chipMall:function()
   {
     wx.navigateTo({
-      url: 'chipMall',
+      // url: 'chipMall',
+      url: 'changePieceList',
     })
   }
 })

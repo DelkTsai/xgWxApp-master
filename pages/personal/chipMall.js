@@ -10,7 +10,11 @@ Page({
     showModalStatus: false, //弹窗用
     hidden: true,//弹窗用
     goodsImg:"",
-    chipDetail:""
+    chipDetail:"",
+    maskst: "background-color:rgba(255,255,255,0.7);",//样式文件
+    masknd: "background-color:rgba(255,255,255,0.7);",
+    maskrd: "background-color:rgba(255,255,255,0.7);",
+    maskth: "background-color:rgba(255,255,255,0.7);"
   },
 
   /**
@@ -67,6 +71,50 @@ Page({
    */
   onReachBottom: function () {
   
+  },
+  //弹出框遮罩点击事件
+  clickMask: function (event) {
+    var that = this;
+    var index = event.currentTarget.dataset.index;
+    var attrIdp = event.currentTarget.dataset.attrId;
+    switch (index) {
+      case "1":
+        that.setData({
+          maskst: "background-color:rgba(255,255,255,0);",//样式文件
+          masknd: "background-color:rgba(255,255,255,0.7);",
+          maskrd: "background-color:rgba(255,255,255,0.7);",
+          maskth: "background-color:rgba(255,255,255,0.7);",
+          attrId: attrIdp
+        });
+        break;
+      case "2":
+        that.setData({
+          maskst: "background-color:rgba(255,255,255,0.7);",//样式文件
+          masknd: "background-color:rgba(255,255,255,0);",
+          maskrd: "background-color:rgba(255,255,255,0.7);",
+          maskth: "background-color:rgba(255,255,255,0.7);",
+          attrId: attrIdp
+        });
+        break;
+      case "3":
+        that.setData({
+          maskst: "background-color:rgba(255,255,255,0.7);",//样式文件
+          masknd: "background-color:rgba(255,255,255,0.7);",
+          maskrd: "background-color:rgba(255,255,255,0);",
+          maskth: "background-color:rgba(255,255,255,0.7);",
+          attrId: attrIdp
+        });
+        break;
+      case "4":
+        that.setData({
+          maskst: "background-color:rgba(255,255,255,0.7);",//样式文件
+          masknd: "background-color:rgba(255,255,255,0.7);",
+          maskrd: "background-color:rgba(255,255,255,0.7);",
+          maskth: "background-color:rgba(255,255,255,0);",
+          attrId: attrIdp
+        });
+        break;
+    }
   },
 
   /**

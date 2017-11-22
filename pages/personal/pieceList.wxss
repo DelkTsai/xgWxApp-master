@@ -116,17 +116,17 @@
   left: 0;  
   z-index: 1000;  
   background: #000000;  
-  opacity: 0.7;  
+  opacity: 1;  
   overflow: hidden;  
 } 
    
 /*content*/ 
 .drawer_box { 
-  width: 100%;  
+  width: 80%;  
   overflow: hidden;  
   position: fixed;  
-  top: 35%;  
-  left: 0;  
+  top: 20%;  
+  left: 10%;  
   z-index: 1001;  
   background: #FAFAFA;  
   /* margin: -150px 50rpx 0 50rpx;   */
@@ -231,7 +231,7 @@ radio{
 
 /* 兑换商品按钮 */
 .butViewS{
-  margin-top:5em;
+  /* margin-top:5em; */
 }
 .cancleButton{
   position: absolute;
@@ -264,5 +264,13 @@ radio{
   top: 5vh;
   word-wrap: break-word;
   word-break: break-all;
+}
+/* 弹窗关闭按钮 */
+.cancleButton{
+  position: absolute;
+  width: 14px;
+  height: 14px;
+  right: 10px;
+  top: 5px;
 }
  

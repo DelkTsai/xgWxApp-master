@@ -8,10 +8,10 @@
 }
 .topImageFang{
   position: absolute;
-  width: 279px;
-  height: 279px;
+  width: 71vw;
+  height: 47vh;
    top: 42px;
-  left: 17vw; 
+  left: 14vw; 
 }
 /* 文字样式 */
 .textStyle{

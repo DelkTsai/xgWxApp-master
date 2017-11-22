@@ -42,7 +42,8 @@ Page({
       var img = options.midImage;
       var name = options.goodsName;
       var attrId = options.attrId;
-      if (attrId=="1")
+      var indexp = options.index;
+      if (indexp=="1")
       {
         that.setData({
           midImage: img,
@@ -54,7 +55,7 @@ Page({
           goodsName:name
         });
       }
-      else if (attrId=="2"){
+      else if (indexp=="2"){
         that.setData({
           midImage: img,
           maskst: "background-color:rgba(255,255,255,0.7);",//样式文件
@@ -65,7 +66,7 @@ Page({
           goToChipList: ""
         });
       }
-      else if (attrId=="3"){
+      else if (indexp=="3"){
         that.setData({
           midImage: img,
           maskst: "background-color:rgba(255,255,255,0.7);",//样式文件
@@ -76,7 +77,7 @@ Page({
           goToChipList: ""
         });
       }
-      else if (attrId=="4")
+      else if (indexp=="4")
       {
         that.setData({
           midImage: img,
@@ -148,7 +149,7 @@ Page({
   {
     var that = this;
     var ivt = that.data.inviteCode
-    wx.navigateTo({
+    wx.redirectTo({
       url: 'chipList?inviteCode='+ivt,
     })
   }

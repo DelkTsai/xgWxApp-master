@@ -19,16 +19,16 @@
    <image src="../../utils/image/personal/btn_cancelgrey.png" class="cancleButton"  bindtap="powerDrawer" data-confirm="delete" data-statu="close"></image>
     <view class="popViewTotal">
       <image src="{{popGoodsImg}}" class="popImageGoods"></image>
-      <view class="coverView coverlt" style="{{popMask[0]}}" bindtap="clickChip" data-local="{{popChipDetail[0].local}}" data-count="{{popChipDetail[0].count}}" data-attr-id="{{popChipDetail[0].attrId}}" data-score="{{popChipDetail[0].score}}">
+      <view class="coverView coverlt" style="{{popMask[0]}}" bindtap="clickChip" data-local="1" data-count="{{popChipDetail[0].count}}" data-attr-id="{{popChipDetail[0].attrId}}" data-score="{{popChipDetail[0].score}}">
         <view class="textlt">{{popChipDetail[0].count}}</view>
       </view>
-      <view class="coverView coverrt" style="{{popMask[1]}}" bindtap="clickChip" data-local="{{popChipDetail[1].local}}" data-count="{{popChipDetail[1].count}}" data-attr-id="{{popChipDetail[1].attrId}}" data-score="{{popChipDetail[1].score}}">
+      <view class="coverView coverrt" style="{{popMask[1]}}" bindtap="clickChip" data-local="2" data-count="{{popChipDetail[1].count}}" data-attr-id="{{popChipDetail[1].attrId}}" data-score="{{popChipDetail[1].score}}">
         <view class="textrt">{{popChipDetail[1].count}}</view>
       </view>
-      <view class="coverView coverlb" style="{{popMask[2]}}" bindtap="clickChip" data-local="{{popChipDetail[2].local}}" data-count="{{popChipDetail[2].count}}" data-attr-id="{{popChipDetail[2].attrId}}" data-score="{{popChipDetail[2].score}}">
+      <view class="coverView coverlb" style="{{popMask[2]}}" bindtap="clickChip" data-local="3" data-count="{{popChipDetail[2].count}}" data-attr-id="{{popChipDetail[2].attrId}}" data-score="{{popChipDetail[2].score}}">
         <view class="textbl">{{popChipDetail[2].count}}</view>
       </view>
-      <view class="coverView coverrb" style="{{popMask[3]}}" bindtap="clickChip" data-local="{{popChipDetail[3].local}}" data-count="{{popChipDetail[3].count}}" data-attr-id="{{popChipDetail[3].attrId}}" data-score="{{popChipDetail[3].score}}">
+      <view class="coverView coverrb" style="{{popMask[3]}}" bindtap="clickChip" data-local="4" data-count="{{popChipDetail[3].count}}" data-attr-id="{{popChipDetail[3].attrId}}" data-score="{{popChipDetail[3].score}}">
         <view class="textbr">{{popChipDetail[3].count}}</view>
       </view>
     </view>

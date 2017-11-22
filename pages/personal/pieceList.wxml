@@ -16,27 +16,48 @@
 <!-- 弹出框选择碎片 -->
 <view class="drawer_screen" hidden="{{hidden}}">
   <view animation="{{animationData}}" class="drawer_box" wx:if="{{showModalStatus}}">
+  <image src="../../utils/image/personal/btn_cancelgrey.png" class="cancleButton"  bindtap="powerDrawer" data-confirm="delete" data-statu="close"></image>
     <!-- 存放图片 -->
-    <view class="classname" style="width:100%;height:4em;text-align:center; position: relative;text-align:center;margin-top:5em;">
+    <view class="classname" style="width:100%;text-align:center; position: relative;text-align:center;margin-top:1em;">
       <!-- {{popImage}} -->
-      <image src="{{popImage}}" style="width:35%;height:100%;">
+      <image src="{{popImage}}" style="">
 
       </image>
       <view class="showCover topleft {{chipDetail[0].count>0?'showCoverP':''}}" style="{{topleft}}">
-        {{chipDetail[0].count}}
+        <view wx:if="{{chipDetail[0]==null}}">
+          0
+        </view>
+        <view wx:else>
+           {{chipDetail[0].count}}
+        </view>
       </view>
       <view class="showCover topright {{chipDetail[1].count>0?'showCoverP':''}}" style="{{topright}}">
-        {{chipDetail[1].count}}
+       <view wx:if="{{chipDetail[1]==null}}">
+          0
+        </view>
+        <view wx:else>
+           {{chipDetail[1].count}}
+        </view>
       </view>
       <view class="showCover bottomleft {{chipDetail[2].count>0?'showCoverP':''}}" style="{{bottomleft}}">
-        {{chipDetail[2].count}}
+        <view wx:if="{{chipDetail[2]==null}}">
+          0
+        </view>
+        <view wx:else>
+           {{chipDetail[2].count}}
+        </view>
       </view>
       <view class="showCover bottomright {{chipDetail[3].count>0?'showCoverP':''}}" style="{{bottomright}}">
-        {{chipDetail[3].count}}
+        <view wx:if="{{chipDetail[3]==null}}">
+          0
+        </view>
+        <view wx:else>
+           {{chipDetail[3].count}}
+        </view>
       </view>
-      <view class='cancleButton' bindtap="powerDrawer" data-confirm="close" data-statu="close">
+      <!-- <view class='cancleButton' bindtap="powerDrawer" data-confirm="close" data-statu="close">
         <image src='../../utils/image/personal/btn_cancelgrey.png' class='cancleImage'></image>
-      </view>
+      </view> -->
     </view>
     <!-- style="{{(chipDetail[0].count>0&&chipDetail[1].count>0&&chipDetail[2].count>0&&chipDetail[3].count>0)?'':'display:none;'}}" -->
     <view class="btn_ok butViewS" bindtap="powerDrawer"  data-confirm="confirm" data-statu="close">兑换商品</view>

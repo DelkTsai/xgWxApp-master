@@ -139,11 +139,17 @@ Page({
         break;
       //团购页面
       case "group":
-        url = "groupList";
+        // url = "groupList";
+        wx.showToast({
+          title: '敬请期待',
+        })
         break;
       //悬赏页面
       case "reward":
-        url = "rewardList";
+        // url = "rewardList";
+        wx.showToast({
+          title: '敬请期待',
+        })
         break;
       //收藏页面
       case "collect":

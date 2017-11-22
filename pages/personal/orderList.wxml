@@ -35,6 +35,10 @@
     <view class='goodsName'>
       {{item.goods[0].goodsName}}
     </view>
+    <!-- 商品价格 -->
+    <view class='goodsPrice'>
+       实付 ￥{{item.goods[0].price}}
+    </view>
     <!-- 商品属性以及购买数量 -->
     <view class='attrView'>
       <view wx:for="{{item.goods[0].goodsAttr}}" wx:for-item="attr" class='forItemView'>
