@@ -16,7 +16,7 @@
           <swiper-item>
             <!-- url="{{item.link}}" -->
             <navigator hover-class="navigator-hover">
-              <image src="{{item.slideImg}}" class="slide-image" width="355" height="150" />
+              <image src="{{item.slideImg}}" class="slide-image" width="355" height="150" data-index='{{index}}' bindtap='onBannerClick'/>
             </navigator>
           </swiper-item>
         </block>
@@ -31,7 +31,7 @@
             <image  mode="widthFix" style='display:inline-block;vertical-align:middle;width:40%;height:auto' src='../../utils/image/home/qiangxie.png' ></image>
             <view style='display:inline-block;width:60%;vertical-align:middle;'>
               <text style='display:block;font-size:12px;white-space:normal;'>{{weekGoods.goodsName}}</text>
-              <image mode="widthFix" style='width:50px;height:50px'  src="{{weekGoods.goodsImg}}" ></image>
+              <image mode="scaleToFill" style='width:89px;height:50px'  src="{{weekGoods.goodsImg}}" ></image>
             </view>
     
           </view>
@@ -42,7 +42,7 @@
             <image  mode="widthFix" style='display:inline-block;vertical-align:middle;width:40%;height:auto' src='../../utils/image/home/fashou.png' ></image>
             <view style='display:inline-block;width:60%;vertical-align:middle;'>
               <text style='display:block;font-size:12px;white-space:normal;'>{{weekGoods.goodsName}}</text>
-              <image mode="widthFix" style='width:50px;height:50px'  src="{{weekGoods.goodsImg}}" ></image>
+              <image mode="scaleToFill" style='width:89px;height:50px'  src="{{weekGoods.goodsImg}}" ></image>
             </view>
           </view>
  </view>
@@ -71,27 +71,34 @@
   <!-- 球鞋定制 -->
   <swiper-item>
   <scroll-view class='pageBgColor' scroll-y="true" bindscrolltolower="dingZhiLoadMore">
+
+      <!--写死的第一栏 球鞋定制价格表  -->
+      <view>
+                  <text class='dingZhiTitle' style='clear:both;display:block;text-align:center;color:#000000;'>球鞋定制价格表</text>
+        <image mode='widthFix' bindtap='onBrowseImageClick' data-image-url='' src='../../utils/image/base/case.jpg' style='width:{{windowWidth-20}}px;margin:10px;'  class='shadowBorder' bindtap='onBrowseImageClick' data-image-url="https://www.sneakerdog.cn/data/upload/show_img/case.jpg"></image>
+      </view>
+
       <view wx:for="{{dingZhiList}}" >     
             <text class='dingZhiTitle' style='clear:both;display:block;text-align:center;color:#000000;'>{{index}}</text>
             <view style='width:{{windowWidth}}px;  text-align: top; ' >
                 <view style='margin-left:10px;width:{{dingZhiImgWidth}}px;display:inline-block;height:100%;  vertical-align: top;'>
-                                <image  wx:for="{{item}}" wx:for-item="img" bindtap='dingZhiClick' data-image-list="{{img.caseImg}}" src='{{img.caseImg[0]}}' mode='widthFix' style="width:100%;margin-top:10px;float:left;" wx:if="{{img.way==1}}"></image>
+                                <image  wx:for="{{item}}" wx:for-item="img" bindtap='dingZhiClick' data-image-list="{{img.caseImg}}" src='{{img.caseImg[0]}}' mode='widthFix' style="width:100%;margin-top:10px;float:left;" wx:if="{{img.way==1}}" class='shadowBorder'></image>
                 </view>
                 <view style='margin-left:10px;width:{{dingZhiImgWidth}}px;display:inline-block;height:100%;  vertical-align: top;'>
-                                <image wx:for="{{item}}" wx:for-item="img" bindtap='dingZhiClick' data-image-list="{{img.caseImg}}" src='{{img.caseImg[0]}}' mode='widthFix' style="width:100%;margin-top:10px;float:left;"  wx:if="{{img.way==2}}"></image>
+                                <image wx:for="{{item}}" wx:for-item="img" bindtap='dingZhiClick' data-image-list="{{img.caseImg}}" src='{{img.caseImg[0]}}' mode='widthFix' style="width:100%;margin-top:10px;float:left;"  wx:if="{{img.way==2}}"  class='shadowBorder'></image>
                 </view>
             </view> 
         
       </view>
   </scroll-view>
   <!-- 定制按钮 -->
-          <text style='z-index:999;position:absolute;bottom:13px;left:calc((100% - 94px) / 2);border-radius:67px;background: rgba(0,0,0,0.85);font-size:13px;color:#FFF;text-align:center;width:94px;height:32px;line-height:32px;display:inline-block;'>我要定制</text>
+          <text style='z-index:999;position:absolute;bottom:13px;left:calc((100% - 94px) / 2);border-radius:67px;background: rgba(0,0,0,0.85);font-size:13px;color:#FFF;text-align:center;width:94px;height:32px;line-height:32px;display:inline-block;' bindtap='onBrowseImageClick' data-image-url="https://www.sneakerdog.cn/data/upload/show_img/kefu.jpg">我要定制</text>
   </swiper-item>
   <!-- 潮流资讯 -->
   <swiper-item >
      <scroll-view class='pageBgColor' bindscrolltolower="ziXunLoadMore" scroll-y="true">
       <view wx:for="{{ziXunList}}">
-        <view class='ziXunDiv' bindtap='ziXunClick' data-info-id="{{item.infoId}}" data-info-title="{{item.infoTitle}}">
+        <view class='ziXunDiv shadowBorder' bindtap='ziXunClick' data-info-id="{{item.infoId}}" data-info-title="{{item.infoTitle}}">
            <image class='ziXunImg' src="{{item.infoImg}}"></image> 
           <text class="ziXunTitle">{{item.infoTitle}}</text> 
           <text class='ziXunDate'>{{item.updateTime}}</text>

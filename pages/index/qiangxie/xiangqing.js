@@ -141,7 +141,9 @@ Page({
   }
   //客服
   ,onKeFuClick(event){
-
+    var images = [];
+    images.push(event.currentTarget.dataset.imageUrl);
+    wx.previewImage({ urls: images })
   }
   //规则
   ,onGuiZeClick(event){

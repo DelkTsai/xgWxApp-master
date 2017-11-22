@@ -33,14 +33,14 @@
 
 
 <view style='background:white;margin-top:10px;' class='shadowBorder'>
-<view style='width:33.3%;display:inline-block;text-align:center;'>
+<view style='width:33.3%;display:inline-block;text-align:center;' bindtap='onBrowImageClick' data-image-url="https://www.sneakerdog.cn/data/upload/show_img/qwjd.jpg">
   <image style='width:75px;height:75px;' src='../../utils/image/base/qwjd.png'></image>
 </view>
-<view style='width:33.3%;display:inline-block;text-align:center;'>
+<view style='width:33.3%;display:inline-block;text-align:center;' data-image-url="https://www.sneakerdog.cn/data/upload/show_img/jybz.jpg" bindtap='onBrowImageClick'>
   <image  style='width:75px;height:75px;' src='../../utils/image/base/jybz.png'></image>
 </view>
-<view style='width:33.3%;display:inline-block;text-align:center;'>
-  <image  style='width:75px;height:75px;' src='../../utils/image/base/shqy.png'></image>
+<view style='width:33.3%;display:inline-block;text-align:center;' bindtap='onBrowImageClick'data-image-url="https://www.sneakerdog.cn/data/upload/show_img/shqy.jpg">
+  <image  style='width:75px;height:75px;' src='../../utils/image/base/shqy.png' ></image>
 </view>
 </view>
 

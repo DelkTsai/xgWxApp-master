@@ -47,7 +47,7 @@ Page({
         "searchValue": this.data.filterContent
       }
       util.getAjax("home/mall", sendFirstPageShoe, this.firstPageShoeCallBack);
-      this.data.filterContent == null;
+    
     }
   }
   ,
@@ -308,7 +308,7 @@ Page({
     console.log(goodsId);
     var par = {
       "tokenSession": this.data.tokenSession,
-      "lastId": "",
+      "lastId": goodsId,
       "searchValue": this.data.filterContent
     }
     util.getAjax("home/mall", par, this.shangChengLoadMoreCallback);
@@ -417,5 +417,58 @@ Page({
     wx.navigateTo({
       url: 'qiangxie/qiangxie?goodsId=' + goodsId + "&type=3",
     })
+  }
+  //轮播图点击 
+  ,onBannerClick(event){
+    var that  = this;
+    var index = event.currentTarget.dataset.index;
+    switch(index){
+        //打开图片
+      case 0:
+        wx.previewImage({
+          urls: ['https://www.sneakerdog.cn/fengmian.jpg'],
+        })
+        break;
+        //领取积分
+      case 1:
+        wx.showModal({
+          title: '提示',
+          content: '是否领取100优惠券和100积分？',
+          success: function (res) {
+            if (res.confirm) {
+              var para ={};
+              para.tokenSession = wx.getStorageSync("token");
+      
+              util.postAjax("coupon/get_free", para, that.getCouponCallback);
+               
+            } else if (res.cancel) {
+              console.log('用户点击取消')
+            }
+          }
+        });
+        break;
+        //筛选
+      case 2:
+        var para = {};
+        that.data.filterContent = { "优惠": ["优惠"] };
+        para.tokenSession = wx.getStorageSync("token");
+        para.searchValue = { "优惠": ["优惠"] };
+        util.getAjax("home/mall", para, this.firstPageShoeCallBack);
+
+        break;
+    }
+  }
+  //获取优惠券回调
+  ,getCouponCallback(json){
+    console.log(json);
+    if(json.ret){
+
+    }
+    wx.showToast({title:json.forUser});
+  }
+  ,onBrowseImageClick(event){
+    var images = [];
+    images.push(event.currentTarget.dataset.imageUrl);
+    wx.previewImage({ urls: images })
   }
 })
