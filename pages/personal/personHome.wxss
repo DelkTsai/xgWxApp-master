@@ -18,6 +18,7 @@
   top: 20px;
   left: 32px;
   width: 200px;
+  font-size: 44px;
 }
 /* 列表样式 */
 .ulList{
@@ -66,10 +67,12 @@
 }
 .viewButtonLeft{
   margin-left: 1.5em;
+  font-size: 14px;
 }
 .viewButtonRight{
   float: right;
   margin-right: 1.5em;
+  font-size: 14px;
 } 
 
 .weui-cell:before {
@@ -118,7 +121,13 @@
   box-sizing: border-box;
 }
 .border-basic{
-  border: 0px solid #ddd
+  border: 0px solid #ddd;
+  font-size: 14px;
+  text-align: center;
+  padding-left: 10px;
+}
+.ulStyle{
+  text-align: center;
 }
 /* 灰色的分隔 */
 .garyText{

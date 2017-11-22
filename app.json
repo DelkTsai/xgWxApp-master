@@ -62,17 +62,20 @@
       {
         "pagePath": "pages/index/index",
         "iconPath": "utils/tabBar/tab_home copy.png",
-        "selectedIconPath": "utils/tabBar/tab_home copy.png"
+        "selectedIconPath": "utils/tabBar/tab_home copy.png",
+        "text":"首页"
       },
       {
         "pagePath": "pages/buycar/buyCarList",
         "iconPath": "utils/tabBar/tab_buy copy.png",
-        "selectedIconPath": "utils/tabBar/tab_buy copy.png"
+        "selectedIconPath": "utils/tabBar/tab_buy copy.png",
+        "text":"购物车"
       },
       {
         "pagePath": "pages/personal/personHome",
         "iconPath": "utils/tabBar/tab_info copy.png",
-        "selectedIconPath": "utils/tabBar/tab_info copy.png"
+        "selectedIconPath": "utils/tabBar/tab_info copy.png",
+        "text":"个人中心"
       }
     ]
   }

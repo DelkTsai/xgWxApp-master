@@ -14,10 +14,10 @@
   <text>\n</text>
   <text>\n</text>
   <!-- 按钮列表 -->
-  <ul class="">
-    <view class="wa-grid-25 border-basic" data-jump-data="order" bindtap="jumpDiffPage">我的订单  |  </view>
-    <view class="wa-grid-25 border-basic" data-jump-data="group" bindtap="jumpDiffPage">我的团购  |  </view>
-    <view class="wa-grid-25 border-basic" data-jump-data="reward" bindtap="jumpDiffPage">我的悬赏  |  </view>  
+  <ul class="ulStyle">
+    <view class="wa-grid-25 border-basic" data-jump-data="order" bindtap="jumpDiffPage">我的订单　 |  </view>
+    <view class="wa-grid-25 border-basic" data-jump-data="group" bindtap="jumpDiffPage">我的团购　 |  </view>
+    <view class="wa-grid-25 border-basic" data-jump-data="reward" bindtap="jumpDiffPage">我的悬赏　 |  </view>  
     <view class="wa-grid-25 border-basic" data-jump-data="collect" bindtap="jumpDiffPage">我的收藏</view>
   </ul>
   <text>\n</text>
