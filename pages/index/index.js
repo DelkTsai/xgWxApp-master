@@ -9,8 +9,8 @@ Page({
     imgUrls: [],//轮播图数组
     indicatorDots: true,//是否会出现焦点
     autoplay: true,//是否自动播放
-    interval: 5000,//自动播放间隔时间
-    duration: 1000,//滑动动画时间
+    interval: 3000,//自动播放间隔时间
+    duration: 200,//滑动动画时间
     weekGoods: "",//每周抢鞋
     shoeList: [],//商品列表
     shopLastId: "",//商城的lastid
@@ -39,16 +39,15 @@ Page({
     })
   },
   onShow:function(){
-    console.log("onShow");
+    wx.stopPullDownRefresh();
     if (this.data.filterContent != null) {
-      console.log("not empty!");
       var sendFirstPageShoe = {
         "tokenSession": this.data.tokenSession,
         "lastId": "",
         "searchValue": this.data.filterContent
       }
       util.getAjax("home/mall", sendFirstPageShoe, this.firstPageShoeCallBack);
-      this.data.filterContent == null;
+    
     }
   }
   ,
@@ -144,6 +143,7 @@ Page({
   },
   //商城获取数据之后的回调
   shopCallBack: function (json) {
+    wx.stopPullDownRefresh();
     var that = this;
     console.log(json);
     that.setData({
@@ -192,6 +192,7 @@ Page({
   }
   //潮流资讯 刷新回调
   ,ziXunRefreshCallback:function(json){
+    wx.stopPullDownRefresh();
     this.setData({
       ziXunList: json.data
     })  ;
@@ -221,6 +222,7 @@ Page({
   }
   //球鞋定制 刷新回调
   ,dingZhiRefreshCallback:function(json){
+    wx.stopPullDownRefresh()
     this.setData({
       dingZhiList: json.data
     });
@@ -306,7 +308,7 @@ Page({
     console.log(goodsId);
     var par = {
       "tokenSession": this.data.tokenSession,
-      "lastId": "",
+      "lastId": goodsId,
       "searchValue": this.data.filterContent
     }
     util.getAjax("home/mall", par, this.shangChengLoadMoreCallback);
@@ -357,8 +359,6 @@ Page({
   onPullDownRefresh: function () {
     if (this.data.currentTab==0){
       var that = this;
-
-
       // 获取首页商城数据
       wx.getStorage({
         key: 'token',
@@ -417,5 +417,58 @@ Page({
     wx.navigateTo({
       url: 'qiangxie/qiangxie?goodsId=' + goodsId + "&type=3",
     })
+  }
+  //轮播图点击 
+  ,onBannerClick(event){
+    var that  = this;
+    var index = event.currentTarget.dataset.index;
+    switch(index){
+        //打开图片
+      case 0:
+        wx.previewImage({
+          urls: ['https://www.sneakerdog.cn/fengmian.jpg'],
+        })
+        break;
+        //领取积分
+      case 1:
+        wx.showModal({
+          title: '提示',
+          content: '是否领取100优惠券和100积分？',
+          success: function (res) {
+            if (res.confirm) {
+              var para ={};
+              para.tokenSession = wx.getStorageSync("token");
+      
+              util.postAjax("coupon/get_free", para, that.getCouponCallback);
+               
+            } else if (res.cancel) {
+              console.log('用户点击取消')
+            }
+          }
+        });
+        break;
+        //筛选
+      case 2:
+        var para = {};
+        that.data.filterContent = { "优惠": ["优惠"] };
+        para.tokenSession = wx.getStorageSync("token");
+        para.searchValue = { "优惠": ["优惠"] };
+        util.getAjax("home/mall", para, this.firstPageShoeCallBack);
+
+        break;
+    }
+  }
+  //获取优惠券回调
+  ,getCouponCallback(json){
+    console.log(json);
+    if(json.ret){
+
+    }
+    wx.showToast({title:json.forUser});
+  }
+  ,onBrowseImageClick(event){
+    var images = [];
+    images.push(event.currentTarget.dataset.imageUrl);
+    wx.previewImage({ urls: images })
   }
 })

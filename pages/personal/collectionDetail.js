@@ -467,7 +467,11 @@ Page({
       title: '点击右上角分享',
     });
   }
-
+  ,onBrowImageClick(event){
+    var images = [];
+    images.push(event.currentTarget.dataset.imageUrl);
+    wx.previewImage({ urls: images})
+  }
   
 
 })
