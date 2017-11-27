@@ -120,12 +120,13 @@
     <view class='goodItemPrice'>
       ￥{{item.price}}
     </view>
-    <!-- 商品属性 -->
+    <view>
+      <!-- 商品属性 -->
     <view class='attrView'>
       <view wx:for="{{item.goodsAttr}}" wx:for-item="attr" class='forItemView'>
         <!-- 文字 -->
         <view wx:if="{{attr.paraType=='1'}}">
-          <view class="fontStyle">{{attr.content}}</view>
+          <view class="textAttr">{{attr.content}}</view>
         </view>
         <!-- 图片 -->
         <view wx:elif="{{attr.paraType=='2'}}" class='attrImageView'>
@@ -136,6 +137,8 @@
       <view class='viewCount'>
          X {{item.num}}
       </view>
+    </view>
+    
     </view>
   </view>
 </view>

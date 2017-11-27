@@ -80,7 +80,7 @@
   <view style='width:1px;height:25px;background-color:#000;display:inline-block;margin-top:13px;'></view>
   <!--收藏  -->
   <view style='width:calc(20% - 1px);display:inline-block;text-align:center;' bindtap='onCollectionClick'>
-     <image src='{{dataList.isCollect=="0"?"../../utils/image/base/star.png":"../../utils/image/base/clickStar.png"}}' style='width:20px;height:20px' >
+     <image src='{{dataList.isCollect=="1"?"../../utils/image/base/clickStar.png":"../../utils/image/base/star.png"}}' style='width:20px;height:20px' >
     </image>
   </view>
   <view style='width:1px;height:25px;background-color:#000;display:inline-block;margin-top:13px;'></view>
@@ -111,12 +111,12 @@
             </view>           
           </view>
       <!--码数  -->
-      <view style='width:100%;color:white;' wx:for="{{dataList.goodsAttr}}" wx:if="{{item.name=='码数'}}">
+      <view style='width:100%;color:white;' wx:for="{{dataList.goodsAttr}}" wx:for-index="index" wx:if="{{item.name=='码数'}}">
         <view style='background:#363636;height:1px;width:80%;margin-left:10%;margin-top:15px;'></view>
         <text style='font-size:12px;margin-top:15px;margin-bottom:20px;display:inline-block;'>{{item.name}}</text>
        
-        <scroll-view style='width:100%;white-space:nowrap;' scroll-x>    
-            <text wx:for="{{item.para}}" wx:for-item="para" class='{{para.isSel?"smaShu sel":"smaShu"}}' style='color:white;margin-left:20px;' data-item-index="{{index}}" bindtap='onMaShuItemClick'>{{para.paraDesc}} </text>
+        <scroll-view style='width:100%;white-space:nowrap;' scroll-x >    
+            <text wx:for="{{item.para}}" wx:for-item="para" wx:for-index="idx"  class='{{para.isSel?"smaShu sel":"smaShu"}}' style='color:white;margin-left:20px;' data-item-parent-index="{{index}}" data-item-index="{{idx}}" bindtap='onMaShuItemClick' data-item-para="{{item.paraType}}">{{para.paraDesc}}</text>
         </scroll-view>
 
       </view>

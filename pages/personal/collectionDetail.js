@@ -185,7 +185,6 @@ Page({
     })
     if (e.currentTarget.dataset.statu=='close')
     {
-      console.log(that.data.goodsAttr);
       var goodsId = e.currentTarget.dataset.goodsId;
       var goodsName = e.currentTarget.dataset.goodsName;
       var goodsImg = e.currentTarget.dataset.goodsImg;
@@ -317,16 +316,7 @@ Page({
   , onMaShuItemClick(event) {
 
     var index = event.target.dataset.itemIndex;
-    var _dataList = this.data.dataList;
-    var attrList = _dataList.goodsAttr;
-    var para=null;
-    var i = 0;
-    for (; i < attrList.length;i++){
-      if (attrList[i].name=='码数'){
-        para = attrList[i].para;
-        break;
-      }
-    }
+    var para = this.data.dataList.goodsAttr[event.target.dataset.itemParentIndex].para;
     if (para==null){
       return;
     }
@@ -337,10 +327,11 @@ Page({
       }
     }
     var item = para[index];
+    item.paraType = this.data.dataList.goodsAttr[event.target.dataset.itemParentIndex].paraType;
     var itemName = item.paraDesc;
     var imageUrl = item.paraImg;
     this.setData({
-      dataList: _dataList
+      dataList: this.data.dataList
       ,selMaShu:item
     })
 
@@ -387,7 +378,18 @@ Page({
     var price = this.data.price;
     var femalePrice = this.data.price;
     var malePrice = this.data.malePrice; 
-    var goodsAttr = {"码数": parseInt(this.data.selMaShu.paraDesc)};
+
+
+    var goodsAttr = [];
+    if (this.data.selMaShu!=null){
+      console.log(this.data.selMaShu);
+      goodsAttr.push({
+        content: this.data.selMaShu.paraDesc
+        , paraType: this.data.selMaShu.paraType
+      });
+    }
+    console.log("11111");
+
     var checkAttrKey = "码数^^" + this.data.selMaShu.paraDesc;
     var saveType = "2";
     this.addToShopptinCar(goodsId, goodsName, goodsImg, num, price, femalePrice, malePrice,saveType, goodsAttr, checkAttrKey, this.buyCallback);
@@ -418,7 +420,7 @@ Page({
       , "femalePrice":femalePrice
       , "malePrice": malePrice
       , "saveType":saveType
-      ,"goodsAttr": goodsAttr
+      , "goodsAttr": JSON.stringify(goodsAttr)
       , "checkAttrKey":checkAttrKey
     }
     util.postAjax("mall/add_car", sendBuyCar, callback)
@@ -444,7 +446,8 @@ Page({
   //收藏点击
   ,onCollectionClick(event){
     var data = this.data.dataList;
-    data.isCollect = !data.isCollect;
+    data.isCollect = ("0" == data.isCollect)?"1":"0";
+        
     var para = {
       "goodsId": this.data.dataList.goodsId
       ,"type" : "1"
