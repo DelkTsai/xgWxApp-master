@@ -76,7 +76,9 @@ page{
 .viewButtonLeft{
   margin-left: 1.5em;
   font-size: 14px;
-}
+  font-weight: lighter;
+  color: #000000;
+  }
 .viewButtonRight{
   float: right;
   margin-right: 1.5em;
