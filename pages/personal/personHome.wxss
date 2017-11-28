@@ -1,9 +1,13 @@
 /* personHome.wxss */
+page{
+  background: #F4F4F4;
+}
 .moveRight{
   /* margin-left: 12em; */
   color: #7D7D7D;
-  display: inline;
-  position: absolute;
+  /* display: inline; */
+  /* position: absolute; */
+  display: block;
   top: 5px;
   left: 90px;
   font-size: 14px;
@@ -11,10 +15,11 @@
 /* 余额样式 */
 .blance{
   /* margin-left: 4.8em; */
-  display: inline;
+  /* display: inline; */
+  display: block;
   font-size: 1.5em;
   font-weight:lighter;
-  position: absolute;
+  /* position: absolute; */
   top: 20px;
   left: 32px;
   width: 200px;
@@ -46,6 +51,8 @@
 .imagePic{
   width: 2em;
   height: 2em;
+  margin-bottom:15px;
+
 }
 /* 图像列表里面的view */
 .viewImageAll{
@@ -54,7 +61,7 @@
 }
 .imageView{
   display: block;
-  margin:0 auto；
+  margin:0 auto;
 }
 
 /* 下方6个按钮 */
@@ -62,7 +69,8 @@
   display: block;
   width: 100%;
   clear: both;
-  margin-bottom: 1.8em;
+  height: 50px;
+  line-height: 50px;
 
 }
 .viewButtonLeft{
@@ -110,7 +118,9 @@
   
 }
 .wa-grid-25{
-  float: left;
+  /* float: left; */
+  display: inline-block;
+  margin: 0;
   width: 25%;
   box-sizing: border-box;
   text-align: center;
@@ -128,6 +138,8 @@
 }
 .ulStyle{
   text-align: center;
+  margin:27px 0px;
+  display: block;
 }
 /* 灰色的分隔 */
 .garyText{
@@ -139,4 +151,13 @@
 .blanceViewTop{
   position: absolute;
   left: 120px;
+}
+.divider{
+    margin: 0px 25px;
+    border: none;
+    background-color: rgb(245, 245, 245);
+    height: 1px;
+}
+.shadowBorder{
+  box-shadow:0px 2px 5px #DDDDDD;
 }

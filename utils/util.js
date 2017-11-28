@@ -18,9 +18,9 @@ function formatNumber(n) {
 //网络请求get
 function getAjax(url, sendData, callBackFunction) {
   wx.request({
-    url: 'http://192.168.3.16/shoedog/api/' + url,
+    // url: 'http://192.168.3.16/shoedog/api/' + url,
     // url: 'http://119.23.66.37/shoedog/api/' + url,
-    // url:'https://www.sneakerdog.cn/api/'+url,
+    url:'https://www.sneakerdog.cn/api/'+url,
     header: {
       'Content-Type': 'application/json'
     },
@@ -43,9 +43,9 @@ function getAjax(url, sendData, callBackFunction) {
 //网络请求post
 function postAjax(url, sendData, callBackFunction) {
   wx.request({
-    url: 'http://192.168.3.16/shoedog/api/' + url,
+    // url: 'http://192.168.3.16/shoedog/api/' + url,
     // url: 'http://119.23.66.37/shoedog/api/' + url,
-    // url: 'https://www.sneakerdog.cn/api/' + url,
+    url: 'https://www.sneakerdog.cn/api/' + url,
     header: {
       "Content-Type": "application/x-www-form-urlencoded"
     },

@@ -284,10 +284,10 @@ silderX{
   width: calc(100% - 10px);
   margin-right: 0px;
   margin-bottom: 0px;
-  margin-left:10px;
+  margin-left:5px;
   margin-top:10px;
   background:white;
-  height: 210px;
+  /* height: 210px; */
   text-align: center;
   position: relative;
 }

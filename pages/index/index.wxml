@@ -51,8 +51,8 @@
       <!-- 商品列表 -->
       <view>
         <!-- 一个商品 -->
-         <view class="goodsView shadowBorder" bindtap="jumpCollection" data-goods-id="{{item.goodsId}}" data-type="1" wx:for="{{shoeList}}" style='width:{{(windowWidth-30)/2}}px;display:inline-block;margin-right:0;float:left'>
-          <image src="{{item.goodsImg[0]}}"  style='margin-left:19px;margin-right:19px;margin-top:15px;margin-bottom:55px;width:{{(windowWidth-30)/2-19-19}}px;height:{{(windowWidth-30)/2-19-19}}px;'></image>
+         <view class="goodsView shadowBorder" bindtap="jumpCollection" data-goods-id="{{item.goodsId}}" data-type="1" wx:for="{{shoeList}}" style='width:{{(windowWidth-15)/2}}px;display:inline-block;margin-right:0;float:left'>
+          <image src="{{item.goodsImg[0]}}"  style='margin-left:19px;margin-right:19px;margin-top:30px;margin-bottom:55px;width:{{(windowWidth-15)/2-19-19}}px;height:{{(windowWidth-15)/2-19-19}}px;'></image>
           <text  style='position:absolute;top:8px;right:12px;border-radius:22px;border:1px solid #DCDCDC;width:44px;height:44px;line-height:44px;font-size:11px;'>￥{{item.price}}</text>
           <view style='position:absolute;bottom:0px;left:0px;right:0px;height:55px'>
                 <text  style='font-size:12px;'>{{item.goodsName}}</text>
@@ -66,7 +66,7 @@
     </scroll-view>
 
 <!-- 筛选按钮 -->
-          <text style='z-index:999;position:absolute;bottom:13px;left:calc((100% - 94px) / 2);border-radius:67px;background: rgba(0,0,0,0.85);font-size:13px;color:#FFF;text-align:center;width:94px;height:32px;line-height:32px;display:inline-block;' bindtap='OnFilterClick'>筛选</text>
+          <text style='z-index:999;position:absolute;bottom:13px;left:calc((100% - 94px) / 2);border-radius:67px;background: rgba(0,0,0,0.85);font-size:13px;color:#FFF;text-align:center;width:94px;height:32px;line-height:32px;display:inline-block;' bindtap='OnFilterClick'>搜索</text>
   </swiper-item>
   <!-- 球鞋定制 -->
   <swiper-item>
