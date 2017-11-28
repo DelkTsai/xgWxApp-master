@@ -15,19 +15,20 @@
   </view>
  
   <!-- 按钮列表 -->
-  <ul class="ulStyle">
-    <view class="wa-grid-25 border-basic" data-jump-data="order" bindtap="jumpDiffPage">我的订单　 |  </view>
-    <view class="wa-grid-25 border-basic" data-jump-data="group" bindtap="jumpDiffPage">我的团购　 |  </view>
-    <view class="wa-grid-25 border-basic" data-jump-data="reward" bindtap="jumpDiffPage">我的悬赏　 |  </view>  
+  <view class="ulStyle">
+    <view class="wa-grid-25 border-basic" data-jump-data="order" bindtap="jumpDiffPage" style='  border-right: 1px solid #000000;'>我的订单</view>
+    <view class="wa-grid-25 border-basic" data-jump-data="group" bindtap="jumpDiffPage"  style='border-right: 1px solid #000000;'
+>我的团购</view>
+    <view class="wa-grid-25 border-basic" data-jump-data="reward" bindtap="jumpDiffPage"  style='border-right: 1px solid #000000;'
+>我的悬赏</view>  
     <view class="wa-grid-25 border-basic" data-jump-data="collect" bindtap="jumpDiffPage" >我的收藏</view>
-  </ul>
+  </view>
 
   
   <view class="divider"/>
 
   <!-- 三张图片 -->
-  <view class="viewImageAll">
-  <view class="" style='margin:27px 0;'>
+  <view class="" style='margin:27px 0;display:inline-block;width:100%;'>
     <view class="wa-grid-33 border-basic" bindtap="jumpPieceList" data-invite-code='{{inviteCode}}' style='float:none;display:inline-block;'>
       <view class="imageView ">
         <image src="../../utils/image/personal/icon_jifen.png" class="imagePic"></image>
@@ -48,7 +49,6 @@
     </view>
   </view>
   </view>
-  </view>
 <view class='shadowBorder' style='margin:10px 0;background:white;'>
 
   <!-- 下方6个按钮 -->
@@ -66,7 +66,7 @@
 
    <view class="viewButton">
     <text class="viewButtonLeft">我的邀请码</text>
-    <text class="viewButtonRight">{{inviteCode}}</text>
+    <text class="viewButtonRight itemValueText">{{inviteCode}}</text>
   </view> 
     <view class="divider"/>
 
