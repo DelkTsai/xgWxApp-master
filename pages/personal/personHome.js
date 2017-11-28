@@ -200,7 +200,7 @@ Page({
   // 转跳到幸运九宫格
   jumpNine:function()
   {
-    wx.redirectTo({
+    wx.navigateTo({
       url: 'luckNine',
     })
   }
