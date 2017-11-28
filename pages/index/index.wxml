@@ -37,12 +37,12 @@
           </view>
       </view>
  <!-- 球鞋发售 -->
-         <view class="shadowBorder" style='width:{{windowWidth*0.82}}px;height:105px;background:white;margin-left:10px;display:inline-block;' bindtap='onFaShouClick' data-goods-id="{{weekGoods.goodsId}}">
+         <view class="shadowBorder" style='width:{{windowWidth*0.82}}px;height:105px;background:white;margin-left:10px;display:inline-block;' bindtap='onFaShouClick' data-goods-id="{{sellGoods.goodsId}}">
           <view style='width:100%;height:100%;text-align:center;display:flex;align-items:center;'>
             <image  mode="widthFix" style='display:inline-block;vertical-align:middle;width:40%;height:auto' src='../../utils/image/home/fashou.png' ></image>
             <view style='display:inline-block;width:60%;vertical-align:middle;'>
-              <text style='display:block;font-size:12px;white-space:normal;'>{{weekGoods.goodsName}}</text>
-              <image mode="scaleToFill" style='width:89px;height:50px'  src="{{weekGoods.goodsImg}}" ></image>
+              <text style='display:block;font-size:12px;white-space:normal;'>{{sellGoods.goodsName}}</text>
+              <image mode="scaleToFill" style='width:89px;height:50px'  src="{{sellGoods.goodsImg}}" ></image>
             </view>
           </view>
  </view>
