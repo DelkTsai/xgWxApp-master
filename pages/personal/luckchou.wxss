@@ -1,0 +1,39 @@
+/* pages/personal/luckchou.wxss */
+.lottery-list{
+  width: calc(100% - 10px);
+  margin: 0px 5px;
+  position: relative;
+}
+.lottery-list-item{
+  margin: 5px;
+  position: absolute;
+  transition: all 1s;
+}
+.lottery-item-content
+{
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    transition: all 1s;
+    transform-style: preserve-3d;
+}
+.bottom-view{
+  position: fixed;
+  bottom: 17px;
+  left: 0px;
+  width: 100%;
+  height: 42px;
+  text-align: center;
+}
+.btn{
+  background-color: #000;
+  width: 80%;
+  color: #fff;
+  position: absolute;
+  left: 10%;
+  border-radius: 10px;
+  height: 30px;
+}

@@ -208,9 +208,9 @@ App({
               console.log(res);
               //这里把openid请求给服务器
               wx.request({
-                url: 'http://192.168.3.16/shoedog/api/login/miniApps',
+                // url: 'http://192.168.3.16/shoedog/api/login/miniApps',
                 // url: 'http://119.23.66.37/shoedog/api/login/miniApps',
-                // url: 'https://www.sneakerdog.cn/api/login/miniApps',
+                url: 'https://www.sneakerdog.cn/api/login/miniApps',
                 header: {
                   "Content-Type": "application/x-www-form-urlencoded"
                 },

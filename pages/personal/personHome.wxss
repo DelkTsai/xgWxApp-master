@@ -124,7 +124,7 @@
   border: 0px solid #ddd;
   font-size: 14px;
   text-align: center;
-  padding-left: 10px;
+  /* padding-left: 10px; */
 }
 .ulStyle{
   text-align: center;
@@ -139,4 +139,8 @@
 .blanceViewTop{
   position: absolute;
   left: 120px;
+}
+/* 分割线 */
+.shuxian{
+  border-right: 1px solid gray;
 }
