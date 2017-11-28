@@ -34,7 +34,7 @@
         <view>鞋狗碎片</view>
       </view>
     </view>
-    <view class="wa-grid-33 border-basic" style='float:none;display:inline-block;'>
+    <view class="wa-grid-33 border-basic" style='float:none;display:inline-block;' bindtap='jumpNine'>
        <view class="imageView">
         <image src="../../utils/image/personal/icon_jjiugongge.png" class="imagePic"></image>
         <view>幸运九宫格</view>

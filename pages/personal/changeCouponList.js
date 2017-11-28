@@ -12,6 +12,8 @@ Page({
     showModalStatus: false, //弹窗用
     hidden: true,//弹窗用
     couponId:"",//优惠券ID
+    scoreShow:"",
+    priceShow:""
   },
 
   /**
@@ -106,6 +108,12 @@ Page({
     var currentStatu = e.currentTarget.dataset.statu;
     var confirm = e.currentTarget.dataset.confirm;
     var couponIdp = e.currentTarget.dataset.couponId
+    var scorep = e.currentTarget.dataset.score
+    var pricep = e.currentTarget.dataset.price
+    that.setData({
+      scoreShow: scorep,
+      priceShow: pricep
+    });
     this.util(currentStatu, confirm);
     this.setData({
       hidden: !that.data.hidden

@@ -1,7 +1,7 @@
 <!--changeCouponList.wxml-->
 <!--  -->
 <view class="classname" wx:for="{{couponList}}">
-  <view class="couponListView" bindtap="powerDrawer" data-coupon-id="{{item.couponId}}" data-statu="open">
+  <view class="couponListView" bindtap="powerDrawer" data-coupon-id="{{item.couponId}}" data-score="{{item.score}}" data-price="{{item.price}}" data-statu="open">
     <image src="../../utils/image/personal/sec_youhuiquan.png" class="itemRightImage"></image>
     <view class="couponName">{{item.title}}</view>
     <view class="couponPrice">{{item.price}}</view>
@@ -18,10 +18,19 @@
 <!-- 弹出框选择碎片 -->
 <view class="drawer_screen" hidden="{{hidden}}">
   <view animation="{{animationData}}" class="drawer_box" wx:if="{{showModalStatus}}">
-    <view class="classname">
-      是否确认兑换该碎片
+    <view class="holdView">
+      <view class='titleView'>
+        兑换优惠券
+      </view>
+      <text>\n</text>
+      <view>
+        确认使用<text  style='color:red;'>{{scoreShow}}</text>积分，<text>\n</text>
+        兑换<text>\n</text>
+        价值<text style='color:red;font-size:18px;'>{{priceShow}}</text>元<text>\n</text>
+        的优惠券吗？？<text>\n</text>
+      </view>
     </view>
-    <view class="btn_ok" bindtap="powerDrawer" data-confirm="confirm" data-statu="close">确认</view>
-    <view class="btn_ok" bindtap="powerDrawer" data-confirm="delete" data-statu="close">取消</view>
+    <view class="btn_okm" bindtap="powerDrawer" data-confirm="confirm" data-statu="close">确认</view>
+    <view class="btn_cancle" bindtap="powerDrawer" data-confirm="delete" data-statu="close">取消</view>
   </view>
 </view>

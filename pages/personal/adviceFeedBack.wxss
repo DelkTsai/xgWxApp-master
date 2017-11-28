@@ -5,17 +5,17 @@
 }
 .centerView{
   position: relative;
-  width: 324px;
+  width: 80%;
   height: 370px;
   background: #fff;
-  left: 26px;
+  left: 10%;
   top: 67px;
 }
 .saveBtnView{
   position: absolute;
-  width: 294px;
+  width: 80%;
   height: 42px;
-  left: 15px;
+  left: 10%;
   top: 292px;
 }
 .myBtn{
@@ -24,4 +24,7 @@
   font-size: 14px;
   color: #fff;
   background-color: #000;
+}
+.textarea{
+  width: 100%;
 }

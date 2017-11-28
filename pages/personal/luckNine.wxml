@@ -1,0 +1,25 @@
+<!--pages/personal/luckNine.wxml-->
+<view class='totalView'>
+  <!-- 碎片抽奖 -->
+  <view>
+    <!-- 显示文字 -->
+    
+    <image src='../../utils/image/personal/suipianchoujiang.png' data-index='2' data-score='{{chipLotteryScore}}' bindtap='choujiang' class='topimage'>
+      <view>
+        <view class='topbigtext'>碎片抽奖</view>
+        <view class='topsmalltext'>100%中奖/消耗{{chipLotteryScore}}积分</view>
+      </view>
+    </image>
+  </view>
+  <!-- 普通抽奖 -->
+  <view>
+   <!-- 显示文字 -->
+    
+    <image src='../../utils/image/personal/putongchoujiang.png' data-index='1' data-score='{{normalLotteryScore}}' bindtap='choujiang' class='buttomimage'>
+      <view>
+      <view class='bottombigtext'>普通抽奖</view>
+      <view class='bottomsmalltext'>大概率抽中优惠券/消耗{{normalLotteryScore}}积分</view>
+    </view>
+    </image>
+  </view>
+</view>

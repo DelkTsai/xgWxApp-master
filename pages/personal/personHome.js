@@ -7,7 +7,8 @@ Page({
   data: {
     blance:"",
     inviteCode:"",
-    imgUrl:""
+    imgUrl:"",
+    myscore:"",//我的积分
   },
 
   /**
@@ -93,6 +94,9 @@ Page({
     that.setData({
       imgUrl: json.data.userImg
     })
+    that.setData({
+      myscore: json.data.score
+    });
   },
   //点击头像的响应事件
   userImage:function()
@@ -192,5 +196,12 @@ Page({
     wx.previewImage({
       urls:url
     });
+  },
+  // 转跳到幸运九宫格
+  jumpNine:function()
+  {
+    wx.redirectTo({
+      url: 'luckNine',
+    })
   }
 })

@@ -1,0 +1,54 @@
+/* pages/personal/luckNine.wxss */
+/* 整个view */
+.totalView{
+  text-align: center;
+  width: 100%;
+  position: relative;
+}
+.topimage{
+  position: absolute;
+  width: 90%;
+  height: 105px;
+  left: 5%;
+  top: 50px;
+}
+.buttomimage{
+  position: absolute;
+  width: 90%;
+  height: 105px;
+  left: 5%;
+  top: 180px;
+}
+.topbigtext{
+  color: #fff;
+  position: absolute;
+  top: 25%;
+  left: 40px;
+  font-size: 20px;
+  font-weight: lighter;
+  z-index: 999;
+}
+.topsmalltext{
+  color: rgb(208, 208, 208);
+  position: absolute;
+  top: 47%;
+  font-size: 12px;
+  font-weight: lighter;
+  left: 40px;
+}
+.bottombigtext{
+  position: absolute;
+  top: 25%;
+  left: 40px;
+  font-size: 20px;
+  font-weight: lighter;
+  color: rgb(67, 67, 67);
+}
+.bottomsmalltext{
+   color: rgb(45, 45, 45);
+  position: absolute;
+  top: 47%;
+  font-size: 12px;
+  font-weight: lighter;
+  left: 40px;
+}

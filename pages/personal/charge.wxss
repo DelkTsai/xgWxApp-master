@@ -12,7 +12,7 @@
   position: absolute;
 }
 .chrge{
-  font-size: 25px;
+  font-size: 20px;
   left: 31px;
   top: 55px;
   position: absolute;
@@ -37,8 +37,8 @@
 }
 .chargeButton{
   width: 80%;
-  background-color: #000;
-  color: #fff;
+  background-color: #fff;
+  color: #000;
   height: 100%;
   font-size: 14px;
 }

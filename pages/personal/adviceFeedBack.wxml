@@ -19,7 +19,7 @@
   <view class='centerView'>
     <!-- 意见 -->
     <view class='adviceView'>
-       <textarea class="" bindchange="finishAdvice" id="userAdvice" placeholder="写下你的意见" >
+       <textarea class="textarea" bindchange="finishAdvice" id="userAdvice" placeholder="写下你的意见" >
         </textarea>
     </view>
     <!-- 保存按钮 -->

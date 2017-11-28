@@ -5,13 +5,13 @@
   height: 105px;
   text-align: center;
   position: relative;
-  margin-left: 2.5%;
+  margin-left: 0.8%;
   margin-top: 1em;
 }
 /* 优惠券底图 */
 .couponImage{
   width: 90%;
-  height: 105px;
+   height: 95px; 
 }
 /* 优惠券标题 */
 .couponTitle{
