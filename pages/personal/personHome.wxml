@@ -1,18 +1,18 @@
 <!--personHome.wxml-->
-<view class="">
+<view class="shadowBorder" style='background:white;'>
 
   <view class="topViewtop">
     <view class="wa-grid-50 border-basic topViews imageViewTop">
        <image src="{{imgUrl}}" class="topImage" bindtap="userImage"></image> 
        <!-- <image src="{{imgUrl}}" class="" bindtap="userImage"></image> -->
     </view>
-    <view class="wa-grid-50 border-basic topViews blanceViewTop" bindtap="jumpBlance">
-       <view class="moveRight" bindtap="jumpBlance">余额</view>
-      <view class="blance" bindtap="jumpBlance">{{blance}}</view>
+    <view class="wa-grid-50 border-basic" bindtap="jumpBlance" style='float:right;display:inline-block;width:30%;text-align:right;margin-right:15px;width:auto;'>
+       <view class="moveRight" bindtap="jumpBlance" >余额</view>
+      <view class="blance" bindtap="jumpBlance" style='display:inline-block;overflow:hidden;white-space:nowrap;'>{{blance}}
+</view>
     </view>
+    <view style="clear:both;"></view>
   </view>
-  <text>\n</text>
-  <text>\n</text>
   <!-- 按钮列表 -->
   <view class="ulStyle">
     <view class="wa-grid-25 border-basic" data-jump-data="order" bindtap="jumpDiffPage" style='  border-right: 1px solid #000000;'>我的订单</view>
@@ -31,22 +31,19 @@
     <view class="wa-grid-33 border-basic" bindtap="jumpPieceList" data-invite-code='{{inviteCode}}' style='float:none;display:inline-block;'>
       <view class="imageView ">
         <image src="../../utils/image/personal/icon_jifen.png" class="imagePic"></image>
-        <text>\n</text>
-        <text>鞋狗碎片</text>
+        <view>鞋狗碎片</view>
       </view>
     </view>
     <view class="wa-grid-33 border-basic">
        <view class="imageView" bindtap='jumpNine'>
         <image src="../../utils/image/personal/icon_jjiugongge.png" class="imagePic"></image>
-        <text>\n</text>
-        <text>幸运九宫格</text>
+        <view>幸运九宫格</view>
       </view>
     </view>
     <view class="wa-grid-33 border-basic" bindtap="jumpCoupon">
        <view class="imageView" >
         <image src="../../utils/image/personal/icon_youhui.png" class="imagePic" ></image>
-        <text>\n</text>
-        <text >优惠券</text>
+        <view >优惠券</view>
       </view>
     </view>
   </view>
@@ -60,6 +57,8 @@
     <text class="viewButtonLeft" bindtap="jumpMsgCenter">消息中心</text>
     <text class="viewButtonRight" bindtap="jumpMsgCenter">></text>
   </view> 
+    <view class="divider"/>
+
    <view class="viewButton" bindtap="jumpScore">
     <text class="viewButtonLeft" bindtap="">积分</text>
     <view class="viewButtonRight" bindtap="">
@@ -67,18 +66,26 @@
       <text style='display:inline-block;margin-left:10px;'>></text>
   </view>
   </view> 
+    <view class="divider"/>
+
    <view class="viewButton">
     <text class="viewButtonLeft">我的邀请码</text>
     <text class="viewButtonRight itemValueText">{{inviteCode}}</text>
   </view> 
+      <view class="divider"/>
+
    <view class="viewButton" bindtap="jumpAddress">
     <text class="viewButtonLeft" bindtap="jumpAddress">地址管理</text>
     <text class="viewButtonRight" bindtap="jumpAddress">></text>
   </view> 
+    <view class="divider"/>
+
    <view class="viewButton" bindtap="adviceFeedBack">
     <text class="viewButtonLeft" bindtap="adviceFeedBack">意见反馈</text>
     <text class="viewButtonRight" bindtap="adviceFeedBack">></text>
   </view> 
+    <view class="divider"/>
+
    <view class="viewButton" bindtap='preImage'>
     <text class="viewButtonLeft">联系客服</text>
     <text class="viewButtonRight">></text>
