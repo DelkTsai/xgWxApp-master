@@ -82,7 +82,7 @@
   /* margin: -150px 50rpx 0 50rpx;   */
   border-radius: 3px;  
   background-color: #FFFFFF;
-  height: 400px;
+  height: 320px;
 } 
    
 .drawer_title{ 
@@ -97,7 +97,7 @@
 } 
    
 .btn_ok{ 
-  padding: 10px;  
+  /* padding: 10px;   */
   font: 20px "microsoft yahei";  
   text-align: center;  
   border-top: 1px solid #E8E8EA;  
@@ -185,7 +185,7 @@ radio{
   /* text-align: center;
   width: 100%; */
   position: relative;
-  height: 300px;
+  height: 230px;
   margin-top: 1em;
 }
 /* 弹窗商品图片 */
@@ -228,8 +228,8 @@ radio{
   margin-left: 130px;
 }
 .textbl{
-  margin-top: 120px;
-  margin-left: 130px;
+  margin-top: 110px;
+  margin-left: 120px;
 }
 .textbr{
   margin-top: 120px;

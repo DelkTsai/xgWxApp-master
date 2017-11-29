@@ -37,3 +37,69 @@
   border-radius: 10px;
   height: 30px;
 }
+
+
+
+
+
+/* 遮罩 */
+.darkScren{
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  background-color: #000;
+  opacity: 0.95;
+}
+.backgroundMask{
+  background-color: #fff;
+  width: 80%;
+  left: 10%;
+  height: 240px;
+  position: absolute;
+  top: 15%;
+}
+.normal-text{
+    text-align: center;
+    font-size: 25px;
+    font-weight: lighter;
+    color: black;
+    position: absolute;
+    top: 45%;
+}
+.imageView{
+  width: 100%;
+  height: 100%;
+  position: relative;
+  background-color: #fff
+}
+.tong{
+  position: absolute;
+  width: 50%;
+  height: 50%;
+  background-color: rgba(255, 255, 255, 0.7);
+}
+.imagePieceShow{
+  width: 100%;
+  height: 100%;
+}
+.mf{
+  top: 0px;
+  left: 0px;
+}
+.ms{
+  right: 0px;
+  top: 0px;
+}
+.mt{
+  left: 0px;
+  bottom: 0px;
+}
+.mfo{
+  right: 0px;
+  bottom: 0px;
+}
+.submitBtn{
+  width: 25%;
+}

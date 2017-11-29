@@ -17,7 +17,7 @@
         <!-- 优惠券 -->
         <view wx:if="{{lotItemDatas[0].type=='3'}}">
           <view style='width:100%;text-align:center;color:white'>
-           <img src="../../utils/image/personal/sec_youhuiquan.png" style="width: 100%"/>
+           <img src="../../utils/image/personal/sec_youhuiquan.png" style="width: 80%"/>
            <view style="position: absolute;width: 100%;left: 0px;top: 0px;text-align: center;margin: 40% 0px;color:white;">￥ {{lotItemDatas[0].price}}</view>
           </view>
         </view>
@@ -51,7 +51,7 @@
         <!-- 优惠券 -->
         <view wx:if="{{lotItemDatas[1].type=='3'}}">
           <view style='width:100%;text-align:center;color:white'>
-           <img src="../../utils/image/personal/sec_youhuiquan.png" style="width: 100%"/>
+           <img src="../../utils/image/personal/sec_youhuiquan.png" style="width: 80%"/>
            <view style="position: absolute;width: 100%;left: 0px;top: 0px;text-align: center;margin: 40% 0px;color:white;">￥ {{lotItemDatas[1].price}}</view>
           </view>
         </view>
@@ -85,7 +85,7 @@
         <!-- 优惠券 -->
         <view wx:if="{{lotItemDatas[2].type=='3'}}">
           <view style='width:100%;text-align:center;color:white'>
-           <img src="../../utils/image/personal/sec_youhuiquan.png" style="width: 100%"/>
+           <img src="../../utils/image/personal/sec_youhuiquan.png" style="width: 80%"/>
            <view style="position: absolute;width: 100%;left: 0px;top: 0px;text-align: center;margin: 40% 0px;color:white;">￥ {{lotItemDatas[2].price}}</view>
           </view>
         </view>
@@ -118,7 +118,7 @@
         <!-- 优惠券 -->
         <view wx:if="{{lotItemDatas[3].type=='3'}}">
           <view style='width:100%;text-align:center;color:white'>
-           <img src="../../utils/image/personal/sec_youhuiquan.png" style="width: 100%"/>
+           <img src="../../utils/image/personal/sec_youhuiquan.png" style="width: 80%"/>
            <view style="position: absolute;width: 100%;left: 0px;top: 0px;text-align: center;margin: 40% 0px;color:white;">￥ {{lotItemDatas[3].price}}</view>
           </view>
         </view>
@@ -145,7 +145,7 @@
         <!-- 碎片 -->
         <view wx:if="{{lotItemDatas[4].type=='2'}}" style="width: 100%;height: 100%;">
           <view style='width:100%;text-align:center;color:white;height: 100%;'>
-           <image src='{{lotItemDatas[4].goodsImg}}' style="width: 80%;margin-left: 10%;height: 100%;"></image>
+           <image src='{{lotItemDatas[4].goodsImg}}' style="width: 80%;margin-left: 10%;height: 80%;"></image>
           </view>
         </view>
         <!-- 优惠券 -->
@@ -184,7 +184,7 @@
         <!-- 优惠券 -->
         <view wx:if="{{lotItemDatas[5].type=='3'}}">
           <view style='width:100%;text-align:center;color:white'>
-           <img src="../../utils/image/personal/sec_youhuiquan.png" style="width: 100%"/>
+           <img src="../../utils/image/personal/sec_youhuiquan.png" style="width: 80%"/>
            <view style="position: absolute;width: 100%;left: 0px;top: 0px;text-align: center;margin: 40% 0px;color:white;">￥ {{lotItemDatas[5].price}}</view>
           </view>
         </view>
@@ -211,7 +211,7 @@
         <!-- 碎片 -->
         <view wx:if="{{lotItemDatas[6].type=='2'}}" style="width: 100%;height: 100%;">
           <view style='width:100%;text-align:center;color:white;height: 100%;'>
-           <image src='{{lotItemDatas[6].goodsImg}}' style="width: 80%;margin-left: 10%;height: 100%;"></image>
+           <image src='{{lotItemDatas[6].goodsImg}}' style="width: 80%;margin-left: 10%;height: 80%;"></image>
           </view>
         </view>
         <!-- 优惠券 -->
@@ -244,7 +244,7 @@
         <!-- 碎片 -->
         <view wx:if="{{lotItemDatas[7].type=='2'}}" style="width: 100%;height: 100%;">
           <view style='width:100%;text-align:center;color:white;height: 100%;'>
-           <image src='{{lotItemDatas[7].goodsImg}}' style="width: 80%;margin-left: 10%;height: 100%;"></image>
+           <image src='{{lotItemDatas[7].goodsImg}}' style="width: 80%;margin-left: 10%;height: 80%;"></image>
           </view>
         </view>
         <!-- 优惠券 -->
@@ -277,7 +277,7 @@
         <!-- 碎片 -->
         <view wx:if="{{lotItemDatas[8].type=='2'}}" style="width: 100%;height: 100%;">
           <view style='width:100%;text-align:center;color:white;height: 100%;'>
-           <image src='{{lotItemDatas[8].goodsImg}}' style="width: 80%;margin-left: 10%;height: 100%;"></image>
+           <image src='{{lotItemDatas[8].goodsImg}}' style="width: 80%;margin-left: 10%;height: 80%;"></image>
           </view>
         </view>
         <!-- 优惠券 -->
@@ -300,8 +300,34 @@
   </view>
   <!-- 点击抽奖按钮 -->
   <view class='bottom-view'>
-    <view class='btn' bindtap='clickChange'>
+    <view class='btn' bindtap='clickChange' style='{{hidden}}'>
       点击抽奖(消耗{{score}}积分)
     </view>
+  </view>
+</view>
+
+<!-- 模态窗 -->
+<view class='darkScren' style='{{mask}}'>
+  <!-- 显示文字用 -->
+  <view style='{{showText}}' class='backgroundMask'>
+    <view class='normal-text'>
+      {{text}}
+    </view>
+    
+  </view>
+  <!-- 显示碎片用 -->
+  <view style='{{showPiece}}' class='backgroundMask'>
+    <view class='imageView'>
+      <image class='imagePieceShow' src='{{pieceImage}}'></image>
+      <view class='tong mf' style='{{one}}'></view>
+      <view class='tong ms' style='{{two}}'></view>
+      <view class='tong mt' style='{[three}}'></view>
+      <view class='tong mfo' style='{{four}}'></view>
+    </view>
+  </view>
+
+  <!-- 确认提交按钮 -->
+  <view class='submitBtn' bindtap='submitChou'>
+    确认提交
   </view>
 </view>

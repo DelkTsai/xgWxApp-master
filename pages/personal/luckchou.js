@@ -15,6 +15,21 @@ Page({
     getTranslate:[],
     url:"",
     flip:"rotateY(180deg)",//控制反转
+    hidden:"",//用于隐藏下面的抽奖按钮
+    mask:"visibility:hidden;display:none;",//页面遮罩层
+    showText:"visibility:hidden;display:none;",//显示文字
+    showPiece:"visibility:hidden;display:none;",//显示碎片
+    text:"",
+    pieceImage:"",//碎片图片路径
+    pieceAttr:"",//选择的piece的id
+    one:"background-color: rgba(255, 255, 255, 0.7);",
+    two: "background-color: rgba(255, 255, 255, 0.7);",
+    three: "background-color: rgba(255, 255, 255, 0.7);",
+    four: "background-color: rgba(255, 255, 255, 0.7);",
+    sendType:"",
+    scores:"",
+    attrIds:"",
+    couponIds:"",
   },
 
   /**
@@ -35,6 +50,9 @@ Page({
         that.setData({
           url:"../../utils/image/personal/suipianchoujiang.png"
         });
+        wx.setNavigationBarTitle({
+          title: '碎片抽奖',
+        })
       }
       else if (showTypep=="1")
       {
@@ -42,6 +60,9 @@ Page({
         that.setData({
           url: "../../utils/image/personal/putongchoujiang.png"
         });
+        wx.setNavigationBarTitle({
+          title: '普通抽奖',
+        })
       }
       //获取屏幕信息
       wx.getSystemInfo({
@@ -137,6 +158,7 @@ Page({
   // 获取的回调
   lotteryCallBack:function(json)
   {
+    console.log(json);
     var that = this;
     var data = json.data;
     that.setData({
@@ -154,9 +176,100 @@ Page({
       getTranslate: getTranslatep
     })
   },
+  // 点击item
   lotteryItemClick:function(e)
   {
     console.log(e);
+    var that = this;
+    that.setData({
+      mask:""
+    });
+    var id = e.currentTarget.dataset.id;
+    var lotItemDatasp = that.data.lotItemDatas;
+    if (lotItemDatasp[id].type=='1')
+    {
+      // 积分
+      var viewText = "获得" + lotItemDatasp[id].score+"积分";
+      that.setData({
+        text: viewText,
+        showText:"",
+        showPiece: "visibility:hidden;display:none;",
+        sendType:"1",
+        scores: lotItemDatasp[id].score
+      })
+    }
+    else if (lotItemDatasp[id].type == '2')
+    {
+      //碎片
+      that.setData({
+        pieceImage: lotItemDatasp[id].goodsImg,//碎片图片路径
+        pieceAttr: lotItemDatasp[id].attrId,//选择的piece的id
+        showText: "visibility:hidden;display:none;",
+        showPiece: "",
+        sendType:"2",
+        attrIds: lotItemDatasp[id].attrId
+      });
+      var local = lotItemDatasp[id].local;
+      if(local=='1')
+      {
+        that.setData({
+          one: "background-color: rgba(255, 255, 255, 0);",
+          two: "background-color: rgba(255, 255, 255, 0.7);",
+          three: "background-color: rgba(255, 255, 255, 0.7);",
+          four: "background-color: rgba(255, 255, 255, 0.7);",
+        });
+      }
+      else if(local=='2')
+      {
+        that.setData({
+          one: "background-color: rgba(255, 255, 255, 0.7);",
+          two: "background-color: rgba(255, 255, 255, 0);",
+          three: "background-color: rgba(255, 255, 255, 0.7);",
+          four: "background-color: rgba(255, 255, 255, 0.7);",
+        });
+      }
+      else if(local=='3')
+      {
+        that.setData({
+          one: "background-color: rgba(255, 255, 255, 0.7);",
+          two: "background-color: rgba(255, 255, 255, 0.7);",
+          three: "background-color: rgba(255, 255, 255, 0);",
+          four: "background-color: rgba(255, 255, 255, 0.7);",
+        });
+      }
+      else if(local=='4')
+      {
+        that.setData({
+          one: "background-color: rgba(255, 255, 255, 0.7);",
+          two: "background-color: rgba(255, 255, 255, 0.7);",
+          three: "background-color: rgba(255, 255, 255, 0.7);",
+          four: "background-color: rgba(255, 255, 255, 0);",
+        })
+      }
+      
+    }
+    else if (lotItemDatasp[id].type == '3')
+    {
+      //优惠券
+      var viewText = "￥" + lotItemDatasp[id].price;
+      that.setData({
+        text: viewText,
+        showText: "",
+        showPiece: "visibility:hidden;display:none;",
+        sendType:"3",
+        couponIds:lotItemDatasp[id].couponId
+      });
+    }
+    else if (lotItemDatasp[id].type == '4')
+    {
+      //谢谢惠顾
+      that.setData({
+        text: "谢谢惠顾",
+        showText: "",
+        showPiece: "visibility:hidden;display:none;",
+        sendType:"4"
+      });
+    }
   },
   // 点击兑换按钮
   clickChange:function()
@@ -181,8 +294,11 @@ Page({
       that.setData({
         getTranslate:pos
       });
-      
     }
+    // 隐藏抽奖按钮
+    that.setData({
+      hidden:"visibility:hidden;display:none;"
+    });
   },
   // 休眠函数
   sleep: function (numberMillis)
@@ -195,5 +311,29 @@ Page({
       if (now.getTime() > exitTime)
         return; 
     }
+  },
+  submitChou:function()
+  {
+    
+    var that = this;
+    var typep = that.data.sendType;
+    var attrIdp = that.data.attrIds;
+    var scorep = that.data.scores;
+    var couponIdp = that.data.couponIds;
+    var sendDatac;
+    if (typep=='1')
+    {
+      sendDatac={
+        "type": typep,
+        "score": scorep
+      }
+      util.postAjax("lottery/exchange", sendDatac,that.sendeCallBack);
+    }
+  },
+  sendeCallBack:function(json)
+  {
+    wx.navigateBack({
+      delta: 1
+    })
   }
 })

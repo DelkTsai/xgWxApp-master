@@ -14,18 +14,21 @@
   <text>\n</text>
   <text>\n</text>
   <!-- 按钮列表 -->
-  <ul class="ulStyle">
-    <view class="wa-grid-25 border-basic shuxian" data-jump-data="order" bindtap="jumpDiffPage">我的订单</view>
-    <view class="wa-grid-25 border-basic shuxian" data-jump-data="group" bindtap="jumpDiffPage">我的团购</view>
-    <view class="wa-grid-25 border-basic shuxian" data-jump-data="reward" bindtap="jumpDiffPage">我的悬赏</view>  
-    <view class="wa-grid-25 border-basic" data-jump-data="collect" bindtap="jumpDiffPage">我的收藏</view>
-  </ul>
-  <text>\n</text>
-  <text>\n</text>
+  <view class="ulStyle">
+    <view class="wa-grid-25 border-basic" data-jump-data="order" bindtap="jumpDiffPage" style='  border-right: 1px solid #000000;'>我的订单</view>
+    <view class="wa-grid-25 border-basic" data-jump-data="group" bindtap="jumpDiffPage"  style='border-right: 1px solid #000000;'
+>我的团购</view>
+    <view class="wa-grid-25 border-basic" data-jump-data="reward" bindtap="jumpDiffPage"  style='border-right: 1px solid #000000;'
+>我的悬赏</view>  
+    <view class="wa-grid-25 border-basic" data-jump-data="collect" bindtap="jumpDiffPage" >我的收藏</view>
+  </view>
+
+  
+  <view class="divider"/>
+
   <!-- 三张图片 -->
-  <view class="viewImageAll">
-  <ul class="">
-    <view class="wa-grid-33 border-basic" bindtap="jumpPieceList" data-invite-code='{{inviteCode}}'>
+  <view class="" style='margin:27px 0;display:inline-block;width:100%;'>
+    <view class="wa-grid-33 border-basic" bindtap="jumpPieceList" data-invite-code='{{inviteCode}}' style='float:none;display:inline-block;'>
       <view class="imageView ">
         <image src="../../utils/image/personal/icon_jifen.png" class="imagePic"></image>
         <text>\n</text>
@@ -46,9 +49,12 @@
         <text >优惠券</text>
       </view>
     </view>
-  </ul>
   </view>
-  <view class="garyText"></view>
+
+  </view>
+<view class='shadowBorder' style='margin:10px 0;background:white;'>
+
+
   <!-- 下方6个按钮 -->
    <view class="viewButton" style="margin-top:0.5em;" bindtap="jumpMsgCenter">
     <text class="viewButtonLeft" bindtap="jumpMsgCenter">消息中心</text>
@@ -60,7 +66,7 @@
   </view> 
    <view class="viewButton">
     <text class="viewButtonLeft">我的邀请码</text>
-    <text class="viewButtonRight">{{inviteCode}}</text>
+    <text class="viewButtonRight itemValueText">{{inviteCode}}</text>
   </view> 
    <view class="viewButton" bindtap="jumpAddress">
     <text class="viewButtonLeft" bindtap="jumpAddress">地址管理</text>
