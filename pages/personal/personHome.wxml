@@ -62,7 +62,10 @@
   </view> 
    <view class="viewButton" bindtap="jumpScore">
     <text class="viewButtonLeft" bindtap="">积分</text>
-    <text class="viewButtonRight" bindtap="">{{myscore}}></text>
+    <view class="viewButtonRight" bindtap="">
+      <text class='itemValueText' style='display:inline-block'>{{myscore}}</text>
+      <text style='display:inline-block;margin-left:10px;'>></text>
+  </view>
   </view> 
    <view class="viewButton">
     <text class="viewButtonLeft">我的邀请码</text>
