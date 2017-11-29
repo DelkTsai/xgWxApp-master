@@ -11,7 +11,9 @@ Page({
     itemList: [],
     shuzu: [],
     startX: 0, //开始坐标
-    startY: 0
+    startY: 0,
+    windowWidth:0
+    , windowHieght:0
   },
 
   /**
@@ -19,21 +21,16 @@ Page({
    */
   onLoad: function (options) {
     var that = this;
-    wx.getStorage({
-      key: 'token',
-      success: function (res) {
-        var token = res.data
-        var sendAddress = {
-          "tokenSession": token
-        }
+
+    wx.getSystemInfo({
+      success: function(res) {
         that.setData({
-          tokenSession: token
+          windowWidth: res.windowWidth
+          ,windowHieght:res.windowHeight
         })
-        util.getAjax("user/myAdressList", sendAddress, that.addressCallBack);
       },
-      fail: function (res) { },
-      complete: function (res) { },
-    });
+})
+    
     wx.setNavigationBarTitle({
       title: '收货地址'
     })
@@ -50,7 +47,18 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
+    var token = wx.getStorageSync("token");
 
+    var sendAddress = {
+      "tokenSession": token
+    }
+    this.setData({
+      tokenSession: token
+    })
+    
+    util.getAjax("user/myAdressList", sendAddress, this.addressCallBack);
+    
+   
   },
 
   /**
@@ -100,6 +108,7 @@ Page({
         that.setData({
           hiddenValue: "hidden"
         });
+        that.data.shuzu = [];
         for (var i = 0; i < json.data.length; i++) {
           that.data.shuzu.push(
             {
