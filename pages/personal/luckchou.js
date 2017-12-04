@@ -320,15 +320,34 @@ Page({
     var attrIdp = that.data.attrIds;
     var scorep = that.data.scores;
     var couponIdp = that.data.couponIds;
+    var token = that.data.tokenSession;
     var sendDatac;
     if (typep=='1')
     {
+
       sendDatac={
         "type": typep,
-        "score": scorep
+        "score": scorep,
+        "tokenSession": token
       }
-      util.postAjax("lottery/exchange", sendDatac,that.sendeCallBack);
     }
+    else if(typep=='2')
+    {
+      sendDatac = {
+        "type": typep,
+        "attrId": attrIdp,
+        "tokenSession": token
+      }
+    }
+    else if(typep==3)
+    {
+      sendDatac = {
+        "type": typep,
+        "couponId": couponIdp,
+        "tokenSession": token
+      }
+    }
+    util.postAjax("lottery/exchange", sendDatac, that.sendeCallBack);
   },
   sendeCallBack:function(json)
   {

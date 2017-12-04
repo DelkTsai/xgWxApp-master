@@ -328,6 +328,8 @@
 
   <!-- 确认提交按钮 -->
   <view class='submitBtn' bindtap='submitChou'>
-    确认提交
+    <view class='buttontijiao'>
+       确认提交
+    </view> 
   </view>
 </view>

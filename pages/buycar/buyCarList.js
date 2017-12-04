@@ -33,12 +33,30 @@ Page({
     windowHeight:"",//屏幕高度
     windowWidth:"",//屏幕宽
     leftWidth:"",//剩余宽度
+    showModalStatus: false, //弹窗用
+    // select:"",//选中之后的样式
+    paraDesc:"",//选择的码数
+    index:"",//当前选择是第几个
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    
+  },
+
+  /**
+   * 生命周期函数--监听页面初次渲染完成
+   */
+  onReady: function () {
+
+  },
+
+  /**
+   * 生命周期函数--监听页面显示
+   */
+  onShow: function () {
     var that = this;
     wx.setNavigationBarTitle({
       title: '购物车'
@@ -69,25 +87,11 @@ Page({
         var leftw = res.windowWidth - 280;
         that.setData({
           windowHeight: res.windowHeight,
-          windowWidth:res.windowWidth,
-          leftWidth:leftw
+          windowWidth: res.windowWidth,
+          leftWidth: leftw
         });
       }
     });
-  },
-
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
-
   },
 
   /**
@@ -277,6 +281,14 @@ Page({
     var goodsImg = event.currentTarget.dataset.goodsImg;
     var goodsName = event.currentTarget.dataset.goodsName;
     var shopCarId = event.currentTarget.dataset.shopCarId;
+    // 判断有没有选中属性
+    if (goodsAttr.length==0)
+    {
+      wx.showToast({
+        title: '请先选择商品属性',
+      });
+      return;
+    }
     //是否有选中
     var cb = that.data.checkBox;
     //总价
@@ -448,7 +460,8 @@ Page({
         sendgoodsName: goodsName,
         sendprice: price,
         sendshopCarId: shopCarId,
-        sendnum:num
+        sendnum:num,
+        index: index,
       })
       var token = that.data.tokenSession;
       var sendGetGoodsAttr= {
@@ -740,7 +753,7 @@ Page({
   //保存购物车列表回调函数
   saveCarListCallBack:function(json)
   {
-    // console.log(json);
+    console.log(json);
     var orderId = json.data.orderId;//"c822c4a29def11e784191c1b0d7314c3";
     var orderNo = json.data.orderNo;//"S2017092059839";
     var score = json.data.score;//"0";
@@ -753,7 +766,8 @@ Page({
     else if(json.ret==true)
     {
       wx.navigateTo({
-        url: 'orderFront?orderId=' + orderId + "&orderNo=" + orderNo + "&score=" + score,
+        // url: 'orderFront?orderId=' + orderId + "&orderNo=" + orderNo + "&score=" + score,
+        url: '../personal/orderDetail?orderId=' + orderId + "&orderNo=" + orderNo + "&score=" + score,
       });
     }
   },
@@ -799,5 +813,73 @@ Page({
         checkBox: cblist
       })
     }
+  },
+  // 隐藏显示模态框
+  showOrHideShoppintModal:function(e)
+  {
+    var status = this.data.showModalStatus;
+    this.setData({
+      showModalStatus: !status
+    });
+    console.log(e);
+  },
+  //码数点击
+  onMaShuItemClick:function(event) {
+    console.log(event);
+    var that = this;
+    var itemIndex = event.currentTarget.dataset.itemIndex;
+    var itemPara = event.currentTarget.dataset.itemPara;
+    var itemParentIndex = event.currentTarget.dataset.itemParentIndex;
+    var paraDesc = event.currentTarget.dataset.paraDesc;
+    wx.showToast({
+      title: "您选择了:"+paraDesc,
+    });
+    that.setData({
+      paraDesc: paraDesc
+    });
+  },
+  // 点击确认
+  onSubmitClick:function()
+  {
+    var that = this
+    var buyCarListp = that.data.buyCarList;
+    var i = that.data.index;
+    var paraDescp = that.data.paraDesc;
+    var attr = {
+      "paraType":"1",
+      "content": paraDescp
+    }
+    buyCarListp[i].goodsAttr=[];
+    buyCarListp[i].goodsAttr.push(attr);
+    that.setData({
+      buyCarList: buyCarListp
+    });
+    var status = that.data.showModalStatus;
+    that.setData({
+      showModalStatus: !status
+    });
+    //把修改的信息发送到服务器
+    //准备发送的数据
+    var sendgoodsId = that.data.sendgoodsId;
+    var sendgoodsAttr = that.data.sendgoodsAttr;
+    var sendgoodsImg = that.data.sendgoodsImg;
+    var sendgoodsName = that.data.sendgoodsName;
+    var sendprice = that.data.sendprice;
+    var sendshopCarId = that.data.sendshopCarId;
+    var token = that.data.tokenSession;
+    var sendnum = that.data.sendnum;
+    var seJson = JSON.stringify(buyCarListp[i].goodsAttr)
+    var sendData = {
+      "tokenSession": token,
+      "goodsId": sendgoodsId,
+      "goodsName": sendgoodsName,
+      "goodsImg": sendgoodsImg,
+      "goodsAttr": seJson,
+      "price": sendprice,
+      "shopCarId": sendshopCarId,
+      "num": sendnum,
+      "checkAttrKey":"false"
+    }
+    util.postAjax("mall/add_car", sendData, that.attrShopCarListCallBack);
   }
 })

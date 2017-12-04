@@ -401,9 +401,9 @@ Page({
     var goodsName = this.data.dataList.goodsName;
     var goodsImg = this.data.dataList.showImg[0];
     var num = "1";
-    var price = this.data.price;
-    var femalePrice = this.data.price;
-    var malePrice = this.data.malePrice;
+    var price = this.data.dataList.price;
+    var femalePrice = this.data.dataList.price;
+    var malePrice = this.data.dataList.malePrice;
     var goodsAttr = "";
     var checkAttrKey = "";
     var saveType = "1";

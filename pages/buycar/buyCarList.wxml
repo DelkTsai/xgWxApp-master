@@ -83,11 +83,13 @@
       <view wx:for="{{item.goodsAttr}}" wx:for-item="attr" class='goodsAttrViewNewFor'>
         <!-- 文字 -->
         <view wx:if="{{attr.paraType=='1'}}" class='attrTextNew'>
-          {{attr.content}}
+           {{attr.content}} 
+          
         </view>
         <!-- 图片 -->
         <view wx:if="{{attr.paraType=='2'}}" class='attrImageViewNew'>
-          <image src='{{attr.content}}' class='attrImageNew'></image>
+           <image src='{{attr.content}}' class='attrImageNew'></image> 
+          
         </view>
       </view>
     </view>
@@ -146,17 +148,16 @@
     </view>
   </view>
   <!-- 结算按钮 -->
-  <view class='sumBtnViewNew' style="width:{{leftWidth}}px;">
+  <view class='sumBtnViewNew'>
     <button class='sumBtnNew' bindtap="sumClick">结算</button>
   </view>
 </view>
 
 
-<!-- 弹出框选择码数以及颜色 -->
+ <!-- 弹出框选择码数以及颜色 
 <view class="drawer_screen" hidden="{{hidden}}">
   <view animation="{{animationData}}" class="drawer_box" wx:if="{{showModalStatus}}">
 
-    <!--drawer content-->
     <view class="drawer_title">码数</view>
     <view class="drawer_content" wx:for="{{dataList.goodsAttr}}">
 
@@ -173,5 +174,37 @@
       </view>
     </view>
     <view class="btn_ok" bindtap="powerDrawer" data-statu="close">确定</view>
+  </view>
+</view> -->
+<!-- 弹窗 -->
+<!--使用animation属性指定需要执行的动画-->
+<view class="drawer_screen" hidden="{{!showModalStatus}}" >
+  <view style='position:relative;width:100%;height:100%;' >
+    <view style='background:#000;width:100%;height:100%;opacity:0.8;' bindtap='showOrHideShoppintModal'></view>
+      <view style='position:absolute;bottom:0px;width:100%;text-align:center;background:#181818;padding-top:15px;color:white;'>
+          <!--购买数量  -->
+          <!-- <view>
+            <text class='attrTitle'>购买数量</text>
+            <view style='text-align:center;color:white;margin:10px;'>
+              <text style='width:20px;height:20px;border-radius:10px;border:1px solid #FFFFFF;line-height:20px;display:inline-block;text-align:center;' bindtap='onModifyCountClick' data-opera="-1">-</text>
+              <text style='margin:0 20px;'>{{selCount}}</text>
+              <text style='width:20px;height:20px;border-radius:10px;border:1px solid #FFFFFF;line-height:20px;display:inline-block;text-align:center;' bindtap='onModifyCountClick' data-opera="1">+</text>
+            </view>           
+          </view> -->
+      <!--码数  -->
+      <view style='width:100%;color:white;' wx:for="{{dataList.goodsAttr}}" wx:for-index="index" wx:if="{{item.name=='码数'}}">
+        <view style='background:#363636;height:1px;width:80%;margin-left:10%;margin-top:15px;'></view>
+        <text style='font-size:12px;margin-top:15px;margin-bottom:20px;display:inline-block;'>{{item.name}}</text>
+       
+        <scroll-view style='width:100%;white-space:nowrap;' scroll-x >    
+            <text wx:for="{{item.para}}" wx:for-item="para" wx:for-index="idx"   style='color:white;margin-left:20px;' data-item-parent-index="{{index}}" data-item-index="{{idx}}" data-para-desc="{{para.paraDesc}}" bindtap='onMaShuItemClick' data-item-para="{{item.paraType}}">{{para.paraDesc}}</text>
+        </scroll-view>
+
+      </view>
+        <!-- <view style='background:#363636;height:1px;width:80%;margin-left:10%;margin-top:15px;'></view>
+        <text style='font-size:12px;margin-top:15px;margin-bottom:15px;display:block;'>价钱</text>
+        <text style='font-size:25px;margin-top:15px;margin-bottom:0;display:block;'>{{price}}</text> -->
+        <button style='width:80%;margin:20px 10%;' size='mini' bindtap='onSubmitClick'>确认</button>
+      </view>
   </view>
 </view>

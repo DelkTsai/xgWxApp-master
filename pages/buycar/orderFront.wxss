@@ -81,7 +81,7 @@
   font-size: 14px;
   color: #FE3131;
   left: 122px;
-  top: 31px;
+  top: 50px;
 }
 /* 商品属性 */
 .attrView{
